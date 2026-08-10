@@ -4,7 +4,7 @@
 
 ## PROBLEM-MECHANISMUS
 
-Durch erhöhte Entzündungsbotenstoffe hat sich die Blasenwand entzündet und ist angeschwollen. Diese geschwollene Blasenwand drückt permanent auf die darunterliegende Muskulatur und reizt sie so stark, dass sie sich unkontrolliert zusammenzieht. Tagsüber kannst du noch bewusst dagegen halten, aber nachts, wenn du schläfst und dein Körper diese Kontrolle nicht mehr hat, gibt die Muskulatur nach und die Blase entleert sich einfach von allein. Genau so entsteht das nächtliche Bettnässen, und solange die Entzündungsbotenstoffe erhöht bleiben, wird sich daran nichts ändern.
+Durch erhöhte Entzündungsbotenstoffe hat sich die Blasenwand entzündet und ist angeschwollen. Diese geschwollene Blasenwand drückt permanent auf die darunterliegende Muskulatur und reizt sie so stark, dass sie sich nachts unkontrolliert zusammenzieht und die Blase sich einfach von allein entleert. Genau so entsteht das nächtliche Bettnässen, und solange die Entzündungsbotenstoffe erhöht bleiben, wird sich daran nichts ändern.
 
 ---
 
