@@ -2,21 +2,15 @@
 
 ---
 
-## PROBLEM
+## PROBLEM-MECHANISMUS
 
-Die Blase ist entzündet. Durch die Entzündung schwillt die Blasenwand an und drückt auf die empfindliche Muskulatur, wie ein Ballon der zu viel Luft hat. Die Muskulatur wird dadurch so gereizt, dass sie sich unkontrolliert zusammenzieht. Nachts, wenn du schläfst und dein Körper keine bewusste Kontrolle mehr hat, entleert sich die Blase einfach von allein. Und genau das ist der Moment, in dem das Bettnässen passiert.
-
----
-
-## URSACHE
-
-Durch erhöhte Entzündungsbotenstoffe hat sich die Blasenwand entzündet. Diese Entzündungsbotenstoffe lassen die Blasenwand anschwellen, reizen die Muskulatur und machen sie überempfindlich. Die Blase will sich ständig entleeren, obwohl sie noch gar nicht voll ist. Solange die Entzündungsbotenstoffe erhöht sind, bleibt die Blase entzündet und das nächtliche Nässen hört nicht auf.
+Durch erhöhte Entzündungsbotenstoffe hat sich die Blasenwand entzündet. Durch die Entzündung schwillt die Blasenwand an und drückt auf die empfindliche Muskulatur. Die Muskulatur wird dadurch so gereizt, dass sie sich unkontrolliert zusammenzieht. Nachts, wenn du schläfst und dein Körper keine bewusste Kontrolle mehr hat, entleert sich die Blase einfach von allein. Und genau das ist der Moment, in dem das Bettnässen passiert.
 
 ---
 
-## LÖSUNG
+## LÖSUNGS-MECHANISMUS
 
-Erdung hemmt die Entzündungsbotenstoffe. Beim Schlafen auf der Erdungsmatte fließen freie Elektronen aus der Erde in den Körper. Diese Elektronen hemmen die Entzündungsbotenstoffe, die Entzündung geht zurück, die Blasenwand schwillt ab, die Muskulatur beruhigt sich und das nächtliche Nässen hört auf.
+Erdung hemmt die Entzündungsbotenstoffe. Beim Schlafen auf der Erdungsmatte fließen freie Elektronen aus der Erde in den Körper und hemmen die Entzündungsbotenstoffe. Dadurch geht die Entzündung zurück, die Blasenwand schwillt ab, der Druck auf die Muskulatur lässt nach und die Blase beruhigt sich. Die unkontrollierte Entleerung hört auf und damit hört auch das nächtliche Nässen auf.
 
 ---
 
