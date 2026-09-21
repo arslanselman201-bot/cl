@@ -699,8 +699,8 @@
 
 /* ── URGENCY ── */
 .hv-urgency {
-  background: var(--hv-bg-alt);
-  border: 1px solid var(--hv-line);
+  background: #FEF2F2;
+  border: 2px solid #DC2626;
   border-radius: 16px;
   padding: 36px 28px;
   margin: 40px 0;
@@ -711,6 +711,27 @@
   font-size: 22px;
   margin-bottom: 16px;
   color: var(--hv-pine-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hv-urgency-icon {
+  width: 28px;
+  height: 28px;
+  background: #DC2626;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hv-urgency-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
 }
 
 .hv-urgency p {
@@ -1141,9 +1162,11 @@
 
     <!-- ══════ URGENCY ══════ -->
     <div class="hv-urgency">
-      <h3>Deine Haarfollikel warten nicht ewig.</h3>
-      <p>Solange deine Haarfollikel noch aktiv sind, kannst du sie schützen. Aber je länger DHT ungestört angreift, desto schwieriger wird es, sie wieder zu aktivieren.</p>
-      <p>Jede Woche ohne Schutz ist eine Woche, in der DHT weiter an deinen Haarfollikeln arbeitet.</p>
+      <h3><span class="hv-urgency-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></span> Warum Warten dich Haare kostet</h3>
+      <p>Ein inaktiver Haarfollikel wartet nicht ewig.</p>
+      <p>Mit jedem Monat, in dem er abgeschaltet bleibt, wird es schwieriger ihn aufzuwecken — und <strong>die Follikel, die zu lange inaktiv bleiben, kommen gar nicht mehr zurück.</strong></p>
+      <p>Das Shedding, das du heute siehst, ist so reversibel wie nie wieder.</p>
+      <p>Du kannst jeden Follikel retten, der noch kämpft — ab jetzt.</p>
     </div>
 
     <!-- ══════ FINAL CTA ══════ -->
