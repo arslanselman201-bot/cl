@@ -551,60 +551,150 @@
   line-height: 1.5;
 }
 
-/* ── TESTIMONIALS ── */
-.hv-testimonials {
-  padding: 48px 0;
+/* ── REVIEWS SECTION ── */
+.hv-reviews {
+  padding: 48px 0 0;
 }
 
-.hv-testimonials h2 {
+.hv-reviews-heading {
+  font-family: 'Work Sans', sans-serif;
   font-size: 26px;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 36px;
+  font-weight: 800;
   color: var(--hv-pine-deep);
-}
-
-.hv-testimonial {
-  background: var(--hv-white);
-  border: 1px solid var(--hv-line);
-  border-radius: 16px;
-  padding: 28px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-}
-
-.hv-testimonial-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
   margin-bottom: 16px;
 }
 
-.hv-testimonial-img {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--hv-bg-alt);
+.hv-reviews-trustpilot {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.hv-testimonial-name {
+.hv-reviews-trustpilot svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hv-reviews-trustpilot span {
+  font-size: 15px;
   font-weight: 600;
-  font-size: 16px;
+  color: var(--hv-text);
+}
+
+.hv-reviews-tp-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 8px;
+}
+
+.hv-reviews-tp-star {
+  width: 30px;
+  height: 30px;
+  background: #00B67A;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hv-reviews-tp-star svg {
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+}
+
+.hv-reviews-rating {
+  font-size: 14px;
+  color: var(--hv-text);
+  margin-bottom: 36px;
+}
+
+.hv-reviews-rating strong {
+  font-weight: 700;
+}
+
+/* ── SINGLE REVIEW ── */
+.hv-review {
+  border-top: 1px solid var(--hv-line);
+  padding: 28px 0;
+}
+
+.hv-review-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.hv-review-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hv-review-meta {
+  flex: 1;
+}
+
+.hv-review-name {
+  font-weight: 700;
+  font-size: 15px;
   color: var(--hv-pine-deep);
 }
 
-.hv-testimonial-stars {
-  color: var(--hv-accent);
-  font-size: 16px;
-  letter-spacing: 2px;
+.hv-review-verified {
+  font-size: 12px;
+  color: var(--hv-text-light);
 }
 
-.hv-testimonial p {
-  font-style: italic;
+.hv-review-date {
+  font-size: 13px;
+  color: var(--hv-text-light);
+  flex-shrink: 0;
+}
+
+.hv-review-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 12px;
+}
+
+.hv-review-star {
+  width: 24px;
+  height: 24px;
+  background: #00B67A;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hv-review-star svg {
+  width: 14px;
+  height: 14px;
+  fill: #fff;
+}
+
+.hv-review-title {
+  font-weight: 700;
   font-size: 16px;
+  color: var(--hv-pine-deep);
+  margin-bottom: 10px;
+}
+
+.hv-review-body {
+  font-size: 15px;
   color: var(--hv-text);
   line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.hv-review-photo {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 8px;
 }
 
 /* ── URGENCY ── */
@@ -963,41 +1053,89 @@
 
     <div class="hv-divider"></div>
 
-    <!-- ══════ SECTION 5 — TESTIMONIALS ══════ -->
-    <div class="hv-testimonials">
-      <h2>Das sagen Frauen, die HaarVita ausprobiert haben</h2>
+    <!-- ══════ SECTION 5 — REVIEWS ══════ -->
+    <div class="hv-reviews">
+      <div class="hv-reviews-heading">Was Frauen berichten</div>
 
-      <div class="hv-testimonial">
-        <div class="hv-testimonial-header">
-          <img class="hv-testimonial-img" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-img-17.webp?v=1789990484" alt="Sandra M.">
-          <div>
-            <div class="hv-testimonial-name">Sandra M., 44</div>
-            <div class="hv-testimonial-stars">★★★★★</div>
-          </div>
-        </div>
-        <p>„Ich habe mit Mounjaro 22 Kilo abgenommen — aber ab Monat drei sind mir die Haare büschelweise ausgefallen. Biotin, Kollagen, alles probiert. Nichts hat geholfen. Dann bin ich auf HaarVita gestoßen. Nach etwa vier Wochen wurde das Shedding deutlich weniger. Jetzt nach drei Monaten sehe ich kleine Baby Haare am Scheitel. Ich bin so erleichtert."</p>
+      <div class="hv-reviews-trustpilot">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00B67A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span>Trustpilot</span>
       </div>
 
-      <div class="hv-testimonial">
-        <div class="hv-testimonial-header">
-          <img class="hv-testimonial-img" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-img-19.webp?v=1789990484" alt="Katrin L.">
-          <div>
-            <div class="hv-testimonial-name">Katrin L., 31</div>
-            <div class="hv-testimonial-stars">★★★★★</div>
-          </div>
-        </div>
-        <p>„Mein Scheitel wurde immer breiter, mein Zopf immer dünner. Mein Mann hat es zuerst bemerkt. Ich war kurz davor, die Spritze komplett abzusetzen. Dann habe ich HaarVita bestellt — weil es als einziges an DHT rangeht und nicht nur Vitamine draufwirft. Nach sechs Wochen hat meine Friseurin gesagt, dass neue Haare nachwachsen."</p>
+      <div class="hv-reviews-tp-stars">
+        <div class="hv-reviews-tp-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="hv-reviews-tp-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="hv-reviews-tp-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="hv-reviews-tp-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="hv-reviews-tp-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
       </div>
 
-      <div class="hv-testimonial">
-        <div class="hv-testimonial-header">
-          <img class="hv-testimonial-img" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-img-21.webp?v=1789990486" alt="Nicole W.">
-          <div>
-            <div class="hv-testimonial-name">Nicole W., 37</div>
-            <div class="hv-testimonial-stars">★★★★★</div>
+      <div class="hv-reviews-rating"><strong>4,8</strong> von 5 · 10.248 Bewertungen</div>
+
+      <!-- Review 1 -->
+      <div class="hv-review">
+        <div class="hv-review-header">
+          <img class="hv-review-avatar" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-reviewer-16.avif?v=1789993957" alt="Sandra M.">
+          <div class="hv-review-meta">
+            <div class="hv-review-name">Sandra M.</div>
+            <div class="hv-review-verified">Verifiziert</div>
           </div>
+          <div class="hv-review-date">vor 2 Tagen</div>
         </div>
-        <p>„Ich nehme Ozempic seit einem Jahr. Die Haare am Haaransatz wurden immer dünner. Ich hatte richtig Angst. Seit ich HaarVita nehme, hat sich das Ausfallen verlangsamt und mein Haar fühlt sich kräftiger an. Und ich konnte weiter abnehmen, ohne meine Haare dafür zu opfern."</p>
+        <div class="hv-review-stars">
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        </div>
+        <div class="hv-review-title">Haare jeden Morgen im Abfluss</div>
+        <div class="hv-review-body">Ich habe mit Mounjaro 22 Kilo abgenommen und ab Monat drei sind mir die Haare büschelweise ausgefallen. Unter der Dusche, in der Bürste, auf dem Kopfkissen. Ich hatte richtig Panik, weil ich die Spritze auf keinen Fall absetzen wollte. Ich hatte vorher schon ein Haarserum probiert, das hat nur meine Kopfhaut fettig gemacht. Was mir an HaarVita gefallen hat — es geht nicht nur obendrauf, sondern direkt an die Ursache. Nach ein paar Wochen waren deutlich weniger Haare in der Bürste, und nach Monat vier hatte ich keine Angst mehr, meine Haare offen zu tragen.</div>
+        <img class="hv-review-photo" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-img-17_1.webp?v=1789993980" alt="Sandra M. Ergebnis">
+      </div>
+
+      <!-- Review 2 -->
+      <div class="hv-review">
+        <div class="hv-review-header">
+          <img class="hv-review-avatar" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-reviewer-18.avif?v=1789994054" alt="Katrin L.">
+          <div class="hv-review-meta">
+            <div class="hv-review-name">Katrin L.</div>
+            <div class="hv-review-verified">Verifiziert</div>
+          </div>
+          <div class="hv-review-date">vor 5 Tagen</div>
+        </div>
+        <div class="hv-review-stars">
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        </div>
+        <div class="hv-review-title">Mein Scheitel wurde immer breiter</div>
+        <div class="hv-review-body">Mir ist es gar nicht auf einmal aufgefallen. Es war eher so, dass ich jedes Mal wenn ich in den Spiegel geschaut habe, der Scheitel ein bisschen breiter wirkte. Besonders unter dem Badezimmerlicht. Ich habe Biotin, Kollagen, Shampoo, sogar komische Gummies gekauft — nichts hat wirklich was gebracht. Ich hatte eigentlich keine großen Erwartungen mehr, aber nach ein paar Wochen HaarVita war meine Bürste nicht mehr voller Haare. Mein Mann hat es vor mir bemerkt, was sonst nie passiert. Ich war auf Wegovy zu der Zeit, also bin ich mir jetzt ziemlich sicher dass das Shedding damit zusammenhing.</div>
+        <img class="hv-review-photo" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-img-19_1.webp?v=1789994091" alt="Katrin L. Ergebnis">
+      </div>
+
+      <!-- Review 3 -->
+      <div class="hv-review">
+        <div class="hv-review-header">
+          <img class="hv-review-avatar" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-reviewer-20.webp?v=1789994152" alt="Nicole W.">
+          <div class="hv-review-meta">
+            <div class="hv-review-name">Nicole W.</div>
+            <div class="hv-review-verified">Verifiziert</div>
+          </div>
+          <div class="hv-review-date">vor 1 Woche</div>
+        </div>
+        <div class="hv-review-stars">
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        </div>
+        <div class="hv-review-title">Meine Kopfhaut war auf Fotos sichtbar</div>
+        <div class="hv-review-body">Ich bin 37 und dachte, dünne Haare sind einfach noch eine Sache mehr, mit der ich klarkommen muss. Mein Haaransatz und Scheitel wurden auf Fotos richtig deutlich sichtbar, und ich habe angefangen Fotos komplett zu vermeiden. Ich war zu der Zeit auf Ozempic, und als ich dann über GLP-1-Shedding gelesen habe, hat es endlich Sinn ergeben. Was mir an HaarVita gefallen hat — es ist für die Haarfollikel gemacht, nicht nur für das Haar das schon da ist. Es ging nicht über Nacht, aber zuerst wurde das Shedding langsamer, dann habe ich kleine Baby Haare vorne am Haaransatz gesehen. Das war das erste Mal, dass ich das Gefühl hatte, es ist vielleicht noch nicht zu spät.</div>
+        <img class="hv-review-photo" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-img-21_1.webp?v=1789994168" alt="Nicole W. Ergebnis">
       </div>
     </div>
 
