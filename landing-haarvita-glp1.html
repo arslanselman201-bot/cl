@@ -1,0 +1,769 @@
+<!-- HaarVita GLP-1 Landing Page — NATURAPlus™ -->
+<!-- Shopify Custom Liquid Block -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --hv-pine: #24421F;
+  --hv-pine-deep: #152A11;
+  --hv-bg: #FAFAF8;
+  --hv-bg-alt: #F2F5F1;
+  --hv-line: #D8DED5;
+  --hv-text: #1A1A1A;
+  --hv-text-light: #5A5A5A;
+  --hv-accent: #D4A843;
+  --hv-accent-hover: #C09A38;
+  --hv-white: #FFFFFF;
+  --hv-red: #C0392B;
+  --hv-green: #27AE60;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.hv-lp {
+  font-family: 'Work Sans', sans-serif;
+  color: var(--hv-text);
+  background: var(--hv-bg);
+  line-height: 1.7;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hv-lp h1, .hv-lp h2, .hv-lp h3 {
+  font-family: 'Fraunces', serif;
+  line-height: 1.3;
+  color: var(--hv-pine-deep);
+}
+
+.hv-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── HEADER ── */
+.hv-header {
+  background: var(--hv-white);
+  border-bottom: 1px solid var(--hv-line);
+  padding: 16px 0;
+  text-align: center;
+}
+
+.hv-header img {
+  height: 44px;
+  width: auto;
+}
+
+/* ── HERO ── */
+.hv-hero {
+  background: var(--hv-white);
+  padding: 48px 0 40px;
+  text-align: center;
+}
+
+.hv-badge {
+  display: inline-block;
+  background: var(--hv-bg-alt);
+  color: var(--hv-pine);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--hv-line);
+  margin-bottom: 24px;
+}
+
+.hv-hero h1 {
+  font-size: 32px;
+  font-weight: 600;
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+
+@media (max-width: 600px) {
+  .hv-hero h1 { font-size: 24px; }
+}
+
+/* ── BYLINE ── */
+.hv-byline {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 480px;
+  margin: 0 auto 24px;
+  text-align: left;
+}
+
+.hv-byline img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--hv-line);
+}
+
+.hv-byline-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--hv-pine-deep);
+}
+
+.hv-byline-title {
+  font-size: 13px;
+  color: var(--hv-text-light);
+}
+
+/* ── QUOTE ── */
+.hv-quote-block {
+  background: var(--hv-bg-alt);
+  border-left: 4px solid var(--hv-pine);
+  padding: 24px 28px;
+  margin: 0 auto 24px;
+  max-width: 600px;
+  text-align: left;
+  border-radius: 0 8px 8px 0;
+}
+
+.hv-quote-block p {
+  font-style: italic;
+  font-size: 16px;
+  color: var(--hv-pine-deep);
+  line-height: 1.6;
+}
+
+.hv-meta {
+  font-size: 13px;
+  color: var(--hv-text-light);
+  margin-top: 8px;
+}
+
+/* ── SECTION DIVIDER ── */
+.hv-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--hv-pine);
+  margin: 48px auto;
+  border-radius: 2px;
+}
+
+/* ── BODY SECTIONS ── */
+.hv-section {
+  padding: 0 0 16px;
+}
+
+.hv-section h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .hv-section h2 { font-size: 22px; }
+}
+
+.hv-section h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 32px 0 16px;
+}
+
+.hv-section p {
+  margin-bottom: 20px;
+  font-size: 17px;
+}
+
+/* ── MEDIA ── */
+.hv-media {
+  margin: 28px 0;
+  text-align: center;
+}
+
+.hv-media img,
+.hv-media video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* ── TIMELINE ── */
+.hv-timeline {
+  margin: 32px 0;
+  padding: 0;
+}
+
+.hv-timeline-item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--hv-line);
+}
+
+.hv-timeline-item:last-child {
+  border-bottom: none;
+}
+
+.hv-timeline-marker {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: var(--hv-pine);
+  color: var(--hv-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.hv-timeline-text {
+  font-size: 16px;
+  color: var(--hv-text);
+  padding-top: 12px;
+}
+
+/* ── DHT TABLE ── */
+.hv-dht-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.hv-dht-table th {
+  background: var(--hv-pine-deep);
+  color: var(--hv-white);
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hv-dht-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--hv-line);
+  font-size: 15px;
+}
+
+.hv-dht-table tr:nth-child(even) td {
+  background: var(--hv-bg-alt);
+}
+
+.hv-dht-table .hv-status-down {
+  color: var(--hv-red);
+  font-weight: 600;
+}
+
+.hv-dht-table .hv-status-up {
+  color: var(--hv-red);
+  font-weight: 600;
+}
+
+/* ── STATS BLOCK ── */
+.hv-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+
+@media (max-width: 500px) {
+  .hv-stats { grid-template-columns: 1fr; }
+}
+
+.hv-stat {
+  background: var(--hv-bg-alt);
+  border: 1px solid var(--hv-line);
+  border-radius: 12px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.hv-stat-number {
+  font-family: 'Fraunces', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--hv-pine);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.hv-stat-label {
+  font-size: 13px;
+  color: var(--hv-text-light);
+  line-height: 1.4;
+}
+
+/* ── ERWARTUNGS-TIMELINE ── */
+.hv-expect {
+  margin: 32px 0;
+}
+
+.hv-expect-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--hv-line);
+  align-items: flex-start;
+}
+
+.hv-expect-item:last-child { border-bottom: none; }
+
+.hv-expect-week {
+  flex-shrink: 0;
+  background: var(--hv-pine);
+  color: var(--hv-white);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.hv-expect-text {
+  font-size: 16px;
+  padding-top: 4px;
+}
+
+/* ── TESTIMONIALS ── */
+.hv-testimonials {
+  padding: 48px 0;
+}
+
+.hv-testimonials h2 {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 36px;
+  color: var(--hv-pine-deep);
+}
+
+.hv-testimonial {
+  background: var(--hv-white);
+  border: 1px solid var(--hv-line);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+.hv-testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.hv-testimonial-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--hv-bg-alt);
+}
+
+.hv-testimonial-name {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--hv-pine-deep);
+}
+
+.hv-testimonial-stars {
+  color: var(--hv-accent);
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.hv-testimonial p {
+  font-style: italic;
+  font-size: 16px;
+  color: var(--hv-text);
+  line-height: 1.7;
+}
+
+/* ── URGENCY ── */
+.hv-urgency {
+  background: var(--hv-bg-alt);
+  border: 1px solid var(--hv-line);
+  border-radius: 16px;
+  padding: 36px 28px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.hv-urgency h3 {
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: var(--hv-pine-deep);
+}
+
+.hv-urgency p {
+  font-size: 16px;
+  color: var(--hv-text);
+  max-width: 540px;
+  margin: 0 auto 12px;
+}
+
+/* ── CTA ── */
+.hv-cta-section {
+  background: var(--hv-pine-deep);
+  border-radius: 20px;
+  padding: 48px 32px;
+  text-align: center;
+  margin: 40px 0 48px;
+  color: var(--hv-white);
+}
+
+.hv-cta-section h2 {
+  color: var(--hv-white);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.hv-cta-section p {
+  color: rgba(255,255,255,0.85);
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.hv-cta-checks {
+  list-style: none;
+  margin: 24px 0 32px;
+  padding: 0;
+}
+
+.hv-cta-checks li {
+  font-size: 16px;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 10px;
+}
+
+.hv-cta-checks li::before {
+  content: "✅ ";
+}
+
+.hv-cta-btn {
+  display: inline-block;
+  background: var(--hv-accent);
+  color: var(--hv-pine-deep);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 18px 48px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 4px 16px rgba(212,168,67,0.4);
+}
+
+.hv-cta-btn:hover {
+  background: var(--hv-accent-hover);
+  transform: translateY(-2px);
+}
+
+.hv-cta-fine {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin-top: 20px;
+}
+
+/* ── FOOTER ── */
+.hv-footer {
+  text-align: center;
+  padding: 32px 0;
+  font-size: 13px;
+  color: var(--hv-text-light);
+  border-top: 1px solid var(--hv-line);
+}
+</style>
+
+<div class="hv-lp">
+
+  <!-- ══════ HEADER ══════ -->
+  <div class="hv-header">
+    <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Gesund_im_Alltag_2.png?v=1789902520" alt="Gesund im Alltag">
+  </div>
+
+  <!-- ══════ HERO ══════ -->
+  <div class="hv-hero">
+    <div class="hv-container">
+      <div class="hv-badge">Frauengesundheit Aktuell</div>
+      <h1>5 Gründe warum deine Abnehmspritze deine Haare mitnimmt — und wie du sie schützt</h1>
+
+      <div class="hv-byline">
+        <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bildschirmfoto_2026-09-16_um_15.12.21.png?v=1789564349" alt="Dr. Anna Weber">
+        <div>
+          <div class="hv-byline-name">Dr. Anna Weber</div>
+          <div class="hv-byline-title">Dermatologie & Haargesundheit</div>
+        </div>
+      </div>
+
+      <div class="hv-quote-block">
+        <p>„Was ich in meiner Praxis immer häufiger sehe, ist hormonell bedingter Haarausfall durch Abnehmspritzen — Frauen verlieren ihre Haare, ohne jemals davor gewarnt worden zu sein."</p>
+      </div>
+
+      <div class="hv-meta">4 Min. Lesezeit · Aktualisiert September 2026</div>
+    </div>
+  </div>
+
+  <div class="hv-container">
+
+    <!-- ══════ EMOTIONALER EINSTIEG ══════ -->
+    <div class="hv-section" style="padding-top: 40px;">
+      <p>Du hast es durchgezogen. Die Kilos sind runter. Zum ersten Mal seit Jahren fühlst du dich wieder wohl in deinen Klamotten. Und dann siehst du deinen Scheitel im Badezimmerspiegel. Breiter als letzten Monat. Und dir wird klar, dass du bald wieder anfängst Fotos zu vermeiden.</p>
+
+      <div class="hv-media">
+        <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-img-04.webp?v=1789903191" alt="Haarausfall durch Abnehmspritze">
+      </div>
+
+      <p>Aber das sagt dir keiner: Du musst dich nicht entscheiden. Der Haarausfall ist real. Er ist eine vorhersehbare Nebenwirkung der Abnehmspritze. Aber er ist umkehrbar. Du kannst weiter abnehmen und deine Haare zurückbekommen, ohne die Spritze abzusetzen.</p>
+
+      <p>Und es gibt eine Sache, die die meisten Frauen — und die meisten Ärzte — falsch machen.</p>
+    </div>
+
+    <div class="hv-divider"></div>
+
+    <!-- ══════ SECTION 1 ══════ -->
+    <div class="hv-section">
+      <h2>Der Haarausfall im dritten Monat ist kein Zufall</h2>
+
+      <div class="hv-media">
+        <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/nach_3_Monate.png?v=1789904856" alt="Haarausfall nach 3 Monaten">
+      </div>
+
+      <p>Du merkst es zuerst in der Dusche. Mehr Haare als sonst zwischen deinen Fingern. Büschel im Abfluss. Ein paar Wochen später liegen sie auf dem Badezimmerboden, auf deinem Kopfkissen, in der Bürste. Du hast nichts verändert — außer dass die Kilos endlich runter gingen.</p>
+
+      <div class="hv-media">
+        <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bildschirmaufnahme2026-09-20um13.43.45-ezgif.com-video-to-gif-converter.gif?v=1789904825" alt="Haarausfall Animation">
+      </div>
+
+      <p>Das sagt dir niemand: Der Haarausfall hat nicht in der Woche angefangen, in der du ihn bemerkt hast. Er hat Monate vorher angefangen. Die Abnehmspritze löst massive hormonelle Schwankungen aus. Dein Östrogen sinkt — und Östrogen ist das Hormon, das deine Haare vor DHT schützt. Ohne diesen Schutz greift DHT deine Haarfollikel direkt an und lässt sie schrumpfen. Dein Scheitel wird breiter, dein Zopf wird dünner und die Haare die nachwachsen, sehen feiner und schwächer aus.</p>
+
+      <div class="hv-timeline">
+        <div class="hv-timeline-item">
+          <div class="hv-timeline-marker">M<br>1–2</div>
+          <div class="hv-timeline-text">Östrogen beginnt zu sinken — deine Haare verlieren ihren Schutz</div>
+        </div>
+        <div class="hv-timeline-item">
+          <div class="hv-timeline-marker">M<br>3–4</div>
+          <div class="hv-timeline-text">DHT greift deine Haarfollikel an — sie schrumpfen</div>
+        </div>
+        <div class="hv-timeline-item">
+          <div class="hv-timeline-marker">M<br>5–6</div>
+          <div class="hv-timeline-text">Scheitel wird breiter, Zopf wird dünner, Haare werden schwächer</div>
+        </div>
+      </div>
+
+      <p>Deshalb fühlt sich der Haarausfall an, als wäre er aus dem Nichts gekommen. Einen Tag ist alles normal. Am nächsten wird dein Scheitel breiter und dein Zopf dünner. Aber was du jetzt siehst, ist nicht das Problem von heute. Dein Östrogen hat vor Monaten angefangen zu sinken — und seitdem greift DHT deine Haarfollikel an.</p>
+    </div>
+
+    <div class="hv-divider"></div>
+
+    <!-- ══════ SECTION 2 ══════ -->
+    <div class="hv-section">
+      <h2>Dein Haar ist das Erste, was DHT angreift</h2>
+
+      <div class="hv-media">
+        <video autoplay muted loop playsinline>
+          <source src="https://cdn.shopify.com/videos/c/o/v/e3ef2967cbcf47669d4703d0e62eba1d.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <p>Du hast wahrscheinlich schon alles versucht. Biotin. Kollagen. Zink. Vitamin D. Eisen. Minoxidil. Sulfatfreie Shampoos. Seidenkissen. Und trotzdem siehst du im Badezimmerlicht deine Kopfhaut durchscheinen, wie noch nie.</p>
+
+      <p>Das ist das Frustrierende am Haarausfall durch die Abnehmspritze. Du machst endlich alles richtig, und die Haare fallen trotzdem aus. Das bildest du dir nicht ein. Etwas hat sich verändert, in dem Moment als die Kilos angefangen haben zu fallen.</p>
+
+      <p>Wenn die Abnehmspritze wirkt, sinkt dein Östrogen. Und dein Körper verliert damit den einzigen Schutz, den deine Haare gegen DHT haben.</p>
+
+      <table class="hv-dht-table">
+        <thead>
+          <tr>
+            <th>Faktor</th>
+            <th>Status</th>
+            <th>Wirkung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Östrogen</td>
+            <td class="hv-status-down">↓ Sinkt</td>
+            <td>Haare verlieren Schutz</td>
+          </tr>
+          <tr>
+            <td>DHT</td>
+            <td class="hv-status-up">↑ Greift an</td>
+            <td>Follikel schrumpfen</td>
+          </tr>
+          <tr>
+            <td>Haarfollikel</td>
+            <td class="hv-status-down">↓ Geschwächt</td>
+            <td>Werden inaktiv</td>
+          </tr>
+          <tr>
+            <td>Haarwachstum</td>
+            <td class="hv-status-down">↓ Gestoppt</td>
+            <td>Haare werden feiner</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Ohne den Schutz von Östrogen greift DHT deine Haarfollikel direkt an. Es lässt sie schrumpfen und schneidet sie von der Nährstoffversorgung ab. Jedes Haar das nachwächst wird feiner und schwächer als das davor.</p>
+
+      <h3>Warum Supplements versagen</h3>
+
+      <div class="hv-media">
+        <video autoplay muted loop playsinline>
+          <source src="https://cdn.shopify.com/videos/c/o/v/7a42a4bff0cc4518b5c08b3da83fb433.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <p>Und die ganzen Supplements? Biotin gibt deinem Haar Nährstoffe. Kollagen stärkt die Struktur. Zink unterstützt das Wachstum. Aber keines davon blockiert DHT. Du kannst dein Haar den ganzen Tag füttern — solange DHT weiter deine Haarfollikel angreift, behandelst du nur die Oberfläche. Du hast nicht das falsche Supplement genommen. Du hast eins genommen, das die eigentliche Ursache nicht bekämpft.</p>
+    </div>
+
+    <div class="hv-divider"></div>
+
+    <!-- ══════ SECTION 3 ══════ -->
+    <div class="hv-section">
+      <h2>Deine Haarfollikel sind noch nicht tot. Du kannst sie zurückholen.</h2>
+
+      <p>DHT hat deine Haarfollikel geschwächt. Sie schrumpfen und produzieren immer schwächeres Haar. Aber Haarfollikel sterben nicht. Sie werden inaktiv. Und inaktive Haarfollikel können reaktiviert werden.</p>
+
+      <p>Was du brauchst, ist kein weiteres Vitamin. Du brauchst etwas, das DHT blockiert, damit deine Haarfollikel aufhören zu schrumpfen und wieder anfangen kräftiges Haar zu produzieren.</p>
+
+      <div class="hv-media">
+        <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/ChatGPT_Image_Sep_11_2026_11_29_55_AM_1.webp?v=1789566444" alt="Haarfollikel Reaktivierung">
+      </div>
+
+      <p>Klinische Studien beweisen: Zwei natürliche Wirkstoffe können DHT direkt blockieren. Kürbiskernöl hemmt die 5-Alpha-Reduktase — das Enzym, das DHT produziert — und stärkt deine Haarfollikel von innen. Sägepalme stoppt DHT, bevor es deine Haarfollikel angreifen und zerstören kann.</p>
+    </div>
+
+    <div class="hv-divider"></div>
+
+    <!-- ══════ SECTION 4 ══════ -->
+    <div class="hv-section">
+      <h2>HaarVita von NATURAPlus™</h2>
+
+      <div class="hv-media">
+        <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Abnehmspritzen_1.png?v=1789565195" alt="HaarVita NATURAPlus">
+      </div>
+
+      <p>Eine kleine Apotheke aus Österreich hat genau diese beiden Wirkstoffe in klinisch wirksamer Dosierung vereint. Die Formel heißt HaarVita von NATURAPlus. Keine Hormone. Keine Nebenwirkungen. Zwei Kapseln am Tag.</p>
+
+      <p>Die meisten Haarprodukte auf dem Markt setzen auf Biotin, Zink oder Kollagen. Sie versorgen dein Haar mit Nährstoffen, aber sie gehen nicht an die Ursache. HaarVita ist anders. Es blockiert DHT und stärkt gleichzeitig deine Haarfollikel von innen.</p>
+
+      <div class="hv-stats">
+        <div class="hv-stat">
+          <span class="hv-stat-number">92%</span>
+          <span class="hv-stat-label">weniger Haarausfall innerhalb weniger Wochen</span>
+        </div>
+        <div class="hv-stat">
+          <span class="hv-stat-number">100k+</span>
+          <span class="hv-stat-label">Frauen vertrauen HaarVita</span>
+        </div>
+        <div class="hv-stat">
+          <span class="hv-stat-number">4–6</span>
+          <span class="hv-stat-label">Wochen bis erste sichtbare Ergebnisse</span>
+        </div>
+      </div>
+
+      <h3>Was du erwarten kannst</h3>
+
+      <div class="hv-expect">
+        <div class="hv-expect-item">
+          <span class="hv-expect-week">Woche 1–2</span>
+          <span class="hv-expect-text">Weniger Haare in der Bürste und im Abfluss</span>
+        </div>
+        <div class="hv-expect-item">
+          <span class="hv-expect-week">Woche 4–6</span>
+          <span class="hv-expect-text">Erste neue Baby Haare werden sichtbar</span>
+        </div>
+        <div class="hv-expect-item">
+          <span class="hv-expect-week">Monat 3–6</span>
+          <span class="hv-expect-text">Zopf wird dicker, Scheitel wird schmaler</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hv-divider"></div>
+
+    <!-- ══════ SECTION 5 — TESTIMONIALS ══════ -->
+    <div class="hv-testimonials">
+      <h2>Das sagen Frauen, die HaarVita ausprobiert haben</h2>
+
+      <div class="hv-testimonial">
+        <div class="hv-testimonial-header">
+          <img class="hv-testimonial-img" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-img-17.webp?v=1789990484" alt="Sandra M.">
+          <div>
+            <div class="hv-testimonial-name">Sandra M., 44</div>
+            <div class="hv-testimonial-stars">★★★★★</div>
+          </div>
+        </div>
+        <p>„Ich habe mit Mounjaro 22 Kilo abgenommen — aber ab Monat drei sind mir die Haare büschelweise ausgefallen. Biotin, Kollagen, alles probiert. Nichts hat geholfen. Dann bin ich auf HaarVita gestoßen. Nach etwa vier Wochen wurde das Shedding deutlich weniger. Jetzt nach drei Monaten sehe ich kleine Baby Haare am Scheitel. Ich bin so erleichtert."</p>
+      </div>
+
+      <div class="hv-testimonial">
+        <div class="hv-testimonial-header">
+          <img class="hv-testimonial-img" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-img-19.webp?v=1789990484" alt="Katrin L.">
+          <div>
+            <div class="hv-testimonial-name">Katrin L., 31</div>
+            <div class="hv-testimonial-stars">★★★★★</div>
+          </div>
+        </div>
+        <p>„Mein Scheitel wurde immer breiter, mein Zopf immer dünner. Mein Mann hat es zuerst bemerkt. Ich war kurz davor, die Spritze komplett abzusetzen. Dann habe ich HaarVita bestellt — weil es als einziges an DHT rangeht und nicht nur Vitamine draufwirft. Nach sechs Wochen hat meine Friseurin gesagt, dass neue Haare nachwachsen."</p>
+      </div>
+
+      <div class="hv-testimonial">
+        <div class="hv-testimonial-header">
+          <img class="hv-testimonial-img" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-img-21.webp?v=1789990486" alt="Nicole W.">
+          <div>
+            <div class="hv-testimonial-name">Nicole W., 37</div>
+            <div class="hv-testimonial-stars">★★★★★</div>
+          </div>
+        </div>
+        <p>„Ich nehme Ozempic seit einem Jahr. Die Haare am Haaransatz wurden immer dünner. Ich hatte richtig Angst. Seit ich HaarVita nehme, hat sich das Ausfallen verlangsamt und mein Haar fühlt sich kräftiger an. Und ich konnte weiter abnehmen, ohne meine Haare dafür zu opfern."</p>
+      </div>
+    </div>
+
+    <!-- ══════ URGENCY ══════ -->
+    <div class="hv-urgency">
+      <h3>Deine Haarfollikel warten nicht ewig.</h3>
+      <p>Solange deine Haarfollikel noch aktiv sind, kannst du sie schützen. Aber je länger DHT ungestört angreift, desto schwieriger wird es, sie wieder zu aktivieren.</p>
+      <p>Jede Woche ohne Schutz ist eine Woche, in der DHT weiter an deinen Haarfollikeln arbeitet.</p>
+    </div>
+
+    <!-- ══════ FINAL CTA ══════ -->
+    <div class="hv-cta-section">
+      <h2>Schütz deine Haare. Heute.</h2>
+      <p>HaarVita von NATURAPlus™ ist aktuell auf Lager — aber die Nachfrage steigt.</p>
+
+      <ul class="hv-cta-checks">
+        <li>Kürbiskernöl + Sägepalme in einer Formel</li>
+        <li>Entwickelt für Frauen auf Abnehmspritzen</li>
+        <li>30-Tage-Geld-zurück-Garantie</li>
+      </ul>
+
+      <a href="#" class="hv-cta-btn">Jetzt HaarVita sichern →</a>
+
+      <p class="hv-cta-fine">Kein Abo. Keine versteckten Kosten. Wenn du nicht zufrieden bist, bekommst du dein Geld zurück.</p>
+    </div>
+
+  </div>
+
+  <!-- ══════ FOOTER ══════ -->
+  <div class="hv-footer">
+    <div class="hv-container">
+      © 2026 NATURAPlus™ · Alle Rechte vorbehalten
+    </div>
+  </div>
+
+</div>
