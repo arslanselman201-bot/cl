@@ -87,57 +87,87 @@
   .hv-hero h1 { font-size: 24px; }
 }
 
-/* ── BYLINE ── */
+/* ── EXPERT CARD ── */
+.hv-expert-card {
+  background: var(--hv-white);
+  border: 1px solid var(--hv-line);
+  border-radius: 16px;
+  padding: 32px 28px 28px;
+  max-width: 540px;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
 .hv-byline {
   display: flex;
   align-items: center;
   gap: 16px;
-  max-width: 480px;
-  margin: 0 auto 24px;
+  margin-bottom: 20px;
   text-align: left;
 }
 
 .hv-byline img {
-  width: 56px;
-  height: 56px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--hv-line);
+  border: 3px solid var(--hv-line);
 }
 
 .hv-byline-name {
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 17px;
   color: var(--hv-pine-deep);
 }
 
 .hv-byline-title {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--hv-text-light);
+  margin-top: 2px;
 }
 
 /* ── QUOTE ── */
 .hv-quote-block {
-  background: var(--hv-bg-alt);
   border-left: 4px solid var(--hv-pine);
-  padding: 24px 28px;
-  margin: 0 auto 24px;
-  max-width: 600px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
   text-align: left;
-  border-radius: 0 8px 8px 0;
 }
 
 .hv-quote-block p {
   font-style: italic;
   font-size: 16px;
-  color: var(--hv-pine-deep);
-  line-height: 1.6;
+  color: var(--hv-text);
+  line-height: 1.65;
 }
 
-.hv-meta {
-  font-size: 13px;
+/* ── META ── */
+.hv-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 20px;
+  border-top: 1px solid var(--hv-line);
+}
+
+.hv-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
   color: var(--hv-text-light);
-  margin-top: 8px;
+}
+
+.hv-meta-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--hv-text-light);
+}
+
+.hv-meta-item strong {
+  font-weight: 600;
+  color: var(--hv-text);
 }
 
 /* ── SECTION DIVIDER ── */
@@ -500,19 +530,34 @@
       <div class="hv-badge">Frauengesundheit Aktuell</div>
       <h1>5 Gründe warum deine Abnehmspritze deine Haare mitnimmt — und wie du sie schützt</h1>
 
-      <div class="hv-byline">
-        <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bildschirmfoto_2026-09-16_um_15.12.21.png?v=1789564349" alt="Dr. Anna Weber">
-        <div>
-          <div class="hv-byline-name">Dr. Anna Weber</div>
-          <div class="hv-byline-title">Dermatologie & Haargesundheit</div>
+      <div class="hv-expert-card">
+        <div class="hv-byline">
+          <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bildschirmfoto_2026-09-16_um_15.12.21.png?v=1789564349" alt="Dr. Anna Weber">
+          <div>
+            <div class="hv-byline-name">Dr. Anna Weber</div>
+            <div class="hv-byline-title">Dermatologie & Haargesundheit</div>
+          </div>
+        </div>
+
+        <div class="hv-quote-block">
+          <p>„Was ich in meiner Praxis immer häufiger sehe, ist hormonell bedingter Haarausfall durch Abnehmspritzen — Frauen verlieren ihre Haare, ohne jemals davor gewarnt worden zu sein."</p>
+        </div>
+
+        <div class="hv-meta-list">
+          <div class="hv-meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><circle cx="12" cy="12" r="9.5"/><path stroke-linecap="round" d="M12 7v5l3.5 2"/></svg>
+            <span><strong>4 Min.</strong> Lesezeit</span>
+          </div>
+          <div class="hv-meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span><strong>48.210</strong> Aufrufe</span>
+          </div>
+          <div class="hv-meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2"/><path stroke-linecap="round" d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <span>Aktualisiert <strong>September 2026</strong></span>
+          </div>
         </div>
       </div>
-
-      <div class="hv-quote-block">
-        <p>„Was ich in meiner Praxis immer häufiger sehe, ist hormonell bedingter Haarausfall durch Abnehmspritzen — Frauen verlieren ihre Haare, ohne jemals davor gewarnt worden zu sein."</p>
-      </div>
-
-      <div class="hv-meta">4 Min. Lesezeit · Aktualisiert September 2026</div>
     </div>
   </div>
 
