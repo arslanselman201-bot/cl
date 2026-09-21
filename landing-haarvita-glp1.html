@@ -217,42 +217,74 @@
 }
 
 /* ── TIMELINE ── */
-.hv-timeline {
+.hv-timeline-card {
+  background: var(--hv-white);
+  border: 1px solid var(--hv-line);
+  border-radius: 14px;
+  padding: 28px 24px 20px;
   margin: 32px 0;
-  padding: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.hv-timeline-card-title {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--hv-pine-deep);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.hv-timeline {
+  position: relative;
+  padding-left: 32px;
+  margin: 0;
+}
+
+.hv-timeline::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  background: var(--hv-pine);
+  border-radius: 2px;
 }
 
 .hv-timeline-item {
-  display: flex;
-  gap: 20px;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--hv-line);
+  position: relative;
+  padding-bottom: 28px;
 }
 
 .hv-timeline-item:last-child {
-  border-bottom: none;
+  padding-bottom: 0;
 }
 
-.hv-timeline-marker {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  background: var(--hv-pine);
-  color: var(--hv-white);
+.hv-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  background: var(--hv-white);
+  border: 3px solid var(--hv-pine);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
+  z-index: 1;
+}
+
+.hv-timeline-label {
   font-weight: 700;
-  text-align: center;
-  line-height: 1.2;
+  font-size: 15px;
+  color: var(--hv-pine-deep);
+  margin-bottom: 4px;
 }
 
 .hv-timeline-text {
-  font-size: 16px;
-  color: var(--hv-text);
-  padding-top: 12px;
+  font-size: 15px;
+  color: var(--hv-text-light);
+  line-height: 1.5;
 }
 
 /* ── DHT TABLE ── */
@@ -590,18 +622,21 @@
 
       <p>Das sagt dir niemand: Der Haarausfall hat nicht in der Woche angefangen, in der du ihn bemerkt hast. Er hat Monate vorher angefangen. Die Abnehmspritze löst massive hormonelle Schwankungen aus. Dein Östrogen sinkt — und Östrogen ist das Hormon, das deine Haare vor DHT schützt. Ohne diesen Schutz greift DHT deine Haarfollikel direkt an und lässt sie schrumpfen. Dein Scheitel wird breiter, dein Zopf wird dünner und die Haare die nachwachsen, sehen feiner und schwächer aus.</p>
 
-      <div class="hv-timeline">
-        <div class="hv-timeline-item">
-          <div class="hv-timeline-marker">M<br>1–2</div>
-          <div class="hv-timeline-text">Östrogen beginnt zu sinken — deine Haare verlieren ihren Schutz</div>
-        </div>
-        <div class="hv-timeline-item">
-          <div class="hv-timeline-marker">M<br>3–4</div>
-          <div class="hv-timeline-text">DHT greift deine Haarfollikel an — sie schrumpfen</div>
-        </div>
-        <div class="hv-timeline-item">
-          <div class="hv-timeline-marker">M<br>5–6</div>
-          <div class="hv-timeline-text">Scheitel wird breiter, Zopf wird dünner, Haare werden schwächer</div>
+      <div class="hv-timeline-card">
+        <div class="hv-timeline-card-title">Warum der Haarausfall erst nach ~3 Monaten sichtbar wird</div>
+        <div class="hv-timeline">
+          <div class="hv-timeline-item">
+            <div class="hv-timeline-label">Monat 1–2</div>
+            <div class="hv-timeline-text">Östrogen beginnt zu sinken — deine Haare verlieren ihren Schutz vor DHT.</div>
+          </div>
+          <div class="hv-timeline-item">
+            <div class="hv-timeline-label">~Monat 3–4</div>
+            <div class="hv-timeline-text">DHT greift deine Haarfollikel an — sie schrumpfen und werden schwächer.</div>
+          </div>
+          <div class="hv-timeline-item">
+            <div class="hv-timeline-label">~Monat 5–6</div>
+            <div class="hv-timeline-text">Scheitel wird breiter, Zopf wird dünner, Haare wachsen feiner nach.</div>
+          </div>
         </div>
       </div>
 
