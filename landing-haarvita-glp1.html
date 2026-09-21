@@ -357,39 +357,101 @@
   .hv-dht-row span, .hv-dht-row .hv-status-down, .hv-dht-row .hv-status-up, .hv-dht-row .hv-dht-effect { font-size: 12px; }
 }
 
-/* ── STATS BLOCK ── */
-.hv-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+/* ── TRUST CARDS ── */
+.hv-trust-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   margin: 32px 0;
 }
 
-@media (max-width: 500px) {
-  .hv-stats { grid-template-columns: 1fr; }
-}
-
-.hv-stat {
-  background: var(--hv-bg-alt);
+.hv-trust-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--hv-white);
   border: 1px solid var(--hv-line);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+
+.hv-trust-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
-  padding: 24px 16px;
-  text-align: center;
+  background: #EBF0FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hv-stat-number {
-  font-family: 'Fraunces', serif;
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--hv-pine);
-  display: block;
-  margin-bottom: 4px;
+.hv-trust-icon svg {
+  width: 22px;
+  height: 22px;
 }
 
-.hv-stat-label {
-  font-size: 13px;
-  color: var(--hv-text-light);
+.hv-trust-icon--star {
+  background: #FFF8E7;
+}
+
+.hv-trust-text {
+  flex: 1;
+  font-size: 15px;
+  color: var(--hv-text);
   line-height: 1.4;
+}
+
+.hv-trust-text strong {
+  font-weight: 700;
+}
+
+.hv-trust-faces {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.hv-trust-faces img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--hv-white);
+  margin-left: -10px;
+}
+
+.hv-trust-faces img:first-child {
+  margin-left: 0;
+}
+
+.hv-trust-stars {
+  display: flex;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.hv-trust-star-box {
+  width: 28px;
+  height: 28px;
+  background: #00B67A;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hv-trust-star-box svg {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
+
+@media (max-width: 480px) {
+  .hv-trust-card { padding: 14px 16px; gap: 10px; }
+  .hv-trust-text { font-size: 13px; }
+  .hv-trust-faces img { width: 30px; height: 30px; }
+  .hv-trust-star-box { width: 24px; height: 24px; }
 }
 
 /* ── ERWARTUNGS-TIMELINE ── */
@@ -762,18 +824,41 @@
 
       <p>Die meisten Haarprodukte auf dem Markt setzen auf Biotin, Zink oder Kollagen. Sie versorgen dein Haar mit Nährstoffen, aber sie gehen nicht an die Ursache. HaarVita ist anders. Es blockiert DHT und stärkt gleichzeitig deine Haarfollikel von innen.</p>
 
-      <div class="hv-stats">
-        <div class="hv-stat">
-          <span class="hv-stat-number">92%</span>
-          <span class="hv-stat-label">weniger Haarausfall innerhalb weniger Wochen</span>
+      <div class="hv-trust-cards">
+        <div class="hv-trust-card">
+          <div class="hv-trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#3B6BB5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          </div>
+          <div class="hv-trust-text">Empfohlen von <strong>200+</strong> Dermatologen</div>
+          <div class="hv-trust-faces">
+            <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-face-10.webp?v=1789992760" alt="">
+            <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-face-11.webp?v=1789992784" alt="">
+            <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-face-10.webp?v=1789992760" alt="">
+          </div>
         </div>
-        <div class="hv-stat">
-          <span class="hv-stat-number">100k+</span>
-          <span class="hv-stat-label">Frauen vertrauen HaarVita</span>
+        <div class="hv-trust-card">
+          <div class="hv-trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#3B6BB5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+          </div>
+          <div class="hv-trust-text">Über <strong>100.000</strong> Frauen vertrauen HaarVita</div>
+          <div class="hv-trust-faces">
+            <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-face-13.avif?v=1789992898" alt="">
+            <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-face-14.webp?v=1789992921" alt="">
+            <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-face-13.avif?v=1789992898" alt="">
+          </div>
         </div>
-        <div class="hv-stat">
-          <span class="hv-stat-number">4–6</span>
-          <span class="hv-stat-label">Wochen bis erste sichtbare Ergebnisse</span>
+        <div class="hv-trust-card">
+          <div class="hv-trust-icon hv-trust-icon--star">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#E8A317" stroke="none"><path d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"/></svg>
+          </div>
+          <div class="hv-trust-text"><strong>4,8 / 5</strong> bei über 10.248 Bewertungen</div>
+          <div class="hv-trust-stars">
+            <div class="hv-trust-star-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+            <div class="hv-trust-star-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+            <div class="hv-trust-star-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+            <div class="hv-trust-star-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+            <div class="hv-trust-star-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          </div>
         </div>
       </div>
 
