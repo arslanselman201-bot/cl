@@ -357,6 +357,46 @@
   .hv-dht-row span, .hv-dht-row .hv-status-down, .hv-dht-row .hv-status-up, .hv-dht-row .hv-dht-effect { font-size: 12px; }
 }
 
+/* ── STAT HIGHLIGHT CARDS ── */
+.hv-stat-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 32px 0;
+}
+
+.hv-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--hv-bg-alt);
+  border-left: 4px solid var(--hv-pine);
+  border-radius: 0 14px 14px 0;
+  padding: 22px 24px;
+}
+
+.hv-stat-card-number {
+  font-family: 'Fraunces', serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--hv-pine);
+  flex-shrink: 0;
+  min-width: 90px;
+}
+
+.hv-stat-card-text {
+  font-size: 16px;
+  color: var(--hv-text);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  .hv-stat-card { padding: 16px 18px; gap: 14px; }
+  .hv-stat-card-number { font-size: 30px; min-width: 72px; }
+  .hv-stat-card-text { font-size: 14px; }
+}
+
 /* ── TRUST CARDS ── */
 .hv-trust-cards {
   display: flex;
@@ -823,6 +863,21 @@
       <p>Eine kleine Apotheke aus Österreich hat genau diese beiden Wirkstoffe in klinisch wirksamer Dosierung vereint. Die Formel heißt HaarVita von NATURAPlus. Keine Hormone. Keine Nebenwirkungen. Zwei Kapseln am Tag.</p>
 
       <p>Die meisten Haarprodukte auf dem Markt setzen auf Biotin, Zink oder Kollagen. Sie versorgen dein Haar mit Nährstoffen, aber sie gehen nicht an die Ursache. HaarVita ist anders. Es blockiert DHT und stärkt gleichzeitig deine Haarfollikel von innen.</p>
+
+      <div class="hv-stat-cards">
+        <div class="hv-stat-card">
+          <div class="hv-stat-card-number">92%</div>
+          <div class="hv-stat-card-text">weniger Haarausfall innerhalb weniger Wochen</div>
+        </div>
+        <div class="hv-stat-card">
+          <div class="hv-stat-card-number">100k+</div>
+          <div class="hv-stat-card-text">Frauen vertrauen HaarVita</div>
+        </div>
+        <div class="hv-stat-card">
+          <div class="hv-stat-card-number">4–6</div>
+          <div class="hv-stat-card-text">Wochen bis erste sichtbare Ergebnisse</div>
+        </div>
+      </div>
 
       <div class="hv-trust-cards">
         <div class="hv-trust-card">
