@@ -288,44 +288,73 @@
 }
 
 /* ── DHT TABLE ── */
-.hv-dht-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 28px 0;
-  border-radius: 12px;
+.hv-dht-card {
+  background: var(--hv-white);
+  border: 1px solid var(--hv-line);
+  border-radius: 14px;
   overflow: hidden;
+  margin: 28px 0;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
 
-.hv-dht-table th {
+.hv-dht-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   background: var(--hv-pine-deep);
+  padding: 12px 16px;
+}
+
+.hv-dht-header span {
   color: var(--hv-white);
-  padding: 14px 20px;
-  text-align: left;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
-.hv-dht-table td {
-  padding: 14px 20px;
+.hv-dht-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 14px 16px;
   border-bottom: 1px solid var(--hv-line);
-  font-size: 15px;
+  align-items: center;
 }
 
-.hv-dht-table tr:nth-child(even) td {
+.hv-dht-row:last-child {
+  border-bottom: none;
+}
+
+.hv-dht-row:nth-child(even) {
   background: var(--hv-bg-alt);
 }
 
-.hv-dht-table .hv-status-down {
-  color: var(--hv-red);
-  font-weight: 600;
+.hv-dht-row span {
+  font-size: 14px;
+  color: var(--hv-text);
 }
 
-.hv-dht-table .hv-status-up {
+.hv-dht-row .hv-status-down {
   color: var(--hv-red);
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.hv-dht-row .hv-status-up {
+  color: var(--hv-red);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.hv-dht-row .hv-dht-effect {
+  font-size: 13px;
+  color: var(--hv-text-light);
+}
+
+@media (max-width: 480px) {
+  .hv-dht-header { padding: 10px 12px; }
+  .hv-dht-header span { font-size: 10px; }
+  .hv-dht-row { padding: 12px; }
+  .hv-dht-row span, .hv-dht-row .hv-status-down, .hv-dht-row .hv-status-up, .hv-dht-row .hv-dht-effect { font-size: 12px; }
 }
 
 /* ── STATS BLOCK ── */
@@ -661,37 +690,33 @@
 
       <p>Wenn die Abnehmspritze wirkt, sinkt dein Östrogen. Und dein Körper verliert damit den einzigen Schutz, den deine Haare gegen DHT haben.</p>
 
-      <table class="hv-dht-table">
-        <thead>
-          <tr>
-            <th>Faktor</th>
-            <th>Status</th>
-            <th>Wirkung</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Östrogen</td>
-            <td class="hv-status-down">↓ Sinkt</td>
-            <td>Haare verlieren Schutz</td>
-          </tr>
-          <tr>
-            <td>DHT</td>
-            <td class="hv-status-up">↑ Greift an</td>
-            <td>Follikel schrumpfen</td>
-          </tr>
-          <tr>
-            <td>Haarfollikel</td>
-            <td class="hv-status-down">↓ Geschwächt</td>
-            <td>Werden inaktiv</td>
-          </tr>
-          <tr>
-            <td>Haarwachstum</td>
-            <td class="hv-status-down">↓ Gestoppt</td>
-            <td>Haare werden feiner</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="hv-dht-card">
+        <div class="hv-dht-header">
+          <span>Faktor</span>
+          <span>Status</span>
+          <span>Wirkung</span>
+        </div>
+        <div class="hv-dht-row">
+          <span>Östrogen</span>
+          <span class="hv-status-down">↓ Sinkt</span>
+          <span class="hv-dht-effect">Haare verlieren Schutz</span>
+        </div>
+        <div class="hv-dht-row">
+          <span>DHT</span>
+          <span class="hv-status-up">↑ Greift an</span>
+          <span class="hv-dht-effect">Follikel schrumpfen</span>
+        </div>
+        <div class="hv-dht-row">
+          <span>Haarfollikel</span>
+          <span class="hv-status-down">↓ Geschwächt</span>
+          <span class="hv-dht-effect">Werden inaktiv</span>
+        </div>
+        <div class="hv-dht-row">
+          <span>Haarwachstum</span>
+          <span class="hv-status-down">↓ Gestoppt</span>
+          <span class="hv-dht-effect">Haare werden feiner</span>
+        </div>
+      </div>
 
       <p>Ohne den Schutz von Östrogen greift DHT deine Haarfollikel direkt an. Es lässt sie schrumpfen und schneidet sie von der Nährstoffversorgung ab. Jedes Haar das nachwächst wird feiner und schwächer als das davor.</p>
 
