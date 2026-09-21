@@ -496,33 +496,59 @@
 
 /* ── ERWARTUNGS-TIMELINE ── */
 .hv-expect {
+  position: relative;
   margin: 32px 0;
+  padding-left: 40px;
+}
+
+.hv-expect::before {
+  content: '';
+  position: absolute;
+  left: 13px;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
+  background: var(--hv-line);
 }
 
 .hv-expect-item {
-  display: flex;
-  gap: 16px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--hv-line);
-  align-items: flex-start;
+  position: relative;
+  padding-bottom: 36px;
 }
 
-.hv-expect-item:last-child { border-bottom: none; }
+.hv-expect-item:last-child {
+  padding-bottom: 0;
+}
+
+.hv-expect-item::before {
+  content: '';
+  position: absolute;
+  left: -33px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  background: var(--hv-white);
+  border: 3px solid var(--hv-pine);
+  border-radius: 50%;
+  z-index: 1;
+}
 
 .hv-expect-week {
-  flex-shrink: 0;
+  display: inline-block;
   background: var(--hv-pine);
   color: var(--hv-white);
-  padding: 6px 14px;
+  padding: 5px 14px;
   border-radius: 20px;
   font-size: 13px;
   font-weight: 600;
-  white-space: nowrap;
+  margin-bottom: 8px;
 }
 
 .hv-expect-text {
-  font-size: 16px;
-  padding-top: 4px;
+  display: block;
+  font-size: 15px;
+  color: var(--hv-text);
+  line-height: 1.5;
 }
 
 /* ── TESTIMONIALS ── */
@@ -922,15 +948,15 @@
       <div class="hv-expect">
         <div class="hv-expect-item">
           <span class="hv-expect-week">Woche 1–2</span>
-          <span class="hv-expect-text">Weniger Haare in der Bürste und im Abfluss</span>
+          <span class="hv-expect-text">Weniger Haare in der Bürste und im Abfluss. Der Haarausfall verlangsamt sich spürbar.</span>
         </div>
         <div class="hv-expect-item">
           <span class="hv-expect-week">Woche 4–6</span>
-          <span class="hv-expect-text">Erste neue Baby Haare werden sichtbar</span>
+          <span class="hv-expect-text">Inaktive Haarfollikel reaktivieren sich. Erste neue Baby Haare werden sichtbar.</span>
         </div>
         <div class="hv-expect-item">
           <span class="hv-expect-week">Monat 3–6</span>
-          <span class="hv-expect-text">Zopf wird dicker, Scheitel wird schmaler</span>
+          <span class="hv-expect-text">Sichtbare Haardichte. Zopf wird dicker, Scheitel wird schmaler — du hörst auf, Fotos zu vermeiden.</span>
         </div>
       </div>
     </div>
