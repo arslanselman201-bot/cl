@@ -13,11 +13,8 @@
   <!-- Timeline -->
   <div class="hvtl-timeline">
 
-    <!-- Track -->
-    <div class="hvtl-track">
-      <div class="hvtl-track-bg"></div>
-      <div class="hvtl-track-fill"></div>
-    </div>
+    <!-- Track fill (bg drawn via ::before) -->
+    <div class="hvtl-track-fill"></div>
 
     <!-- Week 1 -->
     <div class="hvtl-week" data-week="1">
@@ -155,37 +152,33 @@
     max-width: 520px;
     margin: 0 auto;
     padding-left: 36px;
+    overflow: visible !important;
   }
 
-  /* Vertical track */
-  .hvtl-track {
+  /* Background track via pseudo-element */
+  .hvtl-timeline::before {
+    content: '';
     position: absolute;
     left: 11px;
     top: 12px;
     bottom: 12px;
     width: 6px;
-    z-index: 1;
-  }
-
-  .hvtl-track-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background-color: #9AB38E;
     border-radius: 3px;
+    z-index: 0;
   }
 
+  /* Active fill track */
   .hvtl-track-fill {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0%;
+    left: 11px;
+    top: 12px;
+    width: 6px;
+    height: 0px;
     background-color: #24421F;
     border-radius: 3px;
     transition: height 0.6s ease;
+    z-index: 1;
   }
 
   /* Week block */
@@ -327,8 +320,9 @@
       padding-left: 32px;
     }
 
-    .hvtl-track {
-      left: 10px;
+    .hvtl-timeline::before,
+    .hvtl-track-fill {
+      left: 9px;
     }
 
     .hvtl-dot {
@@ -359,14 +353,12 @@
 (function() {
   var weeks = document.querySelectorAll('.hvtl-week');
   var trackFill = document.querySelector('.hvtl-track-fill');
-  var track = document.querySelector('.hvtl-track');
-  if (!weeks.length || !trackFill || !track) return;
+  var timeline = document.querySelector('.hvtl-timeline');
+  if (!weeks.length || !trackFill || !timeline) return;
 
   function updateTimeline() {
-    var trackRect = track.getBoundingClientRect();
-    var trackTop = trackRect.top;
-    var trackHeight = trackRect.height;
-    var maxFill = 0;
+    var timelineRect = timeline.getBoundingClientRect();
+    var maxFillPx = 0;
 
     weeks.forEach(function(week) {
       var dot = week.querySelector('.hvtl-dot');
@@ -376,13 +368,13 @@
 
       if (dotCenter < viewportTrigger) {
         week.classList.add('hvtl-active');
-        var fillTo = ((dotCenter - trackTop) / trackHeight) * 100;
-        if (fillTo > maxFill) maxFill = fillTo;
+        var fillTo = dotCenter - timelineRect.top - 12;
+        if (fillTo > maxFillPx) maxFillPx = fillTo;
       }
     });
 
-    maxFill = Math.min(Math.max(maxFill, 0), 100);
-    trackFill.style.height = maxFill + '%';
+    maxFillPx = Math.max(maxFillPx, 0);
+    trackFill.style.height = maxFillPx + 'px';
   }
 
   window.addEventListener('scroll', updateTimeline, { passive: true });
