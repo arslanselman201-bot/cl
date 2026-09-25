@@ -177,7 +177,7 @@
     height: 0px;
     background-color: #24421F;
     border-radius: 3px;
-    transition: height 0.6s ease;
+    transition: none;
     z-index: 1;
   }
 
@@ -280,8 +280,8 @@
   .hvtl-cta-btn {
     display: inline-block;
     padding: 18px 48px;
-    background-color: #24421F;
-    color: #FAFAF8;
+    background-color: #D4A843;
+    color: #152A11;
     font-family: 'Work Sans', sans-serif;
     font-size: 17px;
     font-weight: 700;
@@ -291,7 +291,7 @@
   }
 
   .hvtl-cta-btn:hover {
-    background-color: #152A11;
+    background-color: #c49a3a;
     transform: translateY(-1px);
   }
 
@@ -358,26 +358,41 @@
 
   function updateTimeline() {
     var timelineRect = timeline.getBoundingClientRect();
-    var maxFillPx = 0;
+    var triggerLine = window.innerHeight * 0.75;
+    var fillTarget = triggerLine - timelineRect.top - 12;
+    var firstDot = weeks[0].querySelector('.hvtl-dot');
+    var lastDot = weeks[weeks.length - 1].querySelector('.hvtl-dot');
+    var firstDotY = firstDot.getBoundingClientRect().top + firstDot.offsetHeight / 2 - timelineRect.top - 12;
+    var lastDotY = lastDot.getBoundingClientRect().top + lastDot.offsetHeight / 2 - timelineRect.top - 12;
+
+    fillTarget = Math.max(0, Math.min(fillTarget, lastDotY));
+    if (fillTarget < firstDotY) fillTarget = 0;
+
+    trackFill.style.height = fillTarget + 'px';
 
     weeks.forEach(function(week) {
       var dot = week.querySelector('.hvtl-dot');
       var dotRect = dot.getBoundingClientRect();
-      var dotCenter = dotRect.top + dotRect.height / 2;
-      var viewportTrigger = window.innerHeight * 0.75;
+      var dotCenter = dotRect.top + dot.offsetHeight / 2;
 
-      if (dotCenter < viewportTrigger) {
+      if (dotCenter < triggerLine) {
         week.classList.add('hvtl-active');
-        var fillTo = dotCenter - timelineRect.top - 12;
-        if (fillTo > maxFillPx) maxFillPx = fillTo;
       }
     });
-
-    maxFillPx = Math.max(maxFillPx, 0);
-    trackFill.style.height = maxFillPx + 'px';
   }
 
-  window.addEventListener('scroll', updateTimeline, { passive: true });
+  var ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        updateTimeline();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', updateTimeline, { passive: true });
 
   updateTimeline();
