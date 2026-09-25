@@ -3,58 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GLP-1 Selector</title>
+<title>GLP-1 Reviews</title>
 <style>
   :root {
     --bg: #f4f1ed;
     --card-bg: #faf8f5;
     --text-dark: #2c2c2c;
     --text-medium: #4a4a4a;
+    --text-light: #888;
     --border: #d4d0cb;
     --select-hover: #e8e4f0;
     --select-active: #ddd8ea;
     --accent: #3d5a47;
+    --star: #d4a843;
     --radius: 12px;
+    --verified: #2a7d4f;
   }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1a1a1a;
+      --card-bg: #252525;
+      --text-dark: #e8e8e8;
+      --text-medium: #b0b0b0;
+      --text-light: #777;
+      --border: #444;
+      --select-active: #3a3550;
+      --accent: #6aad7a;
+      --verified: #5cc47a;
+    }
   }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: var(--bg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    padding: 40px 16px;
+    color: var(--text-dark);
   }
 
+  .section-wrapper {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .section-heading {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 28px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 32px;
+    line-height: 1.3;
+    color: var(--text-dark);
+  }
+
+  /* ── Selector ── */
   .selector-card {
     background: var(--card-bg);
     border-radius: 16px;
-    padding: 32px 28px;
-    max-width: 400px;
-    width: 100%;
+    padding: 28px 24px;
+    margin-bottom: 24px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   }
 
   .selector-card h2 {
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 400;
     color: var(--text-dark);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     line-height: 1.3;
   }
 
-  .custom-select {
-    position: relative;
-    width: 100%;
-  }
+  .custom-select { position: relative; width: 100%; }
 
   .select-trigger {
     display: flex;
@@ -64,7 +86,7 @@
     border: 2px solid var(--text-dark);
     border-radius: 50px;
     cursor: pointer;
-    background: white;
+    background: var(--card-bg);
     font-size: 16px;
     color: var(--text-dark);
     font-weight: 500;
@@ -72,44 +94,29 @@
     user-select: none;
   }
 
-  .select-trigger:hover {
-    border-color: var(--accent);
-  }
-
-  .select-trigger.open {
-    border-color: var(--text-dark);
-  }
-
   .select-trigger .chevron {
-    width: 20px;
-    height: 20px;
+    width: 20px; height: 20px;
     transition: transform 0.25s ease;
   }
 
-  .select-trigger.open .chevron {
-    transform: rotate(180deg);
-  }
+  .select-trigger.open .chevron { transform: rotate(180deg); }
 
   .select-dropdown {
     position: absolute;
     top: calc(100% + 8px);
-    left: 0;
-    right: 0;
-    background: white;
+    left: 0; right: 0;
+    background: var(--card-bg);
     border-radius: var(--radius);
     box-shadow: 0 8px 30px rgba(0,0,0,0.12);
     overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0; visibility: hidden;
     transform: translateY(-8px);
     transition: all 0.25s ease;
-    z-index: 10;
+    z-index: 50;
   }
 
   .select-dropdown.open {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    opacity: 1; visibility: visible; transform: translateY(0);
   }
 
   .select-option {
@@ -123,9 +130,7 @@
     transition: background 0.15s;
   }
 
-  .select-option:hover {
-    background: #f5f3f8;
-  }
+  .select-option:hover { background: var(--select-hover); }
 
   .select-option.active {
     background: var(--select-active);
@@ -134,93 +139,429 @@
   }
 
   .select-option .checkmark {
-    width: 20px;
-    height: 20px;
-    color: var(--accent);
-    opacity: 0;
+    width: 20px; height: 20px;
+    color: var(--accent); opacity: 0;
   }
 
-  .select-option.active .checkmark {
-    opacity: 1;
+  .select-option.active .checkmark { opacity: 1; }
+
+  /* ── Carousel ── */
+  .carousel-wrapper {
+    position: relative;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 8px;
+  }
+
+  .carousel-track::-webkit-scrollbar { display: none; }
+
+  .carousel-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .carousel-btn {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--text-dark);
+    background: var(--card-bg);
+    color: var(--text-dark);
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .carousel-btn:hover {
+    background: var(--text-dark);
+    color: var(--card-bg);
+  }
+
+  .carousel-dots {
+    display: flex;
+    gap: 6px;
+  }
+
+  .carousel-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: all 0.3s;
+  }
+
+  .carousel-dot.active {
+    background: var(--text-dark);
+    width: 24px;
+    border-radius: 4px;
+  }
+
+  /* ── Review Card ── */
+  .review-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .review-header {
+    padding: 20px 20px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .review-avatar {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: var(--select-active);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-dark);
+    flex-shrink: 0;
+  }
+
+  .review-meta {
+    flex: 1;
+  }
+
+  .review-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-dark);
+  }
+
+  .review-details {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+
+  .review-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--verified);
+    font-weight: 500;
+    margin-top: 4px;
+  }
+
+  .review-verified svg {
+    width: 14px; height: 14px;
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 2px;
+    padding: 0 20px 12px;
+  }
+
+  .review-stars svg {
+    width: 18px; height: 18px;
+    fill: var(--star);
+  }
+
+  .review-quote {
+    padding: 0 20px 16px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-medium);
+  }
+
+  .review-quote strong {
+    color: var(--text-dark);
+    font-style: italic;
+  }
+
+  .review-medication {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: var(--select-active);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 20px 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── Before / After ── */
+  .review-images {
+    display: flex;
+    gap: 0;
+  }
+
+  .review-img-col {
+    flex: 1;
+    position: relative;
+  }
+
+  .review-img-col img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .img-placeholder {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--text-light);
+    position: relative;
+  }
+
+  .img-placeholder.before-ph {
+    background: linear-gradient(135deg, #d4c8b8 0%, #c2b5a3 100%);
+  }
+
+  .img-placeholder.after-ph {
+    background: linear-gradient(135deg, #b8c8b4 0%, #a3c2a0 100%);
+  }
+
+  .img-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  .img-label.before {
+    background: rgba(0,0,0,0.5);
+    color: white;
+  }
+
+  .img-label.after {
+    background: rgba(255,255,255,0.85);
+    color: var(--text-dark);
+  }
+
+  .review-timeline {
+    padding: 14px 20px;
+    font-size: 13px;
+    color: var(--text-light);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .review-timeline svg {
+    width: 14px; height: 14px;
   }
 </style>
 </head>
 <body>
 
-<div class="selector-card">
-  <h2>Which GLP-1 are you on?</h2>
+<div class="section-wrapper">
 
-  <div class="custom-select">
-    <div class="select-trigger" onclick="toggleDropdown()">
-      <span id="selected-text">All GLP-1s</span>
-      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
-    </div>
+  <h1 class="section-heading">Works across every major GLP&#x2011;1 medication.</h1>
 
-    <div class="select-dropdown" id="dropdown">
-      <div class="select-option active" onclick="selectOption(this)">
-        <span>All GLP-1s</span>
-        <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"></polyline>
-        </svg>
+  <!-- Selector -->
+  <div class="selector-card">
+    <h2>Which GLP-1 are you on?</h2>
+    <div class="custom-select">
+      <div class="select-trigger" onclick="toggleDropdown()">
+        <span id="selected-text">All GLP-1s</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
       </div>
-      <div class="select-option" onclick="selectOption(this)">
-        <span>Mounjaro</span>
-        <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"></polyline>
-        </svg>
-      </div>
-      <div class="select-option" onclick="selectOption(this)">
-        <span>Ozempic</span>
-        <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"></polyline>
-        </svg>
-      </div>
-      <div class="select-option" onclick="selectOption(this)">
-        <span>Wegovy</span>
-        <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"></polyline>
-        </svg>
-      </div>
-      <div class="select-option" onclick="selectOption(this)">
-        <span>Semaglutide</span>
-        <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"></polyline>
-        </svg>
-      </div>
-      <div class="select-option" onclick="selectOption(this)">
-        <span>Tirzepatide</span>
-        <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"></polyline>
-        </svg>
+      <div class="select-dropdown" id="dropdown">
+        <div class="select-option active" data-med="all" onclick="selectOption(this)"><span>All GLP-1s</span><svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div class="select-option" data-med="mounjaro" onclick="selectOption(this)"><span>Mounjaro</span><svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div class="select-option" data-med="ozempic" onclick="selectOption(this)"><span>Ozempic</span><svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div class="select-option" data-med="wegovy" onclick="selectOption(this)"><span>Wegovy</span><svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div class="select-option" data-med="semaglutide" onclick="selectOption(this)"><span>Semaglutide</span><svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+        <div class="select-option" data-med="tirzepatide" onclick="selectOption(this)"><span>Tirzepatide</span><svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
       </div>
     </div>
   </div>
+
+  <!-- Reviews Carousel -->
+  <div class="carousel-wrapper">
+    <div class="carousel-track" id="carousel">
+      <!-- Cards werden per JS generiert -->
+    </div>
+    <div class="carousel-nav">
+      <button class="carousel-btn" onclick="scrollCarousel(-1)">&#8249;</button>
+      <div class="carousel-dots" id="dots"></div>
+      <button class="carousel-btn" onclick="scrollCarousel(1)">&#8250;</button>
+    </div>
+  </div>
+
 </div>
 
 <script>
-  function toggleDropdown() {
-    const trigger = document.querySelector('.select-trigger');
-    const dropdown = document.getElementById('dropdown');
-    trigger.classList.toggle('open');
-    dropdown.classList.toggle('open');
-  }
+const STAR_SVG = '<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>';
 
-  function selectOption(el) {
-    document.querySelectorAll('.select-option').forEach(opt => opt.classList.remove('active'));
-    el.classList.add('active');
-    document.getElementById('selected-text').textContent = el.querySelector('span').textContent;
-    toggleDropdown();
-  }
+const reviews = [
+  { initials:"MG", name:"Megan G.", age:42, med:"mounjaro", quote:"Mir fielen ganze Büschel aus, bis ich nach fünf Wochen die ersten neuen Haare gesehen habe. Nach zwei Monaten war alles wieder voll.", timeline:"2 Monate" },
+  { initials:"DA", name:"Dana A.", age:39, med:"mounjaro", quote:"Mein Scheitel wurde jede Woche breiter. Seit ich das System benutze, hat der Haarausfall komplett aufgehört, obwohl ich Mounjaro weiter nehme.", timeline:"6 Wochen" },
+  { initials:"LN", name:"Laura N.", age:47, med:"mounjaro", quote:"Der Gewichtsverlust war toll, bis ich den Abfluss gesehen habe. Mein Haaransatz ist jetzt wieder komplett zurück.", timeline:"3 Monate" },
+  { initials:"KS", name:"Kristin S.", age:51, med:"mounjaro", quote:"Ich habe es zuerst gar nicht mit dem Abnehmen verbunden. Jetzt bedeckt mein Haar wieder die ganze Kopfhaut.", timeline:"8 Wochen" },
+  { initials:"SM", name:"Sarah M.", age:38, med:"ozempic", quote:"Auf Fotos konnte man meine Kopfhaut sehen. Nach ein paar Wochen kamen die ersten neuen Haare und die kahle Stelle hat sich geschlossen.", timeline:"5 Wochen" },
+  { initials:"AP", name:"Angela P.", age:44, med:"ozempic", quote:"Die Bürste hat es mir verraten, bevor der Spiegel es getan hat. Nach sechs Wochen kamen die ersten kleinen Haare und jetzt sieht es wieder aus wie vorher.", timeline:"6 Wochen" },
+  { initials:"DB", name:"Denise B.", age:49, med:"ozempic", quote:"Ich hatte ein schlechtes Gewissen, mich zu beschweren, weil Ozempic so gut gewirkt hat. Jetzt fallen deutlich weniger Haare aus und mein Scheitel füllt sich wieder.", timeline:"4 Wochen" },
+  { initials:"MV", name:"Monica V.", age:53, med:"ozempic", quote:"Ich war es leid, so zu tun als wäre es nur Stress. Ab der zweiten Woche wurde der Haarausfall weniger und nach zwei Monaten war mein Scheitel wieder normal.", timeline:"2 Monate" },
+  { initials:"RN", name:"Rachel N.", age:39, med:"wegovy", quote:"Ich war begeistert von meinem Fortschritt, aber Waschtag war ein Albtraum. Nach einem Monat war der Abfluss endlich wieder sauber.", timeline:"1 Monat" },
+  { initials:"KS", name:"Kelly S.", age:52, med:"wegovy", quote:"Der Haarausfall kam spät und hat mir richtig Angst gemacht. Weniger Haare auf dem Kissen und man sieht die Kopfhaut unter Licht nicht mehr.", timeline:"6 Wochen" },
+  { initials:"TV", name:"Tanya V.", age:36, med:"wegovy", quote:"Mein Scheitel wurde jede Woche breiter. Langsam füllt er sich wieder und ich fühle mich endlich wieder selbstsicher.", timeline:"2 Monate" },
+  { initials:"NJ", name:"Nicole J.", age:28, med:"wegovy", quote:"Mein Haaransatz sah schwächer aus nachdem die Kilos runter waren. Im zweiten Monat kamen vorne kurze Haare nach.", timeline:"2 Monate" },
+  { initials:"KM", name:"Karen M.", age:52, med:"semaglutide", quote:"Niemand hat mich gewarnt, dass es Monate später noch kommen kann. Ab der zweiten Woche wurde es besser und nach zwei Monaten war der Scheitel wieder normal.", timeline:"2 Monate" },
+  { initials:"JB", name:"Jenna B.", age:47, med:"semaglutide", quote:"Semaglutide hat mir alles genommen. Jetzt sehen meine Haare wieder aus wie mit dreißig.", timeline:"4 Monate" },
+  { initials:"EH", name:"Erin H.", age:55, med:"semaglutide", quote:"Ich dachte, das liegt einfach am Alter. Die Bürste wurde schnell besser und man sieht die Kopfhaut kaum noch.", timeline:"4 Monate" },
+  { initials:"VS", name:"Vanessa S.", age:43, med:"semaglutide", quote:"Jeden Morgen Haare auf dem Kissen zu sehen hat mich zum Handeln gebracht. Die Ecken sind nachgewachsen und ich nehme weiter ab.", timeline:"6 Wochen" },
+  { initials:"ML", name:"Monica L.", age:43, med:"tirzepatide", quote:"Mein Körper hat sich schneller verändert als meine Haare mithalten konnten. Nach dem Waschen fallen deutlich weniger Haare aus.", timeline:"5 Wochen" },
+  { initials:"SC", name:"Stephanie C.", age:46, med:"tirzepatide", quote:"Ich war stolz auf den Gewichtsverlust, aber mein Scheitel hat mich beschämt. Im dritten Monat hat er sich deutlich verbessert.", timeline:"3 Monate" },
+  { initials:"AE", name:"Amy E.", age:42, med:"tirzepatide", quote:"Es kam so verzögert, dass ich dachte es kommt aus dem Nichts. Neues Wachstum überall, nicht nur am Scheitel.", timeline:"6 Wochen" },
+  { initials:"RZ", name:"Rebecca Z.", age:42, med:"tirzepatide", quote:"Ich brauchte was für die Haarwurzeln, nicht noch ein Pflege-Produkt. Ich habe keine Nebenwirkungen bemerkt und meine Haare sind wieder voll.", timeline:"2 Monate" },
+];
 
-  document.addEventListener('click', function(e) {
-    const select = document.querySelector('.custom-select');
-    if (!select.contains(e.target)) {
-      document.querySelector('.select-trigger').classList.remove('open');
-      document.getElementById('dropdown').classList.remove('open');
+let currentFilter = 'all';
+let currentIndex = 0;
+
+function getFiltered() {
+  if (currentFilter === 'all') return reviews;
+  return reviews.filter(r => r.med === currentFilter);
+}
+
+function renderCards() {
+  const track = document.getElementById('carousel');
+  const filtered = getFiltered();
+  currentIndex = 0;
+
+  track.innerHTML = filtered.map((r, i) => `
+    <div class="review-card" data-med="${r.med}">
+      <div class="review-header">
+        <div class="review-avatar">${r.initials}</div>
+        <div class="review-meta">
+          <div class="review-name">${r.name}</div>
+          <div class="review-details">Alter ${r.age} · ${r.med.charAt(0).toUpperCase()+r.med.slice(1)}</div>
+          <div class="review-verified">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Verifizierter Kauf
+          </div>
+        </div>
+      </div>
+      <div class="review-stars">${STAR_SVG.repeat(5)}</div>
+      <div class="review-medication">${r.med.charAt(0).toUpperCase()+r.med.slice(1)}</div>
+      <p class="review-quote">${r.quote}</p>
+      <div class="review-images">
+        <div class="review-img-col">
+          <div class="img-placeholder before-ph">
+            <span class="img-label before">Vorher</span>
+            Bild einfügen
+          </div>
+        </div>
+        <div class="review-img-col">
+          <div class="img-placeholder after-ph">
+            <span class="img-label after">Nachher</span>
+            Bild einfügen
+          </div>
+        </div>
+      </div>
+      <div class="review-timeline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Ergebnis nach ${r.timeline}
+      </div>
+    </div>
+  `).join('');
+
+  renderDots(filtered.length);
+  updateDots();
+}
+
+function renderDots(count) {
+  const dotsEl = document.getElementById('dots');
+  dotsEl.innerHTML = '';
+  for (let i = 0; i < count; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dotsEl.appendChild(dot);
+  }
+}
+
+function updateDots() {
+  document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === currentIndex);
+  });
+}
+
+function scrollCarousel(dir) {
+  const track = document.getElementById('carousel');
+  const cards = track.querySelectorAll('.review-card');
+  if (!cards.length) return;
+  currentIndex = Math.max(0, Math.min(currentIndex + dir, cards.length - 1));
+  cards[currentIndex].scrollIntoView({ behavior:'smooth', block:'nearest', inline:'start' });
+  updateDots();
+}
+
+// observe scroll for dot sync
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const cards = [...document.querySelectorAll('.review-card')];
+      const idx = cards.indexOf(e.target);
+      if (idx !== -1) { currentIndex = idx; updateDots(); }
     }
   });
+}, { root: document.getElementById('carousel'), threshold: 0.6 });
+
+function observeCards() {
+  document.querySelectorAll('.review-card').forEach(c => observer.observe(c));
+}
+
+function toggleDropdown() {
+  document.querySelector('.select-trigger').classList.toggle('open');
+  document.getElementById('dropdown').classList.toggle('open');
+}
+
+function selectOption(el) {
+  document.querySelectorAll('.select-option').forEach(o => o.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('selected-text').textContent = el.querySelector('span').textContent;
+  currentFilter = el.dataset.med;
+  toggleDropdown();
+  renderCards();
+  setTimeout(observeCards, 100);
+}
+
+document.addEventListener('click', function(e) {
+  const sel = document.querySelector('.custom-select');
+  if (!sel.contains(e.target)) {
+    document.querySelector('.select-trigger').classList.remove('open');
+    document.getElementById('dropdown').classList.remove('open');
+  }
+});
+
+renderCards();
+setTimeout(observeCards, 100);
 </script>
 
 </body>
