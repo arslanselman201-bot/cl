@@ -350,54 +350,50 @@
 </style>
 
 <script>
-(function() {
-  var weeks = document.querySelectorAll('.hvtl-week');
-  var trackFill = document.querySelector('.hvtl-track-fill');
+function hvtlInit() {
   var timeline = document.querySelector('.hvtl-timeline');
-  if (!weeks.length || !trackFill || !timeline) return;
+  var trackFill = document.querySelector('.hvtl-track-fill');
+  var weeks = document.querySelectorAll('.hvtl-week');
+  if (!timeline || !trackFill || !weeks.length) return false;
 
-  function updateTimeline() {
-    var timelineRect = timeline.getBoundingClientRect();
-    var triggerLine = window.innerHeight * 0.75;
-    var firstDot = weeks[0].querySelector('.hvtl-dot');
-    var lastDot = weeks[weeks.length - 1].querySelector('.hvtl-dot');
-    var firstDotTop = firstDot.getBoundingClientRect().top + firstDot.offsetHeight / 2;
-    var lastDotTop = lastDot.getBoundingClientRect().top + lastDot.offsetHeight / 2;
-    var firstDotY = firstDotTop - timelineRect.top - 12;
-    var lastDotY = lastDotTop - timelineRect.top - 12;
+  var dots = [];
+  for (var i = 0; i < weeks.length; i++) {
+    dots.push(weeks[i].querySelector('.hvtl-dot'));
+  }
 
-    var fillTarget = triggerLine - timelineRect.top - 12;
-    fillTarget = Math.max(0, Math.min(fillTarget, lastDotY));
-    if (fillTarget < firstDotY) fillTarget = 0;
+  function update() {
+    var tRect = timeline.getBoundingClientRect();
+    var trigger = window.innerHeight * 0.75;
+    var d0 = dots[0].getBoundingClientRect();
+    var dL = dots[dots.length - 1].getBoundingClientRect();
+    var d0y = d0.top + d0.height / 2 - tRect.top - 12;
+    var dLy = dL.top + dL.height / 2 - tRect.top - 12;
+    var fill = trigger - tRect.top - 12;
 
-    trackFill.style.height = fillTarget + 'px';
+    if (fill < d0y) fill = 0;
+    if (fill > dLy) fill = dLy;
+    if (fill < 0) fill = 0;
 
-    weeks.forEach(function(week) {
-      var dot = week.querySelector('.hvtl-dot');
-      var dotCenter = dot.getBoundingClientRect().top + dot.offsetHeight / 2;
-      if (dotCenter < triggerLine) {
-        week.classList.add('hvtl-active');
+    trackFill.style.cssText = 'position:absolute;left:11px;top:12px;width:6px;background:#24421F;border-radius:3px;z-index:1;height:' + fill + 'px;';
+
+    for (var i = 0; i < weeks.length; i++) {
+      var dc = dots[i].getBoundingClientRect();
+      var center = dc.top + dc.height / 2;
+      if (center < trigger) {
+        weeks[i].classList.add('hvtl-active');
       }
-    });
-  }
-
-  // Shopify themes often scroll inside a container, not window.
-  // Use RAF polling to catch ALL scroll scenarios.
-  var lastY = -1;
-  function poll() {
-    var y = timeline.getBoundingClientRect().top;
-    if (y !== lastY) {
-      lastY = y;
-      updateTimeline();
     }
-    requestAnimationFrame(poll);
   }
 
-  // Also listen to scroll on window + document for good measure
-  window.addEventListener('scroll', updateTimeline, { passive: true });
-  document.addEventListener('scroll', updateTimeline, { passive: true, capture: true });
+  setInterval(update, 30);
+  return true;
+}
 
-  updateTimeline();
-  requestAnimationFrame(poll);
-})();
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', hvtlInit);
+} else {
+  hvtlInit();
+}
+setTimeout(hvtlInit, 500);
+setTimeout(hvtlInit, 1500);
 </script>
