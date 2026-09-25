@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLP-1 Selector</title>
+<style>
+  :root {
+    --bg: #f4f1ed;
+    --card-bg: #faf8f5;
+    --text-dark: #2c2c2c;
+    --text-medium: #4a4a4a;
+    --border: #d4d0cb;
+    --select-hover: #e8e4f0;
+    --select-active: #ddd8ea;
+    --accent: #3d5a47;
+    --radius: 12px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .selector-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 32px 28px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .selector-card h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .custom-select {
+    position: relative;
+    width: 100%;
+  }
+
+  .select-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border: 2px solid var(--text-dark);
+    border-radius: 50px;
+    cursor: pointer;
+    background: white;
+    font-size: 16px;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: border-color 0.2s;
+    user-select: none;
+  }
+
+  .select-trigger:hover {
+    border-color: var(--accent);
+  }
+
+  .select-trigger.open {
+    border-color: var(--text-dark);
+  }
+
+  .select-trigger .chevron {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.25s ease;
+  }
+
+  .select-trigger.open .chevron {
+    transform: rotate(180deg);
+  }
+
+  .select-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.25s ease;
+    z-index: 10;
+  }
+
+  .select-dropdown.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .select-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--text-medium);
+    transition: background 0.15s;
+  }
+
+  .select-option:hover {
+    background: #f5f3f8;
+  }
+
+  .select-option.active {
+    background: var(--select-active);
+    font-weight: 500;
+    color: var(--text-dark);
+  }
+
+  .select-option .checkmark {
+    width: 20px;
+    height: 20px;
+    color: var(--accent);
+    opacity: 0;
+  }
+
+  .select-option.active .checkmark {
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+
+<div class="selector-card">
+  <h2>Which GLP-1 are you on?</h2>
+
+  <div class="custom-select">
+    <div class="select-trigger" onclick="toggleDropdown()">
+      <span id="selected-text">All GLP-1s</span>
+      <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+
+    <div class="select-dropdown" id="dropdown">
+      <div class="select-option active" onclick="selectOption(this)">
+        <span>All GLP-1s</span>
+        <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <div class="select-option" onclick="selectOption(this)">
+        <span>Mounjaro</span>
+        <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <div class="select-option" onclick="selectOption(this)">
+        <span>Ozempic</span>
+        <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <div class="select-option" onclick="selectOption(this)">
+        <span>Wegovy</span>
+        <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <div class="select-option" onclick="selectOption(this)">
+        <span>Semaglutide</span>
+        <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <div class="select-option" onclick="selectOption(this)">
+        <span>Tirzepatide</span>
+        <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleDropdown() {
+    const trigger = document.querySelector('.select-trigger');
+    const dropdown = document.getElementById('dropdown');
+    trigger.classList.toggle('open');
+    dropdown.classList.toggle('open');
+  }
+
+  function selectOption(el) {
+    document.querySelectorAll('.select-option').forEach(opt => opt.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('selected-text').textContent = el.querySelector('span').textContent;
+    toggleDropdown();
+  }
+
+  document.addEventListener('click', function(e) {
+    const select = document.querySelector('.custom-select');
+    if (!select.contains(e.target)) {
+      document.querySelector('.select-trigger').classList.remove('open');
+      document.getElementById('dropdown').classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>
