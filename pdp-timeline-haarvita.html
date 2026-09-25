@@ -359,12 +359,14 @@
   function updateTimeline() {
     var timelineRect = timeline.getBoundingClientRect();
     var triggerLine = window.innerHeight * 0.75;
-    var fillTarget = triggerLine - timelineRect.top - 12;
     var firstDot = weeks[0].querySelector('.hvtl-dot');
     var lastDot = weeks[weeks.length - 1].querySelector('.hvtl-dot');
-    var firstDotY = firstDot.getBoundingClientRect().top + firstDot.offsetHeight / 2 - timelineRect.top - 12;
-    var lastDotY = lastDot.getBoundingClientRect().top + lastDot.offsetHeight / 2 - timelineRect.top - 12;
+    var firstDotTop = firstDot.getBoundingClientRect().top + firstDot.offsetHeight / 2;
+    var lastDotTop = lastDot.getBoundingClientRect().top + lastDot.offsetHeight / 2;
+    var firstDotY = firstDotTop - timelineRect.top - 12;
+    var lastDotY = lastDotTop - timelineRect.top - 12;
 
+    var fillTarget = triggerLine - timelineRect.top - 12;
     fillTarget = Math.max(0, Math.min(fillTarget, lastDotY));
     if (fillTarget < firstDotY) fillTarget = 0;
 
@@ -372,29 +374,30 @@
 
     weeks.forEach(function(week) {
       var dot = week.querySelector('.hvtl-dot');
-      var dotRect = dot.getBoundingClientRect();
-      var dotCenter = dotRect.top + dot.offsetHeight / 2;
-
+      var dotCenter = dot.getBoundingClientRect().top + dot.offsetHeight / 2;
       if (dotCenter < triggerLine) {
         week.classList.add('hvtl-active');
       }
     });
   }
 
-  var ticking = false;
-  function onScroll() {
-    if (!ticking) {
-      requestAnimationFrame(function() {
-        updateTimeline();
-        ticking = false;
-      });
-      ticking = true;
+  // Shopify themes often scroll inside a container, not window.
+  // Use RAF polling to catch ALL scroll scenarios.
+  var lastY = -1;
+  function poll() {
+    var y = timeline.getBoundingClientRect().top;
+    if (y !== lastY) {
+      lastY = y;
+      updateTimeline();
     }
+    requestAnimationFrame(poll);
   }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', updateTimeline, { passive: true });
+  // Also listen to scroll on window + document for good measure
+  window.addEventListener('scroll', updateTimeline, { passive: true });
+  document.addEventListener('scroll', updateTimeline, { passive: true, capture: true });
 
   updateTimeline();
+  requestAnimationFrame(poll);
 })();
 </script>
