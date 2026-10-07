@@ -1,0 +1,1202 @@
+<!-- HaarVita GLP-1 Landing Page — NATURAPlus™ -->
+<!-- Shopify Custom Liquid Block -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --hv-pine: #24421F;
+  --hv-pine-deep: #152A11;
+  --hv-bg: #FAFAF8;
+  --hv-bg-alt: #F2F5F1;
+  --hv-line: #D8DED5;
+  --hv-text: #1A1A1A;
+  --hv-text-light: #5A5A5A;
+  --hv-accent: #D4A843;
+  --hv-accent-hover: #C09A38;
+  --hv-white: #FFFFFF;
+  --hv-red: #C0392B;
+  --hv-green: #27AE60;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.hv-lp {
+  font-family: 'Work Sans', sans-serif;
+  color: var(--hv-text);
+  background: var(--hv-bg);
+  line-height: 1.7;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hv-lp h1, .hv-lp h2, .hv-lp h3 {
+  font-family: 'Fraunces', serif;
+  line-height: 1.3;
+  color: var(--hv-pine-deep);
+}
+
+.hv-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── HEADER ── */
+.hv-header {
+  background: var(--hv-white);
+  border-bottom: 1px solid var(--hv-line);
+  padding: 12px 0;
+  text-align: center;
+}
+
+.hv-header img {
+  height: 72px;
+  width: auto;
+}
+
+/* ── HERO ── */
+.hv-hero {
+  background: var(--hv-white);
+  padding: 12px 0 40px;
+  text-align: center;
+}
+
+.hv-badge {
+  display: block;
+  color: var(--hv-pine);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: 20px;
+}
+
+.hv-hero h1 {
+  font-size: 32px;
+  font-weight: 600;
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+
+@media (max-width: 600px) {
+  .hv-hero h1 { font-size: 24px; }
+}
+
+/* ── EXPERT CARD ── */
+.hv-expert-card {
+  background: var(--hv-white);
+  border: 1px solid var(--hv-line);
+  border-radius: 14px;
+  padding: 24px 24px 22px;
+  max-width: 480px;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.hv-byline {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.hv-byline img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--hv-line);
+}
+
+.hv-byline-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--hv-pine-deep);
+}
+
+.hv-byline-title {
+  font-size: 13px;
+  color: var(--hv-text-light);
+  margin-top: 2px;
+}
+
+/* ── QUOTE ── */
+.hv-quote-block {
+  border-left: 3px solid var(--hv-pine);
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.hv-quote-block p {
+  font-style: italic;
+  font-size: 13.5px;
+  color: var(--hv-text-light);
+  line-height: 1.5;
+}
+
+/* ── META ── */
+.hv-meta-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--hv-line);
+}
+
+.hv-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--hv-text-light);
+}
+
+.hv-meta-item svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--hv-text-light);
+}
+
+.hv-meta-item strong {
+  font-weight: 600;
+  color: var(--hv-text);
+}
+
+/* ── SECTION DIVIDER ── */
+.hv-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--hv-pine);
+  margin: 48px auto;
+  border-radius: 2px;
+}
+
+/* ── BODY SECTIONS ── */
+.hv-section {
+  padding: 0 0 16px;
+}
+
+.hv-section h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .hv-section h2 { font-size: 22px; }
+}
+
+.hv-section h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 32px 0 16px;
+}
+
+.hv-section p {
+  margin-bottom: 20px;
+  font-size: 17px;
+}
+
+/* ── MEDIA ── */
+.hv-media {
+  margin: 28px 0;
+  text-align: center;
+}
+
+.hv-media img,
+.hv-media video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* ── TIMELINE ── */
+.hv-timeline-card {
+  background: var(--hv-white);
+  border: 1px solid var(--hv-line);
+  border-radius: 14px;
+  padding: 28px 24px 20px;
+  margin: 32px 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.hv-timeline-card-title {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--hv-pine-deep);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.hv-timeline {
+  position: relative;
+  padding-left: 32px;
+  margin: 0;
+}
+
+.hv-timeline::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  background: var(--hv-pine);
+  border-radius: 2px;
+}
+
+.hv-timeline-item {
+  position: relative;
+  padding-bottom: 28px;
+}
+
+.hv-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.hv-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  background: var(--hv-white);
+  border: 3px solid var(--hv-pine);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.hv-timeline-label {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--hv-pine-deep);
+  margin-bottom: 4px;
+}
+
+.hv-timeline-text {
+  font-size: 15px;
+  color: var(--hv-text-light);
+  line-height: 1.5;
+}
+
+/* ── DHT TABLE ── */
+.hv-dht-card {
+  background: var(--hv-white);
+  border: 1px solid var(--hv-line);
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 28px 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.hv-dht-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: var(--hv-pine-deep);
+  padding: 12px 16px;
+}
+
+.hv-dht-header span {
+  color: var(--hv-white);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hv-dht-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--hv-line);
+  align-items: center;
+}
+
+.hv-dht-row:last-child {
+  border-bottom: none;
+}
+
+.hv-dht-row:nth-child(even) {
+  background: var(--hv-bg-alt);
+}
+
+.hv-dht-row span {
+  font-size: 14px;
+  color: var(--hv-text);
+}
+
+.hv-dht-row .hv-status-down {
+  color: var(--hv-red);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.hv-dht-row .hv-status-up {
+  color: var(--hv-red);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.hv-dht-row .hv-dht-effect {
+  font-size: 13px;
+  color: var(--hv-text-light);
+}
+
+@media (max-width: 480px) {
+  .hv-dht-header { padding: 10px 12px; }
+  .hv-dht-header span { font-size: 10px; }
+  .hv-dht-row { padding: 12px; }
+  .hv-dht-row span, .hv-dht-row .hv-status-down, .hv-dht-row .hv-status-up, .hv-dht-row .hv-dht-effect { font-size: 12px; }
+}
+
+/* ── STAT HIGHLIGHT CARDS ── */
+.hv-stat-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 32px 0;
+}
+
+.hv-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--hv-bg-alt);
+  border-left: 4px solid var(--hv-pine);
+  border-radius: 0 14px 14px 0;
+  padding: 22px 24px;
+}
+
+.hv-stat-card-number {
+  font-family: 'Fraunces', serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--hv-pine);
+  flex-shrink: 0;
+  min-width: 90px;
+}
+
+.hv-stat-card-text {
+  font-size: 16px;
+  color: var(--hv-text);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  .hv-stat-card { padding: 16px 18px; gap: 14px; }
+  .hv-stat-card-number { font-size: 30px; min-width: 72px; }
+  .hv-stat-card-text { font-size: 14px; }
+}
+
+/* ── TRUST CARDS ── */
+.hv-trust-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 32px 0;
+}
+
+.hv-trust-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--hv-white);
+  border: 1px solid var(--hv-line);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+
+.hv-trust-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #EBF0FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hv-trust-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.hv-trust-icon--star {
+  background: #FFF8E7;
+}
+
+.hv-trust-text {
+  flex: 1;
+  font-size: 15px;
+  color: var(--hv-text);
+  line-height: 1.4;
+}
+
+.hv-trust-text strong {
+  font-weight: 700;
+}
+
+.hv-trust-faces {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.hv-trust-faces img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--hv-white);
+  margin-left: -10px;
+}
+
+.hv-trust-faces img:first-child {
+  margin-left: 0;
+}
+
+.hv-trust-stars {
+  display: flex;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.hv-trust-star-box {
+  width: 28px;
+  height: 28px;
+  background: #00B67A;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hv-trust-star-box svg {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
+
+@media (max-width: 480px) {
+  .hv-trust-card { padding: 14px 16px; gap: 10px; }
+  .hv-trust-text { font-size: 13px; }
+  .hv-trust-faces img { width: 30px; height: 30px; }
+  .hv-trust-star-box { width: 24px; height: 24px; }
+}
+
+/* ── ERWARTUNGS-TIMELINE ── */
+.hv-expect {
+  position: relative;
+  margin: 32px 0;
+  padding-left: 40px;
+}
+
+.hv-expect::before {
+  content: '';
+  position: absolute;
+  left: 13px;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
+  background: var(--hv-line);
+}
+
+.hv-expect-item {
+  position: relative;
+  padding-bottom: 36px;
+}
+
+.hv-expect-item:last-child {
+  padding-bottom: 0;
+}
+
+.hv-expect-item::before {
+  content: '';
+  position: absolute;
+  left: -33px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  background: var(--hv-white);
+  border: 3px solid var(--hv-pine);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.hv-expect-week {
+  display: inline-block;
+  background: var(--hv-pine);
+  color: var(--hv-white);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.hv-expect-text {
+  display: block;
+  font-size: 15px;
+  color: var(--hv-text);
+  line-height: 1.5;
+}
+
+/* ── REVIEWS SECTION ── */
+.hv-reviews {
+  padding: 48px 0 0;
+}
+
+.hv-reviews-heading {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--hv-pine-deep);
+  margin-bottom: 16px;
+}
+
+.hv-reviews-trustpilot {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hv-reviews-trustpilot svg {
+  width: 20px;
+  height: 20px;
+}
+
+.hv-reviews-trustpilot span {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--hv-text);
+}
+
+.hv-reviews-tp-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 8px;
+}
+
+.hv-reviews-tp-star {
+  width: 30px;
+  height: 30px;
+  background: #00B67A;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hv-reviews-tp-star svg {
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+}
+
+.hv-reviews-rating {
+  font-size: 14px;
+  color: var(--hv-text);
+  margin-bottom: 36px;
+}
+
+.hv-reviews-rating strong {
+  font-weight: 700;
+}
+
+/* ── SINGLE REVIEW ── */
+.hv-review {
+  border-top: 1px solid var(--hv-line);
+  padding: 28px 0;
+}
+
+.hv-review-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.hv-review-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hv-review-meta {
+  flex: 1;
+}
+
+.hv-review-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--hv-pine-deep);
+}
+
+.hv-review-verified {
+  font-size: 12px;
+  color: var(--hv-text-light);
+}
+
+.hv-review-date {
+  font-size: 13px;
+  color: var(--hv-text-light);
+  flex-shrink: 0;
+}
+
+.hv-review-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 12px;
+}
+
+.hv-review-star {
+  width: 24px;
+  height: 24px;
+  background: #00B67A;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hv-review-star svg {
+  width: 14px;
+  height: 14px;
+  fill: #fff;
+}
+
+.hv-review-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--hv-pine-deep);
+  margin-bottom: 10px;
+}
+
+.hv-review-body {
+  font-size: 15px;
+  color: var(--hv-text);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.hv-review-photo {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+/* ── URGENCY ── */
+.hv-urgency {
+  background: #FEF2F2;
+  border: 2px solid #DC2626;
+  border-radius: 16px;
+  padding: 36px 28px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.hv-urgency h3 {
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: var(--hv-pine-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hv-urgency-icon {
+  width: 28px;
+  height: 28px;
+  background: #DC2626;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hv-urgency-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
+
+.hv-urgency p {
+  font-size: 16px;
+  color: var(--hv-text);
+  max-width: 540px;
+  margin: 0 auto 12px;
+}
+
+/* ── CTA ── */
+.hv-cta-section {
+  background: var(--hv-pine-deep);
+  border-radius: 20px;
+  padding: 48px 32px;
+  text-align: center;
+  margin: 40px 0 48px;
+  color: var(--hv-white);
+}
+
+.hv-cta-section h2 {
+  color: var(--hv-white);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.hv-cta-section p {
+  color: rgba(255,255,255,0.85);
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.hv-cta-checks {
+  list-style: none;
+  margin: 24px 0 32px;
+  padding: 0;
+}
+
+.hv-cta-checks li {
+  font-size: 16px;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 10px;
+}
+
+.hv-cta-checks li::before {
+  content: "✅ ";
+}
+
+.hv-cta-btn {
+  display: inline-block;
+  background: var(--hv-accent);
+  color: var(--hv-pine-deep);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 18px 48px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 4px 16px rgba(212,168,67,0.4);
+}
+
+.hv-cta-btn:hover {
+  background: var(--hv-accent-hover);
+  transform: translateY(-2px);
+}
+
+.hv-cta-fine {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin-top: 20px;
+}
+
+/* ── FOOTER ── */
+.hv-footer {
+  text-align: center;
+  padding: 32px 0;
+  font-size: 13px;
+  color: var(--hv-text-light);
+  border-top: 1px solid var(--hv-line);
+}
+</style>
+
+<div class="hv-lp">
+
+  <!-- ══════ HEADER ══════ -->
+  <div class="hv-header">
+    <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Gesund_im_Alltag_2.png?v=1789902520" alt="Gesund im Alltag">
+  </div>
+
+  <!-- ══════ HERO ══════ -->
+  <div class="hv-hero">
+    <div class="hv-container">
+      <div class="hv-badge">Haar & Haut Forschung · Frauen</div>
+      <h1>5 Gründe warum deine Abnehmspritze deine Haare mitnimmt — und wie du sie schützt</h1>
+
+      <div class="hv-media" style="margin: 0 0 32px;">
+        <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-img-02.webp?v=1789996516" alt="Haarausfall durch Abnehmspritze">
+      </div>
+
+      <div class="hv-expert-card">
+        <div class="hv-byline">
+          <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bildschirmfoto_2026-09-16_um_15.12.21.png?v=1789564349" alt="Dr. Anna Weber">
+          <div>
+            <div class="hv-byline-name">Dr. Anna Weber</div>
+            <div class="hv-byline-title">Dermatologie & Haargesundheit</div>
+          </div>
+        </div>
+
+        <div class="hv-quote-block">
+          <p>„Was ich in meiner Praxis immer häufiger sehe, ist hormonell bedingter Haarausfall durch Abnehmspritzen — Frauen verlieren ihre Haare, ohne jemals davor gewarnt worden zu sein."</p>
+        </div>
+
+        <div class="hv-meta-list">
+          <div class="hv-meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><circle cx="12" cy="12" r="9.5"/><path stroke-linecap="round" d="M12 7v5l3.5 2"/></svg>
+            <span><strong>4 Min.</strong> Lesezeit</span>
+          </div>
+          <div class="hv-meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span><strong>48.210</strong> Aufrufe</span>
+          </div>
+          <div class="hv-meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2"/><path stroke-linecap="round" d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <span>Aktualisiert <strong>September 2026</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hv-container">
+
+    <!-- ══════ EMOTIONALER EINSTIEG ══════ -->
+    <div class="hv-section" style="padding-top: 40px;">
+      <p>Du hast es durchgezogen. Die Kilos sind runter. Zum ersten Mal seit Jahren fühlst du dich wieder wohl in deinen Klamotten. Und dann siehst du deinen Scheitel im Badezimmerspiegel. Breiter als letzten Monat. Und dir wird klar, dass du bald wieder anfängst Fotos zu vermeiden.</p>
+
+      <div class="hv-media">
+        <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-img-04.webp?v=1789903191" alt="Haarausfall durch Abnehmspritze">
+      </div>
+
+      <p>Aber das sagt dir keiner: Du musst dich nicht entscheiden. Der Haarausfall ist real. Er ist eine vorhersehbare Nebenwirkung der Abnehmspritze. Aber er ist umkehrbar. Du kannst weiter abnehmen und deine Haare zurückbekommen, ohne die Spritze abzusetzen.</p>
+
+      <p>Und es gibt eine Sache, die die meisten Frauen — und die meisten Ärzte — falsch machen.</p>
+    </div>
+
+    <div class="hv-divider"></div>
+
+    <!-- ══════ SECTION 1 ══════ -->
+    <div class="hv-section">
+      <h2>Der Haarausfall im dritten Monat ist kein Zufall</h2>
+
+      <div class="hv-media">
+        <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/nach_3_Monate.png?v=1789904856" alt="Haarausfall nach 3 Monaten">
+      </div>
+
+      <p>Du merkst es zuerst in der Dusche. Mehr Haare als sonst zwischen deinen Fingern. Büschel im Abfluss. Ein paar Wochen später liegen sie auf dem Badezimmerboden, auf deinem Kopfkissen, in der Bürste. Du hast nichts verändert — außer dass die Kilos endlich runter gingen.</p>
+
+      <div class="hv-media">
+        <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bildschirmaufnahme2026-09-20um13.43.45-ezgif.com-video-to-gif-converter.gif?v=1789904825" alt="Haarausfall Animation">
+      </div>
+
+      <p>Das sagt dir niemand: Der Haarausfall hat nicht in der Woche angefangen, in der du ihn bemerkt hast. Er hat Monate vorher angefangen. Die Abnehmspritze löst massive hormonelle Schwankungen aus. Dein Östrogen sinkt — und Östrogen ist das Hormon, das deine Haare vor DHT schützt. Ohne diesen Schutz greift DHT deine Haarfollikel direkt an und lässt sie schrumpfen. Dein Scheitel wird breiter, dein Zopf wird dünner und die Haare die nachwachsen, sehen feiner und schwächer aus.</p>
+
+      <div class="hv-timeline-card">
+        <div class="hv-timeline-card-title">Warum der Haarausfall erst nach ~3 Monaten sichtbar wird</div>
+        <div class="hv-timeline">
+          <div class="hv-timeline-item">
+            <div class="hv-timeline-label">Monat 1–2</div>
+            <div class="hv-timeline-text">Östrogen beginnt zu sinken — deine Haare verlieren ihren Schutz vor DHT.</div>
+          </div>
+          <div class="hv-timeline-item">
+            <div class="hv-timeline-label">~Monat 3–4</div>
+            <div class="hv-timeline-text">DHT greift deine Haarfollikel an — sie schrumpfen und werden schwächer.</div>
+          </div>
+          <div class="hv-timeline-item">
+            <div class="hv-timeline-label">~Monat 5–6</div>
+            <div class="hv-timeline-text">Scheitel wird breiter, Zopf wird dünner, Haare wachsen feiner nach.</div>
+          </div>
+        </div>
+      </div>
+
+      <p>Deshalb fühlt sich der Haarausfall an, als wäre er aus dem Nichts gekommen. Einen Tag ist alles normal. Am nächsten wird dein Scheitel breiter und dein Zopf dünner. Aber was du jetzt siehst, ist nicht das Problem von heute. Dein Östrogen hat vor Monaten angefangen zu sinken — und seitdem greift DHT deine Haarfollikel an.</p>
+    </div>
+
+    <div class="hv-divider"></div>
+
+    <!-- ══════ SECTION 2 ══════ -->
+    <div class="hv-section">
+      <h2>Dein Haar ist das Erste, was DHT angreift</h2>
+
+      <div class="hv-media">
+        <video autoplay muted loop playsinline>
+          <source src="https://cdn.shopify.com/videos/c/o/v/e3ef2967cbcf47669d4703d0e62eba1d.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <p>Du hast wahrscheinlich schon alles versucht. Biotin. Kollagen. Zink. Vitamin D. Eisen. Minoxidil. Sulfatfreie Shampoos. Seidenkissen. Und trotzdem siehst du im Badezimmerlicht deine Kopfhaut durchscheinen, wie noch nie.</p>
+
+      <p>Das ist das Frustrierende am Haarausfall durch die Abnehmspritze. Du machst endlich alles richtig, und die Haare fallen trotzdem aus. Das bildest du dir nicht ein. Etwas hat sich verändert, in dem Moment als die Kilos angefangen haben zu fallen.</p>
+
+      <p>Wenn die Abnehmspritze wirkt, sinkt dein Östrogen. Und dein Körper verliert damit den einzigen Schutz, den deine Haare gegen DHT haben.</p>
+
+      <div class="hv-dht-card">
+        <div class="hv-dht-header">
+          <span>Faktor</span>
+          <span>Status</span>
+          <span>Wirkung</span>
+        </div>
+        <div class="hv-dht-row">
+          <span>Östrogen</span>
+          <span class="hv-status-down">↓ Sinkt</span>
+          <span class="hv-dht-effect">Haare verlieren Schutz</span>
+        </div>
+        <div class="hv-dht-row">
+          <span>DHT</span>
+          <span class="hv-status-up">↑ Greift an</span>
+          <span class="hv-dht-effect">Follikel schrumpfen</span>
+        </div>
+        <div class="hv-dht-row">
+          <span>Haarfollikel</span>
+          <span class="hv-status-down">↓ Geschwächt</span>
+          <span class="hv-dht-effect">Werden inaktiv</span>
+        </div>
+        <div class="hv-dht-row">
+          <span>Haarwachstum</span>
+          <span class="hv-status-down">↓ Gestoppt</span>
+          <span class="hv-dht-effect">Haare werden feiner</span>
+        </div>
+      </div>
+
+      <p>Ohne den Schutz von Östrogen greift DHT deine Haarfollikel direkt an. Es lässt sie schrumpfen und schneidet sie von der Nährstoffversorgung ab. Jedes Haar das nachwächst wird feiner und schwächer als das davor.</p>
+
+      <h3>Warum Supplements versagen</h3>
+
+      <div class="hv-media">
+        <video autoplay muted loop playsinline>
+          <source src="https://cdn.shopify.com/videos/c/o/v/7a42a4bff0cc4518b5c08b3da83fb433.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <p>Und die ganzen Supplements? Biotin gibt deinem Haar Nährstoffe. Kollagen stärkt die Struktur. Zink unterstützt das Wachstum. Aber keines davon blockiert DHT. Du kannst dein Haar den ganzen Tag füttern — solange DHT weiter deine Haarfollikel angreift, behandelst du nur die Oberfläche. Du hast nicht das falsche Supplement genommen. Du hast eins genommen, das die eigentliche Ursache nicht bekämpft.</p>
+    </div>
+
+    <div class="hv-divider"></div>
+
+    <!-- ══════ SECTION 3 ══════ -->
+    <div class="hv-section">
+      <h2>Deine Haarfollikel sind noch nicht tot. Du kannst sie zurückholen.</h2>
+
+      <p>DHT hat deine Haarfollikel geschwächt. Sie schrumpfen und produzieren immer schwächeres Haar. Aber Haarfollikel sterben nicht. Sie werden inaktiv. Und inaktive Haarfollikel können reaktiviert werden.</p>
+
+      <p>Was du brauchst, ist kein weiteres Vitamin. Du brauchst etwas, das DHT blockiert, damit deine Haarfollikel aufhören zu schrumpfen und wieder anfangen kräftiges Haar zu produzieren.</p>
+
+      <div class="hv-media">
+        <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/ChatGPT_Image_Sep_11_2026_11_29_55_AM_1.webp?v=1789566444" alt="Haarfollikel Reaktivierung">
+      </div>
+
+      <p>Klinische Studien beweisen: Zwei natürliche Wirkstoffe können DHT direkt blockieren. Kürbiskernöl hemmt die 5-Alpha-Reduktase — das Enzym, das DHT produziert — und stärkt deine Haarfollikel von innen. Sägepalme stoppt DHT, bevor es deine Haarfollikel angreifen und zerstören kann.</p>
+    </div>
+
+    <div class="hv-divider"></div>
+
+    <!-- ══════ SECTION 4 ══════ -->
+    <div class="hv-section">
+      <h2>HaarVita von NATURAPlus™</h2>
+
+      <div class="hv-media">
+        <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Abnehmspritzen_1.png?v=1789565195" alt="HaarVita NATURAPlus">
+      </div>
+
+      <p>Eine kleine Apotheke aus Österreich hat genau diese beiden Wirkstoffe in klinisch wirksamer Dosierung vereint. Die Formel heißt HaarVita von NATURAPlus. Keine Hormone. Keine Nebenwirkungen. Zwei Kapseln am Tag.</p>
+
+      <p>Die meisten Haarprodukte auf dem Markt setzen auf Biotin, Zink oder Kollagen. Sie versorgen dein Haar mit Nährstoffen, aber sie gehen nicht an die Ursache. HaarVita ist anders. Es blockiert DHT und stärkt gleichzeitig deine Haarfollikel von innen.</p>
+
+      <div class="hv-stat-cards">
+        <div class="hv-stat-card">
+          <div class="hv-stat-card-number">92%</div>
+          <div class="hv-stat-card-text">weniger Haarausfall innerhalb weniger Wochen</div>
+        </div>
+        <div class="hv-stat-card">
+          <div class="hv-stat-card-number">100k+</div>
+          <div class="hv-stat-card-text">Frauen vertrauen HaarVita</div>
+        </div>
+        <div class="hv-stat-card">
+          <div class="hv-stat-card-number">4–6</div>
+          <div class="hv-stat-card-text">Wochen bis erste sichtbare Ergebnisse</div>
+        </div>
+      </div>
+
+      <div class="hv-trust-cards">
+        <div class="hv-trust-card">
+          <div class="hv-trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#3B6BB5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+          </div>
+          <div class="hv-trust-text">Empfohlen von <strong>200+</strong> Dermatologen</div>
+          <div class="hv-trust-faces">
+            <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-face-10.webp?v=1789992760" alt="">
+            <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-face-11.webp?v=1789992784" alt="">
+            <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-face-10.webp?v=1789992760" alt="">
+          </div>
+        </div>
+        <div class="hv-trust-card">
+          <div class="hv-trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="#3B6BB5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+          </div>
+          <div class="hv-trust-text">Über <strong>100.000</strong> Frauen vertrauen HaarVita</div>
+          <div class="hv-trust-faces">
+            <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-face-13.avif?v=1789992898" alt="">
+            <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-face-14.webp?v=1789992921" alt="">
+            <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-face-13.avif?v=1789992898" alt="">
+          </div>
+        </div>
+        <div class="hv-trust-card">
+          <div class="hv-trust-icon hv-trust-icon--star">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#E8A317" stroke="none"><path d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"/></svg>
+          </div>
+          <div class="hv-trust-text"><strong>4,8 / 5</strong> bei über 10.248 Bewertungen</div>
+          <div class="hv-trust-stars">
+            <div class="hv-trust-star-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+            <div class="hv-trust-star-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+            <div class="hv-trust-star-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+            <div class="hv-trust-star-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+            <div class="hv-trust-star-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Was du erwarten kannst</h3>
+
+      <div class="hv-expect">
+        <div class="hv-expect-item">
+          <span class="hv-expect-week">Woche 1–2</span>
+          <span class="hv-expect-text">Weniger Haare in der Bürste und im Abfluss. Der Haarausfall verlangsamt sich spürbar.</span>
+        </div>
+        <div class="hv-expect-item">
+          <span class="hv-expect-week">Woche 4–6</span>
+          <span class="hv-expect-text">Inaktive Haarfollikel reaktivieren sich. Erste neue Baby Haare werden sichtbar.</span>
+        </div>
+        <div class="hv-expect-item">
+          <span class="hv-expect-week">Monat 3–6</span>
+          <span class="hv-expect-text">Sichtbare Haardichte. Zopf wird dicker, Scheitel wird schmaler — du hörst auf, Fotos zu vermeiden.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hv-divider"></div>
+
+    <!-- ══════ SECTION 5 — REVIEWS ══════ -->
+    <div class="hv-reviews">
+      <div class="hv-reviews-heading">Was Frauen berichten</div>
+
+      <div class="hv-reviews-trustpilot">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00B67A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span>Trustpilot</span>
+      </div>
+
+      <div class="hv-reviews-tp-stars">
+        <div class="hv-reviews-tp-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="hv-reviews-tp-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="hv-reviews-tp-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="hv-reviews-tp-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="hv-reviews-tp-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      </div>
+
+      <div class="hv-reviews-rating"><strong>4,8</strong> von 5 · 10.248 Bewertungen</div>
+
+      <!-- Review 1 -->
+      <div class="hv-review">
+        <div class="hv-review-header">
+          <img class="hv-review-avatar" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-reviewer-16.avif?v=1789993957" alt="Sandra M.">
+          <div class="hv-review-meta">
+            <div class="hv-review-name">Sandra M.</div>
+            <div class="hv-review-verified">Verifiziert</div>
+          </div>
+          <div class="hv-review-date">vor 2 Tagen</div>
+        </div>
+        <div class="hv-review-stars">
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        </div>
+        <div class="hv-review-title">Haare jeden Morgen im Abfluss</div>
+        <div class="hv-review-body">Ich habe mit Mounjaro 22 Kilo abgenommen und ab Monat drei sind mir die Haare büschelweise ausgefallen. Unter der Dusche, in der Bürste, auf dem Kopfkissen. Ich hatte richtig Panik, weil ich die Spritze auf keinen Fall absetzen wollte. Ich hatte vorher schon ein Haarserum probiert, das hat nur meine Kopfhaut fettig gemacht. Was mir an HaarVita gefallen hat — es geht nicht nur obendrauf, sondern direkt an die Ursache. Nach ein paar Wochen waren deutlich weniger Haare in der Bürste, und nach Monat vier hatte ich keine Angst mehr, meine Haare offen zu tragen.</div>
+        <img class="hv-review-photo" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-img-17_1.webp?v=1789993980" alt="Sandra M. Ergebnis">
+      </div>
+
+      <!-- Review 2 -->
+      <div class="hv-review">
+        <div class="hv-review-header">
+          <img class="hv-review-avatar" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-reviewer-18.avif?v=1789994054" alt="Katrin L.">
+          <div class="hv-review-meta">
+            <div class="hv-review-name">Katrin L.</div>
+            <div class="hv-review-verified">Verifiziert</div>
+          </div>
+          <div class="hv-review-date">vor 5 Tagen</div>
+        </div>
+        <div class="hv-review-stars">
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        </div>
+        <div class="hv-review-title">Mein Scheitel wurde immer breiter</div>
+        <div class="hv-review-body">Mir ist es gar nicht auf einmal aufgefallen. Es war eher so, dass ich jedes Mal wenn ich in den Spiegel geschaut habe, der Scheitel ein bisschen breiter wirkte. Besonders unter dem Badezimmerlicht. Ich habe Biotin, Kollagen, Shampoo, sogar komische Gummies gekauft — nichts hat wirklich was gebracht. Ich hatte eigentlich keine großen Erwartungen mehr, aber nach ein paar Wochen HaarVita war meine Bürste nicht mehr voller Haare. Mein Mann hat es vor mir bemerkt, was sonst nie passiert. Ich war auf Wegovy zu der Zeit, also bin ich mir jetzt ziemlich sicher dass das Shedding damit zusammenhing.</div>
+        <img class="hv-review-photo" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-img-19_1.webp?v=1789994091" alt="Katrin L. Ergebnis">
+      </div>
+
+      <!-- Review 3 -->
+      <div class="hv-review">
+        <div class="hv-review-header">
+          <img class="hv-review-avatar" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-reviewer-20.webp?v=1789994152" alt="Nicole W.">
+          <div class="hv-review-meta">
+            <div class="hv-review-name">Nicole W.</div>
+            <div class="hv-review-verified">Verifiziert</div>
+          </div>
+          <div class="hv-review-date">vor 1 Woche</div>
+        </div>
+        <div class="hv-review-stars">
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="hv-review-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        </div>
+        <div class="hv-review-title">Meine Kopfhaut war auf Fotos sichtbar</div>
+        <div class="hv-review-body">Ich bin 37 und dachte, dünne Haare sind einfach noch eine Sache mehr, mit der ich klarkommen muss. Mein Haaransatz und Scheitel wurden auf Fotos richtig deutlich sichtbar, und ich habe angefangen Fotos komplett zu vermeiden. Ich war zu der Zeit auf Ozempic, und als ich dann über GLP-1-Shedding gelesen habe, hat es endlich Sinn ergeben. Was mir an HaarVita gefallen hat — es ist für die Haarfollikel gemacht, nicht nur für das Haar das schon da ist. Es ging nicht über Nacht, aber zuerst wurde das Shedding langsamer, dann habe ich kleine Baby Haare vorne am Haaransatz gesehen. Das war das erste Mal, dass ich das Gefühl hatte, es ist vielleicht noch nicht zu spät.</div>
+        <img class="hv-review-photo" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/glp1-img-21_1.webp?v=1789994168" alt="Nicole W. Ergebnis">
+      </div>
+    </div>
+
+    <!-- ══════ URGENCY ══════ -->
+    <div class="hv-urgency">
+      <h3><span class="hv-urgency-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></span> Warum Warten dich Haare kostet</h3>
+      <p>Ein inaktiver Haarfollikel wartet nicht ewig.</p>
+      <p>Mit jedem Monat, in dem er abgeschaltet bleibt, wird es schwieriger ihn aufzuwecken — und <strong>die Follikel, die zu lange inaktiv bleiben, kommen gar nicht mehr zurück.</strong></p>
+      <p>Das Shedding, das du heute siehst, ist so reversibel wie nie wieder.</p>
+      <p>Du kannst jeden Follikel retten, der noch kämpft — ab jetzt.</p>
+    </div>
+
+    <!-- ══════ FINAL CTA ══════ -->
+    <div class="hv-cta-section">
+      <h2>Schütz deine Haare. Heute.</h2>
+      <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Design_ohne_Titel_23.png?v=1789626136" alt="HaarVita NATURAPlus" style="width: 100%; max-width: 320px; border-radius: 12px; margin: 0 auto 28px; display: block;">
+      <p>HaarVita von NATURAPlus™ ist aktuell auf Lager — aber die Nachfrage steigt.</p>
+
+      <ul class="hv-cta-checks">
+        <li>Kürbiskernöl + Sägepalme in einer Formel</li>
+        <li>Entwickelt für Frauen auf Abnehmspritzen</li>
+        <li>30-Tage-Geld-zurück-Garantie</li>
+      </ul>
+
+      <a href="#" class="hv-cta-btn">Jetzt HaarVita sichern →</a>
+
+      <p class="hv-cta-fine">Kein Abo. Keine versteckten Kosten. Wenn du nicht zufrieden bist, bekommst du dein Geld zurück.</p>
+    </div>
+
+  </div>
+
+  <!-- ══════ FOOTER ══════ -->
+  <div class="hv-footer">
+    <div class="hv-container">
+      © 2026 NATURAPlus™ · Alle Rechte vorbehalten
+    </div>
+  </div>
+
+</div>

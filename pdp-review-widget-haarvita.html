@@ -1,0 +1,594 @@
+<!-- HaarVita PDP Review Widget — Shopify Custom Liquid Block -->
+<!-- Filterbares Review-Carousel mit GLP-1 Markenfilter -->
+
+<style>
+:root {
+  --hvrw-bg: #FAFAF8;
+  --hvrw-white: #FFFFFF;
+  --hvrw-text: #1A1A1A;
+  --hvrw-text-light: #5A5A5A;
+  --hvrw-line: #D8DED5;
+  --hvrw-accent: #24421F;
+  --hvrw-accent-light: #EAF0E8;
+  --hvrw-accent-border: #B8CCAF;
+  --hvrw-star: #D4A843;
+}
+
+.hvrw-section {
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--hvrw-bg);
+  padding: 48px 0 56px;
+  color: var(--hvrw-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.hvrw-section * { margin: 0; padding: 0; box-sizing: border-box; }
+
+.hvrw-heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #152A11;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 32px;
+  padding: 0 20px;
+}
+
+/* ── Filter Card ── */
+.hvrw-filter-card {
+  background: var(--hvrw-white);
+  border: 1px solid var(--hvrw-accent-border);
+  border-radius: 16px;
+  padding: 24px 24px 20px;
+  max-width: 440px;
+  margin: 0 auto 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+
+.hvrw-filter-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--hvrw-text);
+  margin-bottom: 16px;
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+.hvrw-select-wrap {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.hvrw-select {
+  width: 100%;
+  padding: 14px 48px 14px 18px;
+  font-size: 16px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  color: var(--hvrw-text);
+  background: var(--hvrw-white);
+  border: 1.5px solid var(--hvrw-line);
+  border-radius: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.hvrw-select:focus {
+  outline: none;
+  border-color: var(--hvrw-accent);
+}
+
+.hvrw-select-arrow {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--hvrw-text-light);
+}
+
+.hvrw-filter-sub {
+  font-size: 14px;
+  color: var(--hvrw-text-light);
+  line-height: 1.5;
+}
+
+.hvrw-filter-sub strong {
+  color: var(--hvrw-accent);
+  font-weight: 600;
+}
+
+/* ── Carousel ── */
+.hvrw-carousel-wrap {
+  padding: 24px 0 8px;
+  overflow: hidden;
+}
+
+.hvrw-carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 20px 16px;
+  scrollbar-width: none;
+}
+
+.hvrw-carousel::-webkit-scrollbar { display: none; }
+
+/* ── Review Card ── */
+.hvrw-card {
+  flex: 0 0 310px;
+  background: var(--hvrw-white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 1px solid var(--hvrw-line);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.hvrw-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/2.8;
+  overflow: hidden;
+  background: #eee;
+}
+
+.hvrw-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.hvrw-card-body {
+  padding: 16px 18px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hvrw-brand-tag {
+  display: inline-block;
+  background: var(--hvrw-accent-light);
+  color: var(--hvrw-accent);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+
+.hvrw-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.hvrw-card-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--hvrw-text);
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+.hvrw-verified {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hvrw-accent);
+}
+
+.hvrw-verified svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--hvrw-accent);
+}
+
+.hvrw-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 12px;
+}
+
+.hvrw-stars svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--hvrw-star);
+}
+
+.hvrw-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--hvrw-text);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.hvrw-card-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--hvrw-text-light);
+  flex: 1;
+}
+
+/* ── Arrow Navigation ── */
+.hvrw-arrows {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 8px 0 0;
+}
+
+.hvrw-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--hvrw-text);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  color: var(--hvrw-text);
+}
+
+.hvrw-arrow:hover {
+  background: var(--hvrw-accent);
+  border-color: var(--hvrw-accent);
+  color: var(--hvrw-white);
+}
+
+.hvrw-arrow.hvrw-arrow-inactive {
+  border-color: var(--hvrw-line);
+  color: var(--hvrw-line);
+  cursor: default;
+}
+
+.hvrw-arrow.hvrw-arrow-inactive:hover {
+  background: transparent;
+  border-color: var(--hvrw-line);
+  color: var(--hvrw-line);
+}
+
+.hvrw-arrow svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .hvrw-heading { font-size: 24px; margin-bottom: 24px; }
+  .hvrw-card { flex: 0 0 280px; }
+  .hvrw-filter-card { margin-left: 20px; margin-right: 20px; }
+  .hvrw-filter-label { font-size: 18px; }
+}
+
+@media (min-width: 900px) {
+  .hvrw-card { flex: 0 0 340px; }
+  .hvrw-carousel { padding: 0 calc((100% - 720px) / 2 + 20px) 16px; }
+}
+</style>
+
+<div class="hvrw-section">
+
+  <h2 class="hvrw-heading">Wirkt bei allen großen GLP-1 Medikamenten.</h2>
+
+  <div class="hvrw-filter-card">
+    <div class="hvrw-filter-label">Welches GLP-1 nimmst du?</div>
+    <div class="hvrw-select-wrap">
+      <select class="hvrw-select" id="hvrwFilter">
+        <option value="all">Alle GLP-1s</option>
+        <option value="mounjaro">Mounjaro</option>
+        <option value="ozempic">Ozempic</option>
+        <option value="wegovy">Wegovy</option>
+        <option value="semaglutide">Semaglutide</option>
+        <option value="tirzepatide">Tirzepatide</option>
+      </select>
+      <span class="hvrw-select-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </span>
+    </div>
+    <div class="hvrw-filter-sub" id="hvrwFilterSub">Zeigt verifizierte Bewertungen von Frauen auf <strong>Alle GLP-1s</strong>.</div>
+  </div>
+
+  <div class="hvrw-carousel-wrap">
+    <div class="hvrw-carousel" id="hvrwCarousel"></div>
+  </div>
+
+  <div class="hvrw-arrows">
+    <button class="hvrw-arrow" id="hvrwPrev" aria-label="Zurück">
+      <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="hvrw-arrow hvrw-arrow-inactive" id="hvrwNext" aria-label="Weiter">
+      <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  var starSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+  var checkSVG = '<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>';
+
+  var reviews = [
+    {
+      name: "Vanessa S., 43",
+      brand: "semaglutide",
+      brandLabel: "SEMAGLUTIDE",
+      title: "„Jeden Morgen Haare auf dem Kopfkissen haben mich zum Handeln gebracht“",
+      body: "Ein paar Haare in der Dusche konnte ich ignorieren, aber jeden Morgen damit auf dem Kopfkissen aufzuwachen hat mich fertig gemacht. Semaglutid hat mir beim Abnehmen geholfen, also wollte ich nicht aufhören. Nach ein paar Wochen mit HaarVita haben meine Ecken angefangen wieder nachzuwachsen.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor.png?v=1790338260"
+    },
+    {
+      name: "Kristin S., 51",
+      brand: "mounjaro",
+      brandLabel: "MOUNJARO",
+      title: "„Ich habe es zuerst gar nicht mit dem Abnehmen verbunden“",
+      body: "Der Haarausfall kam erst später, was mich verwirrt hat. Meine Dosis war erhöht worden, mein Appetit war gering, und plötzlich waren überall Haare. Eine Freundin hat mir HaarVita empfohlen, weil sie die gleichen Nebenwirkungen hatte. Nach nur ein paar Wochen war ein sichtbarer Unterschied in der Dichte und die Haare haben wieder komplett die Kopfhaut bedeckt.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_1.png?v=1790342355"
+    },
+    {
+      name: "Denise B., 49",
+      brand: "ozempic",
+      brandLabel: "OZEMPIC",
+      title: "„Ich hatte ein schlechtes Gewissen mich zu beschweren, weil Ozempic so gut wirkte“",
+      body: "Mein Gewicht und mein Blutzucker haben sich verbessert, also habe ich mir immer gesagt, der Haarausfall ist nicht so schlimm. Aber er war es. Ich habe mit HaarVita angefangen, als meine vorderen Partien dünn und strähnig wurden. Nach nur wenigen Anwendungen habe ich weniger Haare im Waschbecken bemerkt und mein Scheitel hat angefangen sich zu füllen.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_2.png?v=1790342532"
+    },
+    {
+      name: "Tanja V., 36",
+      brand: "wegovy",
+      brandLabel: "WEGOVY",
+      title: "„Mein Scheitel wurde jede Woche breiter“",
+      body: "Ich habe sogar angefangen meinen Scheitel mit einem Lineal zu messen, so besessen war ich davon, wie viele Haare ich verliere. So schlimm war es geworden. Ich war zu der Zeit auf Wegovy. HaarVita hat mir eine einfache Routine gegeben, und mein Scheitel hat sich langsam wieder gefüllt. So froh, dass ich mich wieder wohl fühlen kann mit meinen Haaren und meinem Körper.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bildschirmfoto_2026-09-25_um_15.23.47.png?v=1790342635"
+    },
+    {
+      name: "Meike G., 42",
+      brand: "mounjaro",
+      brandLabel: "MOUNJARO",
+      title: "„Ich habe angefangen meine Haare in Klammern zu verstecken“",
+      body: "Als ich gemerkt habe, dass es wirklich Haarausfall war, habe ich schon jeden Morgen mein Kopfkissen kontrolliert. Ich war seit ein paar Monaten auf Mounjaro und wollte nicht aufhören. HaarVita wurde mein „bitte lass es nicht schlimmer werden“-Schritt. Um Woche fünf herum habe ich winzige Baby Haare an meinem Scheitel gesehen, und nach zwei Monaten sind die Haare komplett zurückkgekommen.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_4.png?v=1790343141"
+    },
+    {
+      name: "Laura A., 45",
+      brand: "wegovy",
+      brandLabel: "WEGOVY",
+      title: "„Ich fühlte mich sicher in Kleidung, unsicher wegen meiner Haare“",
+      body: "Wegovy hat meinen Körper schneller verändert als erwartet. Dann wurde mein Scheitel breiter, und das hat einen Teil meines Selbstvertrauens genommen. Ich habe HaarVita benutzt, weil es einfach war und die Ergebnisse sprechen für sich.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_5.png?v=1790343588"
+    },
+    {
+      name: "Angela P., 44",
+      brand: "ozempic",
+      brandLabel: "OZEMPIC",
+      title: "„Die Bürste hat es mir vor dem Spiegel verraten“",
+      body: "Ich habe ständig Haare aus meiner Bürste gezogen und so getan als wäre das normal. Dann wurden meine Ecken dünner. Ozempic hatte meinen Appetit so stark verändert, dass mein Körper sich gestresst hat. HaarVita war einfach in meine Routine einzubauen, und nach ungefähr sechs Wochen habe ich Baby Haare gesehen. Jetzt kommen die Haare zurück wie vor der Spritze, obwohl ich nicht aufgehört habe.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_6.png?v=1790343778"
+    },
+    {
+      name: "Dana A., 39",
+      brand: "mounjaro",
+      brandLabel: "MOUNJARO",
+      title: "„Mein Scheitel sah in jedem Spiegel breiter aus“",
+      body: "HaarVita war das Erste, das wirklich etwas gebracht hat — nicht einfach nur ein weiteres Vitamin. Ich habe es angefangen, als mein Scheitel unter hellem Licht immer breiter aussah. Ich war immer noch auf Mounjaro, habe weiter abgenommen, aber der Haarausfall hat komplett aufgehört.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_7.png?v=1790343909"
+    },
+    {
+      name: "Monika V., 53",
+      brand: "ozempic",
+      brandLabel: "OZEMPIC",
+      title: "„Ich hatte es satt so zu tun, als wäre es nur Stress“",
+      body: "Alle sagen, Stress verursacht Haarausfall, also habe ich das eine Weile als Ausrede genommen. Aber der Zeitpunkt passte genau zu meiner Ozempic-Abnahme. Ich habe mit HaarVita angefangen, weil der Ansatz „direkt an die Haarfollikel“ Sinn gemacht hat. Baby Haare kamen etwas später, aber als Erstes wurde der Haarausfall weniger.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_8.png?v=1790344054"
+    },
+    {
+      name: "Kerstin S., 52",
+      brand: "wegovy",
+      brandLabel: "WEGOVY",
+      title: "„Der Haarausfall kam spät und hat mir Angst gemacht“",
+      body: "Ich dachte, wenn Wegovy Haarausfall verursacht, passiert das sofort. Meiner kam Monate später, nachdem die Waage sich schon bewegt hatte. HaarVita hat mir geholfen, mich weniger hilflos zu fühlen. Es war kein Wunder über Nacht, aber ich hatte weniger Haare auf dem Kopfkissen, und dann hat meine Kopfhaut unter dem Licht nicht mehr so durchgeschienen.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_9.png?v=1790344113"
+    },
+    {
+      name: "Stefanie C., 46",
+      brand: "tirzepatide",
+      brandLabel: "TIRZEPATIDE",
+      title: "„Ich war stolz auf den Gewichtsverlust, aber mein Scheitel war mir peinlich“",
+      body: "Bei jedem Selfie habe ich zuerst meinen Scheitel gesehen, dann mein Gesicht. Ich war froh, dass Tirzepatid gewirkt hat, aber der Haarausfall hat an meinem Selbstvertrauen genagt. HaarVita hat in meine Routine gepasst, ohne dass ich das Gefühl hatte, noch einen Vollzeitjob zu haben. Nach Monat drei sah es deutlich besser aus.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_10.png?v=1790344240"
+    },
+    {
+      name: "Britta T., 50",
+      brand: "wegovy",
+      brandLabel: "WEGOVY",
+      title: "„Meine Schläfen haben mich über Nacht älter aussehen lassen“",
+      body: "Die Abnahme war toll, aber meine Schläfen sahen schwächer aus und das hat mein Gesicht gealtert. Ich habe HaarVita angefangen, während ich weiter Wegovy genommen habe, weil ich Unterstützung wollte ohne meinen Fortschritt aufzugeben. Nach ungefähr zwei Monaten habe ich kurze Baby Haare vorne gesehen.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_11.png?v=1790344409"
+    },
+    {
+      name: "Jenny B., 47",
+      brand: "mounjaro",
+      brandLabel: "MOUNJARO",
+      title: "„Die Abnehmspritze hat mir alles genommen“",
+      body: "Ich habe alles probiert, von Seren über teure Öle bis zu Nahrungsergänzungsmitteln — nichts hat geholfen. Als ich HaarVita gesehen habe, war ich skeptisch, aber zu dem Zeitpunkt war ich bereit alles zu probieren. Nach ein paar Monaten hat es angefangen sich wieder zu füllen, und nach einem Jahr hatte ich wieder das Gefühl, meine Haare aus meinen Dreißigern zurückzuhaben.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_12.png?v=1790344524"
+    },
+    {
+      name: "Karin M., 52",
+      brand: "ozempic",
+      brandLabel: "OZEMPIC",
+      title: "„Niemand hat mich gewarnt, dass es Monate später kommen kann“",
+      body: "Ich habe Ozempic über eine Klinik bekommen und war stolz auf meine Fortschritte. Dann, Monate später, haben meine Haare angefangen aus dem Nichts auszufallen. HaarVita wurde mein Weg zu reagieren, ohne in Panik zu geraten. Nach der zweiten Woche sah mein Scheitel weniger scharf aus. Nach dem zweiten Monat war er wieder so wie vor dem Medikament.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_14.png?v=1790344748"
+    },
+    {
+      name: "Evelin H., 55",
+      brand: "ozempic",
+      brandLabel: "OZEMPIC",
+      title: "„Ich dachte, es liegt einfach am Alter“",
+      body: "Zuerst habe ich das Alter verantwortlich gemacht. Dann habe ich gemerkt, dass der Zeitpunkt genau mit meiner Abnahme durch Ozempic zusammenfiel. HaarVita war das Erste, das sich anfühlte, als würde es an die eigentliche Ursache meines Haarausfalls gehen. Meine Bürste sah nach ein paar Anwendungen besser aus, und das hat mich motiviert weiterzumachen. Die richtigen Ergebnisse kamen nach Monat vier.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_15.png?v=1790344909"
+    },
+    {
+      name: "Laura N., 47",
+      brand: "mounjaro",
+      brandLabel: "MOUNJARO",
+      title: "„Die Abnahme war unglaublich, bis ich den Abfluss gesehen habe“",
+      body: "Ich erinnere mich, wie ich nach dem Haarewaschen dastand und auf den Abfluss gestarrt habe und dachte: „Das kann nicht normal sein.“ Meine Mounjaro-Ergebnisse kamen endlich, also aufhören fühlte sich unfair an. Ich habe mit HaarVita angefangen. Mein Haaransatz kam komplett zurück, als hätte die Spritze überhaupt keinen Effekt gehabt.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_16.png?v=1790344977"
+    },
+    {
+      name: "Heike E., 50",
+      brand: "wegovy",
+      brandLabel: "WEGOVY",
+      title: "„Ich hätte fast aufgehört, als ich zufällig meine Kopfhaut gesehen habe“",
+      body: "Ich habe 19 Kilo mit Wegovy abgenommen und ab Monat drei sind meine Haare wie verrückt ausgefallen. Nach ein paar Wochen mit HaarVita habe ich gemerkt, dass deutlich weniger Haare ausgefallen sind.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_18.png?v=1790345172"
+    },
+    {
+      name: "Melanie F., 48",
+      brand: "tirzepatide",
+      brandLabel: "TIRZEPATIDE",
+      title: "„Ich habe alles gekauft, bevor ich etwas Gezieltes gefunden habe“",
+      body: "Biotin, Kollagen, Volumen-Shampoo — ich habe alles probiert, als mein Haarausfall durch Tirzepatid angefangen hat. Das meiste hat meine Haare beschichtet, nicht stärker gemacht. HaarVita hat sich anders angefühlt, weil es auf die Kopfhaut fokussiert war. Mein erster Erfolg war weniger Haarausfall pro Tag. Der zweite war, dass mein Scheitel sich wieder gefüllt hat.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_19.png?v=1790345319"
+    },
+    {
+      name: "Rebecca Z., 42",
+      brand: "ozempic",
+      brandLabel: "OZEMPIC",
+      title: "„Ich brauchte Unterstützung an der Wurzel, nicht noch ein Pflegeprodukt“",
+      body: "Alles was ich gekauft habe, hat meine Haare für ein paar Stunden schöner gemacht, aber der Haarausfall hat nicht aufgehört. Ozempic hat mir beim Abnehmen geholfen, und ich wollte auf Kurs bleiben. HaarVita hat meinen Haaren geholfen. Angefangen damit zusammen mit der Spritze, und keine Nebenwirkungen gemerkt.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_20.png?v=1790345429"
+    },
+    {
+      name: "Monika L., 43",
+      brand: "mounjaro",
+      brandLabel: "MOUNJARO",
+      title: "„Mein Körper hat sich schneller verändert als meine Haare mithalten konnten“",
+      body: "Mounjaro hat bei mir schnell gewirkt, vielleicht zu schnell. Mein Appetit ging runter, das Gewicht ging runter, und dann haben meine Haare angefangen sich brüchig anzufühlen. HaarVita war etwas, das ich benutzt habe, um meinen Follikeln zu helfen mitzuhalten. Weniger Haarausfall kam zuerst, besonders nach dem Waschen.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_21.png?v=1790345622"
+    },
+    {
+      name: "Nicole J., 28",
+      brand: "wegovy",
+      brandLabel: "WEGOVY",
+      title: "„Mein Haaransatz sah schwächer aus, nachdem das Gewicht runter war“",
+      body: "Zuerst habe ich nur den Haarausfall bemerkt. Dann eines Morgens habe ich meine Haare zurückgezogen und mein Haaransatz sah dünner aus. Das hat mir mehr Angst gemacht. HaarVita kam nachdem Wegovy schon gewirkt hatte, und nach Monat zwei habe ich kleine kurze Haare vorne gesehen.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_22.png?v=1790345749"
+    },
+    {
+      name: "Sarah M., 38",
+      brand: "ozempic",
+      brandLabel: "OZEMPIC",
+      title: "„Meine Kopfhaut war auf Fotos sichtbar“",
+      body: "Das Schlimmste war, Bilder von mir zu sehen und als Erstes die kahle Stelle zu bemerken. Ich habe mit HaarVita angefangen, nachdem ich Kollagen und teure Haaröle probiert hatte. Ich war immer noch auf Ozempic, aber ich hatte endlich das Gefühl, etwas Gezieltes gegen den Haarausfall zu tun. Die kahle Stelle war nach ein paar Wochen wieder bedeckt.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_23.png?v=1790345859"
+    },
+    {
+      name: "Rahel N., 39",
+      brand: "wegovy",
+      brandLabel: "WEGOVY",
+      title: "„Ich liebte meine Fortschritte, aber hasste den Waschtag“",
+      body: "Wegovy hat mir geholfen Gewicht zu verlieren, das ich jahrelang mit mir herumgetragen habe, aber Haare waschen wurde emotional. Ich habe sogar angefangen Shampoo-Tage zu vermeiden. Mit HaarVita angefangen, weil ich nicht noch eine tägliche Sache wollte, an der ich scheitere. Nach ungefähr einem Monat war der Abfluss nicht mehr so voll.",
+      image: "https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Bevor_24.png?v=1790346067"
+    }
+  ];
+
+  var brandNames = {
+    all: "Alle GLP-1s",
+    mounjaro: "Mounjaro",
+    ozempic: "Ozempic",
+    wegovy: "Wegovy",
+    semaglutide: "Semaglutide",
+    tirzepatide: "Tirzepatide"
+  };
+
+  function renderCard(r) {
+    var stars = '';
+    for (var i = 0; i < 5; i++) stars += starSVG;
+
+    return '<div class="hvrw-card" data-brand="' + r.brand + '">' +
+      '<div class="hvrw-card-img-wrap">' +
+        '<img src="' + r.image + '" alt="' + r.name + ' Vorher Nachher" loading="lazy">' +
+      '</div>' +
+      '<div class="hvrw-card-body">' +
+        '<span class="hvrw-brand-tag">' + r.brandLabel + '</span>' +
+        '<div class="hvrw-card-meta">' +
+          '<span class="hvrw-card-name">' + r.name + '</span>' +
+          '<span class="hvrw-verified">' + checkSVG + ' Verifiziert</span>' +
+        '</div>' +
+        '<div class="hvrw-stars">' + stars + '</div>' +
+        '<div class="hvrw-card-title">' + r.title + '</div>' +
+        '<div class="hvrw-card-text">' + r.body + '</div>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function renderAll(filter) {
+    var carousel = document.getElementById('hvrwCarousel');
+    var html = '';
+    for (var i = 0; i < reviews.length; i++) {
+      if (filter === 'all' || reviews[i].brand === filter) {
+        html += renderCard(reviews[i]);
+      }
+    }
+    carousel.innerHTML = html;
+    carousel.scrollLeft = 0;
+
+    var sub = document.getElementById('hvrwFilterSub');
+    sub.innerHTML = 'Zeigt verifizierte Bewertungen von Frauen auf <strong>' + brandNames[filter] + '</strong>.';
+  }
+
+  var carousel = document.getElementById('hvrwCarousel');
+  var prevBtn = document.getElementById('hvrwPrev');
+  var nextBtn = document.getElementById('hvrwNext');
+
+  function updateArrows() {
+    var sl = carousel.scrollLeft;
+    var maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    prevBtn.className = 'hvrw-arrow' + (sl <= 10 ? ' hvrw-arrow-inactive' : '');
+    nextBtn.className = 'hvrw-arrow' + (sl >= maxScroll - 10 ? ' hvrw-arrow-inactive' : '');
+  }
+
+  function scrollByCard(dir) {
+    var card = carousel.querySelector('.hvrw-card');
+    if (!card) return;
+    var scrollAmount = card.offsetWidth + 16;
+    carousel.scrollBy({ left: dir * scrollAmount, behavior: 'smooth' });
+  }
+
+  prevBtn.addEventListener('click', function() { scrollByCard(-1); });
+  nextBtn.addEventListener('click', function() { scrollByCard(1); });
+  carousel.addEventListener('scroll', updateArrows);
+
+  document.getElementById('hvrwFilter').addEventListener('change', function() {
+    renderAll(this.value);
+    setTimeout(updateArrows, 50);
+  });
+
+  renderAll('all');
+  setTimeout(updateArrows, 100);
+})();
+</script>
