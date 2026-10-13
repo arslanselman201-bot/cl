@@ -46,7 +46,7 @@ Bereits über 100.000 Frauen haben ihren Haarausfall mit HaarVita gestoppt und t
 
 ## GARANTIE:
 
-NATURAPlus™ ist so überzeugt von der eigenen Lösung, dass du eine 30-Tage-Geld-zurück-Garantie bekommst. Wenn dein Haarausfall nicht weniger wird, kriegst du jeden Cent zurück. Du gehst kein Risiko ein.
+NATURAPlus™ ist so überzeugt von der eigenen Lösung, dass du eine 120-Tage-Geld-zurück-Garantie bekommst. Wenn dein Haarausfall nicht weniger wird, kriegst du jeden Cent zurück. Du gehst kein Risiko ein.
 
 ## ANGEBOT + CTA:
 
