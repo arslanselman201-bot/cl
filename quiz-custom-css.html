@@ -1,0 +1,150 @@
+<style>
+/* === QUIZ CUSTOM CSS === */
+
+/* Logo nach oben */
+.q-d5b47e6d .question-content {
+  padding-top: 0 !important;
+}
+
+#qbhtml-42723afa div {
+  padding-top: 0 !important;
+}
+
+/* Q2: Checkbox rechts */
+.q-911bee35 .question-choice__label-content {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  width: 100% !important;
+  padding: 10px 15px !important;
+  box-sizing: border-box !important;
+  height: 60px !important;
+}
+
+.q-911bee35 .question-choice__label-thumbnail {
+  order: 1 !important;
+  margin-right: 15px !important;
+  margin-left: 0 !important;
+}
+
+.q-911bee35 .question-choice__label-content p {
+  order: 2 !important;
+  margin: 0 !important;
+  flex-grow: 1 !important;
+  text-align: left !important;
+}
+
+.q-911bee35 .question-choice__label-content input {
+  order: 3 !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  display: block !important;
+  appearance: auto !important;
+}
+
+/* Q9: Altersabfrage Spinner & Button weg */
+.q-aeb0cb6e input[type=number]::-webkit-inner-spin-button,
+.q-aeb0cb6e input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+.q-aeb0cb6e input[type=number] {
+  -moz-appearance: textfield !important;
+}
+
+.q-aeb0cb6e button.question_button {
+  display: none !important;
+}
+
+/* === NAVIGATION & FORTSCHRITTSBALKEN === */
+
+/* Quiz Container */
+.quiz {
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
+  padding-top: 60px !important;
+}
+
+/* Navigation Container oben fixiert */
+.navigation-bar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  background: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+  z-index: 1000 !important;
+  padding: 12px 0 8px 0 !important;
+}
+
+.navigation-bar__container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+/* Zurück-Pfeil links oben */
+.navigation-bar__buttons {
+  position: absolute !important;
+  top: 10px !important;
+  left: 16px !important;
+  width: auto !important;
+  display: flex !important;
+  z-index: 1100 !important;
+}
+
+.navigation-bar__button--prev {
+  display: flex !important;
+  background: transparent !important;
+  border: none !important;
+  color: #333 !important;
+  font-size: 24px !important;
+  cursor: pointer !important;
+  padding: 8px !important;
+}
+
+/* Rechter Pfeil & Fortschrittstext weg */
+.navigation-bar__button--next,
+.navigation-bar__progress-text {
+  display: none !important;
+}
+
+/* Fortschrittsbalken */
+.navigation-bar__progress-bar {
+  width: 85% !important;
+  max-width: 500px !important;
+  height: 6px !important;
+  background-color: #d1d5db !important;
+  border-radius: 3px !important;
+  margin: 40px auto 0 auto !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  overflow: hidden !important;
+}
+
+.navigation-bar__progress-bar-fill {
+  background-color: #24421F !important;
+  height: 100% !important;
+  border-radius: 3px !important;
+  display: block !important;
+  visibility: visible !important;
+  transition: width 0.3s ease !important;
+}
+
+/* Scrollbar verstecken */
+::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+}
+
+html, body, .quiz {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+</style>
