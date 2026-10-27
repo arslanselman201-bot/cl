@@ -36,6 +36,38 @@ SO WIRKT HAARVITAL
 
 ---
 
+## Bild 2 Variante: Mechanismus 2 (Papilla-Signal)
+
+**Headline:**
+SO WIRKT HAARVITAL
+*auf die Haarwurzel*
+
+**3 Steps:**
+1. Östrogen sinkt → Papilla schaltet auf Ausfall
+2. Kürbiskernöl-Phytosterole stimulieren die Papilla — schaltet zurück auf Wachstum
+3. Sägepalme blockiert DHT — bremst das Ausfallsignal zusätzlich
+
+**Bottom Bar:**
+2 Natürliche Inhaltsstoffe. 1 Starke Wirkung.
+
+---
+
+## Bild 2 Variante: Mechanismus 3 (Papilla-Entzündung)
+
+**Headline:**
+SO WIRKT HAARVITAL
+*auf die Haarwurzel*
+
+**3 Steps:**
+1. Östrogen sinkt → Papillen entzünden sich → schalten auf Ausfall
+2. Kürbiskernöl-Phytosterole hemmen Mikroentzündungen — Papilla schaltet zurück auf Wachstum
+3. Sägepalme blockiert DHT — bremst das Ausfallsignal zusätzlich
+
+**Bottom Bar:**
+2 Natürliche Inhaltsstoffe. 1 Starke Wirkung.
+
+---
+
 ## Bild 3: Reviews (3 Karten)
 
 **Headline:**
