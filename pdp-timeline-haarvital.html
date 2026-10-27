@@ -1,0 +1,274 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+  .hvltl-section {
+    background: #e8f0e4;
+    padding: 48px 20px 40px;
+    overflow: hidden;
+  }
+
+  .hvltl-headline {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 30px;
+    color: #2d4a2d;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0 auto 4px;
+    max-width: 520px;
+  }
+
+  .hvltl-headline-accent {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 18px;
+    color: #D4A843;
+    margin-top: 4px;
+  }
+
+  .hvltl-subtitle {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
+    color: #5a7a5a;
+    text-align: center;
+    max-width: 480px;
+    margin: 12px auto 36px;
+    line-height: 1.5;
+  }
+
+  .hvltl-timeline {
+    position: relative;
+    max-width: 520px;
+    margin: 0 auto;
+    padding-left: 38px;
+  }
+
+  .hvltl-track {
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #b8cfb0;
+    border-radius: 2px;
+  }
+
+  .hvltl-track-fill {
+    position: absolute;
+    left: 7px;
+    top: 0;
+    width: 4px;
+    height: 0;
+    background: #2d4a2d;
+    border-radius: 2px;
+    transition: height 0.1s linear;
+  }
+
+  .hvltl-week {
+    position: relative;
+    margin-bottom: 36px;
+    opacity: 0.3;
+    transform: translateY(12px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .hvltl-week.hvltl-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hvltl-dot {
+    position: absolute;
+    left: -31px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #b8cfb0;
+    border: 3px solid #e8f0e4;
+    transition: background 0.3s ease;
+  }
+
+  .hvltl-active .hvltl-dot {
+    background: #2d4a2d;
+  }
+
+  .hvltl-week-label {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #fff;
+    background: #2d4a2d;
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    letter-spacing: 0.3px;
+  }
+
+  .hvltl-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hvltl-benefits li {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
+    color: #2d4a2d;
+    line-height: 1.45;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .hvltl-benefits li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #2d4a2d;
+    font-weight: 700;
+  }
+
+  .hvltl-benefits li strong {
+    color: #152A11;
+    font-weight: 600;
+  }
+
+  .hvltl-cta-wrapper {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .hvltl-cta {
+    display: inline-block;
+    background: #E8C840;
+    color: #000;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .hvltl-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  }
+
+  .hvltl-guarantee {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    color: #5a7a5a;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .hvltl-headline { font-size: 24px; }
+    .hvltl-headline-accent { font-size: 16px; }
+    .hvltl-subtitle { font-size: 14px; }
+    .hvltl-benefits li { font-size: 14px; }
+    .hvltl-section { padding: 36px 16px 32px; }
+  }
+</style>
+
+<section class="hvltl-section">
+  <h2 class="hvltl-headline">
+    Dein Haar kann nachwachsen.
+    <span class="hvltl-headline-accent">Auch nach den Wechseljahren.</span>
+  </h2>
+  <p class="hvltl-subtitle">
+    Kürbiskernöl hemmt DHT, Sägepalme blockiert es zusätzlich — so bekommen deine Follikel die Chance, sich zu erholen. So verändert sich dein Haar, wenn du täglich zwei Kapseln nimmst:
+  </p>
+
+  <div class="hvltl-timeline">
+    <div class="hvltl-track"></div>
+    <div class="hvltl-track-fill" id="hvltlTrackFill"></div>
+
+    <div class="hvltl-week" data-week="1">
+      <div class="hvltl-dot"></div>
+      <div class="hvltl-week-label">Woche 1–2</div>
+      <ul class="hvltl-benefits">
+        <li><strong>Kürbiskernöl</strong> beginnt 5-Alpha-Reduktase zu hemmen</li>
+        <li><strong>Sägepalme</strong> blockiert DHT an den Follikeln</li>
+        <li>Deine Haarwurzeln bekommen <strong>Schutz von innen</strong></li>
+      </ul>
+    </div>
+
+    <div class="hvltl-week" data-week="2">
+      <div class="hvltl-dot"></div>
+      <div class="hvltl-week-label">Woche 3–4</div>
+      <ul class="hvltl-benefits">
+        <li><strong>Weniger Haare</strong> in Bürste und Abfluss</li>
+        <li>Kopfhaut fühlt sich <strong>kräftiger</strong> an</li>
+        <li>Der <strong>Haarausfall verlangsamt</strong> sich spürbar</li>
+      </ul>
+    </div>
+
+    <div class="hvltl-week" data-week="3">
+      <div class="hvltl-dot"></div>
+      <div class="hvltl-week-label">Woche 5–8</div>
+      <ul class="hvltl-benefits">
+        <li><strong>Neue kleine Härchen</strong> am Scheitel sichtbar</li>
+        <li>Haare fühlen sich <strong>fester und voller</strong> an</li>
+        <li>Der Scheitel wirkt <strong>weniger breit</strong></li>
+      </ul>
+    </div>
+
+    <div class="hvltl-week" data-week="4">
+      <div class="hvltl-dot"></div>
+      <div class="hvltl-week-label">Woche 9–12</div>
+      <ul class="hvltl-benefits">
+        <li><strong>Sichtbar dickerer Zopf</strong> und mehr Volumen</li>
+        <li>Du trägst deine <strong>Haare wieder offen</strong></li>
+        <li>Deine Friseurin fragt, <strong>was du anders machst</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="hvltl-cta-wrapper">
+    <button type="button" class="hvltl-cta" onclick="window.scrollTo({top: 900, behavior: 'smooth'});">Jetzt HaarVital starten →</button>
+    <p class="hvltl-guarantee">🛡 120 Tage Geld-zurück-Garantie</p>
+  </div>
+</section>
+
+<script>
+(function() {
+  var weeks = document.querySelectorAll('.hvltl-week');
+  var trackFill = document.getElementById('hvltlTrackFill');
+  var timeline = document.querySelector('.hvltl-timeline');
+  if (!weeks.length || !trackFill || !timeline) return;
+
+  function update() {
+    var timelineRect = timeline.getBoundingClientRect();
+    var windowH = window.innerHeight;
+    var lastActiveBottom = 0;
+
+    weeks.forEach(function(week) {
+      var rect = week.getBoundingClientRect();
+      var trigger = windowH * 0.75;
+      if (rect.top < trigger) {
+        week.classList.add('hvltl-active');
+        var bottom = rect.bottom - timelineRect.top;
+        if (bottom > lastActiveBottom) lastActiveBottom = bottom;
+      }
+    });
+
+    if (lastActiveBottom > 0) {
+      trackFill.style.height = lastActiveBottom + 'px';
+    }
+  }
+
+  setInterval(update, 30);
+  update();
+})();
+</script>
