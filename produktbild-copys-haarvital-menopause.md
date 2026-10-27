@@ -45,7 +45,7 @@ SO WIRKT HAARVITAL
 **3 Steps:**
 1. Östrogen sinkt → Papilla schaltet auf Ausfall
 2. Kürbiskernöl-Phytosterole stimulieren die Papilla — schaltet zurück auf Wachstum
-3. Sägepalme blockiert DHT — bremst das Ausfallsignal zusätzlich
+3. Sägepalme regt neues Haarwachstum zusätzlich an
 
 **Bottom Bar:**
 2 Natürliche Inhaltsstoffe. 1 Starke Wirkung.
@@ -61,7 +61,7 @@ SO WIRKT HAARVITAL
 **3 Steps:**
 1. Östrogen sinkt → Papillen entzünden sich → schalten auf Ausfall
 2. Kürbiskernöl-Phytosterole hemmen Mikroentzündungen — Papilla schaltet zurück auf Wachstum
-3. Sägepalme blockiert DHT — bremst das Ausfallsignal zusätzlich
+3. Sägepalme regt neues Haarwachstum zusätzlich an
 
 **Bottom Bar:**
 2 Natürliche Inhaltsstoffe. 1 Starke Wirkung.
@@ -123,12 +123,12 @@ Frauen in den Wechseljahren kämpfen mit Haarausfall
 *Warum dein Haarausfall sich nicht bessert, obwohl du alles richtig machst*
 
 **Fließtext:**
-In den Wechseljahren sinkt dein Östrogen. Die Papilla — das Nervenzentrum an deiner Haarwurzel — verliert ihr Wachstumssignal und schaltet auf Ausfall. Vitamine wie Biotin, Zink oder Magnesium ernähren nur die Haarwurzel, aber stellen das Wachstumssignal nicht wieder her.
+In den Wechseljahren sinkt dein Östrogen. Die Papilla — das Nervenzentrum an deiner Haarwurzel — schaltet auf Ausfall statt Wachstum. Vitamine wie Biotin, Zink oder Magnesium ernähren nur die Haarwurzel, aber schalten die Papilla nicht zurück.
 
 **3 Bullet-Points:**
 1. **Deine Papilla sendet Ausfallsignale** — andere Lösungen ändern das nicht
 2. **Kürbiskernöl-Phytosterole stimulieren die Papilla** — das Wachstumssignal kehrt zurück
-3. **Sägepalme blockiert DHT** — bremst das Ausfallsignal zusätzlich
+3. **Sägepalme regt neues Haarwachstum an** — verstärkt den Wachstumseffekt zusätzlich
 
 **CTA-Pill:**
 Bekämpfe die Ursache, nicht das Symptom.
@@ -150,7 +150,7 @@ In den Wechseljahren sinkt dein Östrogen — der natürliche Schutz deiner Haar
 **3 Bullet-Points:**
 1. **Deine Haarwurzeln sind entzündet** — andere Lösungen hemmen das nicht
 2. **Kürbiskernöl-Phytosterole hemmen Mikroentzündungen** — deine Haarwurzeln schalten zurück auf Wachstum
-3. **Sägepalme blockiert DHT** — bremst das Ausfallsignal zusätzlich
+3. **Sägepalme regt neues Haarwachstum an** — verstärkt den Wachstumseffekt zusätzlich
 
 **CTA-Pill:**
 Bekämpfe die Ursache, nicht das Symptom.
