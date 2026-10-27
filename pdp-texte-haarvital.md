@@ -2,6 +2,12 @@
 
 ---
 
+## Produktbeschreibung (Text-Block unter Titel)
+
+Entwickelt für Frauen in den Wechseljahren, die unter Haarausfall leiden — mit Kürbiskernöl und Sägepalme, die DHT blockieren und neues Haarwachstum anregen.
+
+---
+
 ## Einklappbare Reihe 1: Beschreibung
 
 **Dein Haar wird dünner, dein Scheitel breiter** — und du hast das Gefühl, alles probiert zu haben. Biotin, Priorin, Koffein-Shampoo. Nichts hat wirklich funktioniert.
@@ -39,6 +45,8 @@ Die meisten Kundinnen berichten von sichtbaren Verbesserungen innerhalb von 4 Wo
 Ja! Alle NATURAPlus™ Bestellungen sind durch unsere 120-Tage-Geld-zurück-Garantie abgesichert.
 
 Wenn du nicht vollständig zufrieden bist, kontaktiere uns einfach — wir kümmern uns darum, ohne Wenn und Aber.
+
+[Alle Details zur Garantie findest du hier.](LINK-EINFÜGEN)
 
 ---
 
