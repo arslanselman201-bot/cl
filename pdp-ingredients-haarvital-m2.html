@@ -1,0 +1,174 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,900&display=swap');
+
+  .hvl-ing-section {
+    background: #e8f0e4;
+    padding: 48px 20px;
+  }
+
+  .hvl-ing-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 32px;
+    color: #2d4a2d;
+    text-align: center;
+    margin: 0 auto 28px;
+    max-width: 520px;
+  }
+
+  .hvl-ing-slider {
+    position: relative;
+    max-width: 520px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .hvl-ing-track {
+    display: flex;
+    transition: transform 0.35s ease;
+  }
+
+  .hvl-ing-card {
+    background: #f2f7ef;
+    border-radius: 16px;
+    min-width: 100%;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+
+  .hvl-ing-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hvl-ing-card-body {
+    padding: 20px 24px 24px;
+  }
+
+  .hvl-ing-name {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: #2d4a2d;
+    margin: 0 0 4px 0;
+  }
+
+  .hvl-ing-tag {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    color: #3a5a3a;
+    text-decoration: underline;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .hvl-ing-desc {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+    color: #2d4a2d;
+    line-height: 1.5;
+    margin: 0 0 12px 0;
+  }
+
+  .hvl-ing-footnote {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 11px;
+    color: #5a7a5a;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .hvl-ing-arrows {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .hvl-ing-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid #2d4a2d;
+    background: transparent;
+    color: #2d4a2d;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .hvl-ing-arrow:hover {
+    background: #2d4a2d;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 749px) {
+    .hvl-ing-title { font-size: 26px; }
+    .hvl-ing-section { padding: 36px 16px; }
+    .hvl-ing-card-body { padding: 16px 18px 20px; }
+  }
+</style>
+
+<section class="hvl-ing-section">
+  <h2 class="hvl-ing-title">Unsere Wirkstoffe</h2>
+
+  <div class="hvl-ing-slider">
+    <div class="hvl-ing-track" id="hvlIngTrack">
+
+      <div class="hvl-ing-card">
+        <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/1789478530428.jpg?v=1789478547" alt="Kürbiskernöl" loading="lazy">
+        <div class="hvl-ing-card-body">
+          <h3 class="hvl-ing-name">Kürbiskernöl</h3>
+          <span class="hvl-ing-tag">KALTGEPRESST</span>
+          <p class="hvl-ing-desc">Enthält Phytosterole — pflanzliche Verbindungen, die die Papilla stimulieren und zurück auf Wachstum schalten. Zusätzlich stärken Zink und Vitamin E die Haarwurzel von innen.</p>
+          <p class="hvl-ing-footnote">3.000 mg pro Tagesdosis · aus steirischen Kürbiskernen</p>
+        </div>
+      </div>
+
+      <div class="hvl-ing-card">
+        <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/2_a7b7662c-581e-4992-85f9-de5e6ee796ad.png?v=1789477704" alt="Sägepalmen-Extrakt" loading="lazy">
+        <div class="hvl-ing-card-body">
+          <h3 class="hvl-ing-name">Sägepalmen-Extrakt</h3>
+          <span class="hvl-ing-tag">STANDARDISIERT</span>
+          <p class="hvl-ing-desc">Regt neues Haarwachstum an und verstärkt den Wachstumseffekt der Phytosterole. Während Kürbiskernöl die Papilla zurückschaltet, sorgt Sägepalme dafür, dass neue Haare nachwachsen.</p>
+          <p class="hvl-ing-footnote">Standardisierter Extrakt · klinisch dosiert</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hvl-ing-arrows">
+      <button class="hvl-ing-arrow" id="hvlIngPrev" aria-label="Vorheriger Wirkstoff">←</button>
+      <button class="hvl-ing-arrow" id="hvlIngNext" aria-label="Nächster Wirkstoff">→</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var track = document.getElementById('hvlIngTrack');
+  var prev = document.getElementById('hvlIngPrev');
+  var next = document.getElementById('hvlIngNext');
+  if (!track || !prev || !next) return;
+
+  var current = 0;
+  var total = track.children.length;
+
+  function slide(dir) {
+    current = Math.max(0, Math.min(total - 1, current + dir));
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+  }
+
+  prev.addEventListener('click', function() { slide(-1); });
+  next.addEventListener('click', function() { slide(1); });
+})();
+</script>

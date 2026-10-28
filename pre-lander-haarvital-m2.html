@@ -1,0 +1,991 @@
+<!-- Pre-Lander Page — NATURAPlus™ HaarVital — Mechanismus 2 (Papilla-Signal) -->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700;800&display=swap');
+
+  /* ── Reset ── */
+  .hvl-pl * { margin: 0; padding: 0; box-sizing: border-box; }
+  .hvl-pl { font-family: 'Work Sans', sans-serif; color: #1a1a1a; line-height: 1.6; }
+  .hvl-pl img { max-width: 100%; display: block; }
+
+  /* ══════════════════════════════════════
+     SECTION 1 — TRUST-LEISTE
+     ══════════════════════════════════════ */
+  .hvl-pl-trust {
+    background: #24421F;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hvl-pl-trust-item {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .hvl-pl-trust-item svg {
+    width: 14px; height: 14px; flex-shrink: 0;
+  }
+
+  /* ══════════════════════════════════════
+     SECTION 2 — HERO
+     ══════════════════════════════════════ */
+  .hvl-pl-hero {
+    background: #ffffff;
+    padding: 0 0 48px;
+    text-align: center;
+  }
+  .hvl-pl-hero-img {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .hvl-pl-hero-content {
+    padding: 32px 20px 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .hvl-pl-hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 38px;
+    line-height: 1.15;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+  }
+  .hvl-pl-hero h1 .accent {
+    color: #24421F;
+  }
+  .hvl-pl-hero-sub {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  .hvl-pl-hero-bullets {
+    list-style: none;
+    text-align: left;
+    max-width: 440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .hvl-pl-hero-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: #1a1a1a;
+    line-height: 1.45;
+  }
+  .hvl-pl-hero-bullets li .icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #24421F;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+  .hvl-pl-hero-bullets li strong {
+    color: #24421F;
+    font-weight: 700;
+  }
+
+  /* ══════════════════════════════════════
+     SECTION 3 — PROBLEM
+     ══════════════════════════════════════ */
+  .hvl-pl-problem {
+    background: #F8F8F8;
+    padding: 20px 20px;
+  }
+  .hvl-pl-problem-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .hvl-pl-problem h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1.15;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .hvl-pl-problem h2 .accent {
+    color: #24421F;
+    display: block;
+  }
+  .hvl-pl-problem p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 24px;
+  }
+  .hvl-pl-problem p strong {
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+  .hvl-pl-problem-img {
+    width: 100%;
+    border-radius: 12px;
+    margin: 24px 0;
+  }
+  .hvl-pl-problem-x-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 24px 0;
+  }
+  .hvl-pl-problem-x-list li {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hvl-pl-problem-x-list li .x {
+    color: #c0392b;
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .hvl-pl-problem-collage {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 24px;
+  }
+
+  /* ══════════════════════════════════════
+     SECTION 4 — LÖSUNG
+     ══════════════════════════════════════ */
+  .hvl-pl-solution {
+    background: #F8F8F8;
+    padding: 20px 20px;
+  }
+  .hvl-pl-solution-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .hvl-pl-solution h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1.15;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .hvl-pl-solution h2 .accent {
+    color: #24421F;
+  }
+  .hvl-pl-solution p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 24px;
+  }
+  .hvl-pl-solution p strong {
+    color: #1a1a1a;
+    font-weight: 700;
+  }
+  .hvl-pl-solution .green-text {
+    color: #24421F;
+    font-weight: 600;
+  }
+  .hvl-pl-solution .breakthrough {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    margin-top: 8px;
+  }
+  .hvl-pl-solution .breakthrough .accent {
+    color: #24421F;
+  }
+  .hvl-pl-solution-stat {
+    width: 100%;
+    border-radius: 12px;
+    margin: 24px 0;
+  }
+
+  /* ══════════════════════════════════════
+     SECTION 5 — WIRKSTOFF-FEATURES
+     ══════════════════════════════════════ */
+  .hvl-pl-features {
+    background: #FFFFFF;
+    padding: 20px 20px;
+    text-align: center;
+  }
+  .hvl-pl-features-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .hvl-pl-features h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 38px;
+    line-height: 1.15;
+    margin-bottom: 40px;
+  }
+  .hvl-pl-features h2 .accent {
+    color: #24421F;
+    display: block;
+  }
+  .hvl-pl-feature-card {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .hvl-pl-feature-card .emoji {
+    font-size: 42px;
+    margin-bottom: 12px;
+  }
+  .hvl-pl-feature-card h3 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+  }
+  .hvl-pl-feature-card p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .hvl-pl-features-img {
+    max-width: 320px;
+    margin: 20px auto 36px;
+  }
+
+  /* ══════════════════════════════════════
+     SECTION 6 — TESTIMONIALS
+     ══════════════════════════════════════ */
+  .hvl-pl-testimonials {
+    background: #F8F8F8;
+    padding: 15px 20px;
+  }
+  .hvl-pl-testimonials-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .hvl-pl-testimonials h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 32px;
+    text-align: center;
+    color: #1a1a1a;
+    margin-bottom: 32px;
+  }
+  .hvl-pl-review {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .hvl-pl-review-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+  .hvl-pl-review-body {
+    padding: 20px 24px;
+  }
+  .hvl-pl-review-stars {
+    color: #D4A843;
+    font-size: 18px;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+  .hvl-pl-review-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+  }
+  .hvl-pl-review-text {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  /* ══════════════════════════════════════
+     SECTION 7 — CTA CARD
+     ══════════════════════════════════════ */
+  .hvl-pl-cta-section {
+    background: #24421F;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 48px 24px;
+    text-align: center;
+  }
+  .hvl-pl-cta-wrapper {
+    padding: 20px;
+  }
+  .hvl-pl-cta-section h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+  .hvl-pl-cta-section > img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 12px;
+    margin: 0 auto 28px;
+  }
+  .hvl-pl-cta-section .sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+  .hvl-pl-cta-checks {
+    list-style: none;
+    text-align: left;
+    max-width: 380px;
+    margin: 0 auto 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .hvl-pl-cta-checks li {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hvl-pl-cta-checks li::before {
+    content: '✅';
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .hvl-pl-cta-btn {
+    display: inline-block;
+    background: #FAC903;
+    color: #000;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 16px;
+  }
+  .hvl-pl-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+  .hvl-pl-cta-fine {
+    font-size: 13px !important;
+    color: rgba(255,255,255,0.7) !important;
+    line-height: 1.5;
+  }
+
+  /* ══════════════════════════════════════
+     SECTION 8 — FAQ
+     ══════════════════════════════════════ */
+  .hvl-pl-faq {
+    background: #F8F8F8;
+    padding: 56px 20px;
+  }
+  .hvl-pl-faq-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .hvl-pl-faq h2 {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 900 !important;
+    font-size: 36px !important;
+    text-align: center !important;
+    color: #1a1a1a !important;
+    margin-bottom: 32px !important;
+  }
+  .hvl-pl-faq-item {
+    border-bottom: 1px solid #ddd;
+  }
+  .hvl-pl-faq-item:first-child {
+    border-top: 1px solid #ddd;
+  }
+  .hvl-pl-faq-q {
+    width: 100%;
+    background: none !important;
+    border: none !important;
+    padding: 18px 40px 18px 0 !important;
+    font-family: 'Work Sans', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #1a1a1a !important;
+    text-align: left !important;
+    cursor: pointer;
+    position: relative;
+    line-height: 1.4 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+  }
+  .hvl-pl-faq-q::after {
+    content: '›';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-size: 22px;
+    color: #888;
+    transition: transform 0.3s ease;
+  }
+  .hvl-pl-faq-item.active .hvl-pl-faq-q::after {
+    transform: translateY(-50%) rotate(270deg);
+  }
+  .hvl-pl-faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .hvl-pl-faq-item.active .hvl-pl-faq-a {
+    max-height: 300px;
+  }
+  .hvl-pl-faq-a p {
+    font-size: 15px !important;
+    color: #555 !important;
+    line-height: 1.6 !important;
+    padding: 0 0 18px !important;
+  }
+
+  /* ══════════════════════════════════════
+     SECTION 9 — ZAHLEN & ERGEBNISSE
+     ══════════════════════════════════════ */
+  .hvl-pl-stats {
+    background: #F8F8F8;
+    padding: 56px 20px;
+  }
+  .hvl-pl-stats-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hvl-pl-stats-label {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #24421F;
+    margin-bottom: 8px;
+  }
+  .hvl-pl-stats h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 34px;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .hvl-pl-stats-divider {
+    width: 60px;
+    height: 3px;
+    background: #24421F;
+    margin: 0 auto 24px;
+    border-radius: 2px;
+  }
+  .hvl-pl-stats-desc {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .hvl-pl-stats-footnote {
+    font-size: 13px;
+    color: #888;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 36px;
+  }
+  .hvl-pl-stat-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+  .hvl-pl-stat-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 20px 16px;
+  }
+  .hvl-pl-stat-number {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 48px;
+    color: #24421F;
+    line-height: 1;
+  }
+  .hvl-pl-stat-label {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1a1a1a;
+    line-height: 1.3;
+  }
+  .hvl-pl-stat-img-wrap {
+    background: #f0d6cc;
+    padding: 0;
+  }
+  .hvl-pl-stat-img-wrap img {
+    width: 100%;
+    display: block;
+  }
+  .hvl-pl-stat-customer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #f9e8e2;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  .hvl-pl-stat-customer .verified {
+    color: #24421F;
+    font-weight: 600;
+  }
+  .hvl-pl-stat-bullets {
+    list-style: none;
+    padding: 16px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .hvl-pl-stat-bullets li {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.45;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .hvl-pl-stat-bullets li strong {
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+  .hvl-pl-stat-bullets li .check {
+    color: #24421F;
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ══════════════════════════════════════
+     RESPONSIVE
+     ══════════════════════════════════════ */
+  @media screen and (max-width: 749px) {
+    .hvl-pl-hero h1 { font-size: 30px; }
+    .hvl-pl-problem h2 { font-size: 28px; }
+    .hvl-pl-solution h2 { font-size: 28px; }
+    .hvl-pl-features h2 { font-size: 30px; }
+    .hvl-pl-testimonials h2 { font-size: 26px; }
+    .hvl-pl-cta-section h2 { font-size: 26px; }
+    .hvl-pl-faq h2 { font-size: 28px; }
+    .hvl-pl-stats h2 { font-size: 26px; }
+    .hvl-pl-stat-number { font-size: 40px; }
+    .hvl-pl-trust { gap: 12px; padding: 8px 12px; }
+    .hvl-pl-trust-item { font-size: 11px; }
+  }
+</style>
+
+<div class="hvl-pl">
+
+  <!-- ════════════════════════════════════
+       SECTION 1 — TRUST-LEISTE
+       ════════════════════════════════════ -->
+  <div class="hvl-pl-trust">
+    <div class="hvl-pl-trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Über 10.246+ zufriedene Kundinnen
+    </div>
+    <div class="hvl-pl-trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      120 Tage Geld-zurück-Garantie
+    </div>
+    <div class="hvl-pl-trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+      In deutschen Laboren geprüft
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       SECTION 2 — HERO
+       ════════════════════════════════════ -->
+  <section class="hvl-pl-hero">
+    <img class="hvl-pl-hero-img" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/1793177764144.png?v=1793179476" alt="NATURAPlus HaarVital" loading="eager">
+
+    <div class="hvl-pl-hero-content">
+      <h1>Reaktiviere <span class="accent">das Wachstumssignal deiner Haare</span> mit zwei Kapseln am Tag.</h1>
+
+      <p class="hvl-pl-hero-sub">Unsere natürlichen Kürbiskernöl + Sägepalmen-Kapseln sind klinisch erwiesen, um das abgeschaltete Wachstumssignal an deinen Haarfollikeln wieder zu aktivieren — bei Frauen in und nach den Wechseljahren.</p>
+
+      <ul class="hvl-pl-hero-bullets">
+        <li>
+          <span class="icon">🔄</span>
+          <span><strong>Reaktiviert das Wachstumssignal</strong> — an der Papilla (Nervenzentrum) deiner Follikel</span>
+        </li>
+        <li>
+          <span class="icon">📉</span>
+          <span><strong>Weniger Haarausfall</strong> — sichtbar weniger Haare in der Bürste nach 4-6 Wochen</span>
+        </li>
+        <li>
+          <span class="icon">💪</span>
+          <span><strong>Stärkt Haarwurzeln von innen</strong> — mit kaltgepresstem Kürbiskernöl</span>
+        </li>
+        <li>
+          <span class="icon">🌿</span>
+          <span><strong>100% natürlich</strong> — ohne Hormone, ohne Rezept, ohne Nebenwirkungen</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       SECTION 3 — PROBLEM
+       ════════════════════════════════════ -->
+  <section class="hvl-pl-problem">
+    <div class="hvl-pl-problem-inner">
+      <h2>
+        <span class="accent">Der wahre Grund,</span>
+        warum deine Haare ausfallen.
+      </h2>
+
+      <p>Die meisten Frauen rechnen in den Wechseljahren mit Hitzewallungen und Schlafproblemen — ausgelöst durch den <strong>sinkenden Östrogenspiegel.</strong> Was sie nicht erwarten: Dieser Abfall führt auch dazu, dass sie einen Teil ihrer Identität verlieren — <strong>ihre Haare.</strong></p>
+
+      <p>Als Frau Haare zu verlieren fühlt sich an, als würde man unsichtbar. Was dich einmal weiblich und selbstbewusst gemacht hat, verschwindet langsam. Wenn dir das bekannt vorkommt, bist du nicht allein. <strong>In den Wechseljahren leiden bis zu 40% aller Frauen unter sichtbarem Haarausfall.</strong> Aber warum passiert das — und warum hat dich niemand davor gewarnt?</p>
+
+      <p><strong style="color:#24421F;">Am Boden jedes Haarfollikels sitzt ein winziges Nervenzentrum: die Papilla.</strong> Sie ist die Kommandozentrale deines Haarwachstums. Jede Sekunde entscheidet sie: <strong>Wachsen oder Ausfallen.</strong> Auf einer gesunden Kopfhaut senden 90% der Papillen das Signal „Wachsen" — nur 10% senden „Ausfallen". Dieses Gleichgewicht hält dein Haar dicht und voll.</p>
+
+      <img class="hvl-pl-problem-img" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/1.18171208.1382369626.webp?v=1793193386" alt="Papilla-Signal an der Haarwurzel" loading="lazy">
+
+      <p>Die Papilla ist voll mit <strong>Östrogen-Rezeptoren:</strong> winzige Andockstellen, die das Wachstumssignal aufrechterhalten. Solange genug Östrogen da ist, bleibt die Papilla auf „Wachsen" geschaltet. <strong>Aber in den Wechseljahren sinkt dein Östrogenspiegel rapide.</strong></p>
+
+      <p>Ohne Östrogen werden die Rezeptoren an der Papilla nicht mehr stimuliert. <strong>Die Papilla schaltet von „Wachsen" auf „Ausfallen" um.</strong> Statt 90% Wachstum und 10% Ausfall kippt das Verhältnis — bis zu 50% deiner Haare wechseln in die Ausfallphase. Das führt zu:</p>
+
+      <ul class="hvl-pl-problem-x-list">
+        <li><span class="x">❌</span> Haare fallen büschelweise aus</li>
+        <li><span class="x">❌</span> Dünnerer Zopf</li>
+        <li><span class="x">❌</span> Breiterer Scheitel</li>
+        <li><span class="x">❌</span> Mehr Kopfhaut sichtbar</li>
+        <li><span class="x">❌</span> Sinkendes Selbstbewusstsein</li>
+      </ul>
+
+      <p><strong>Die gute Nachricht: Kein einziger Follikel ist tot.</strong> Deine Haarwurzeln sind noch da — sie wurden nur auf die falsche Seite umgeschaltet. Sie warten auf das richtige Signal.</p>
+
+      <img class="hvl-pl-problem-collage" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/2495a1ef-7f1c-4a17-bc94-292f88910381.png?v=1793133170" alt="Haarausfall in den Wechseljahren" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       SECTION 4 — LÖSUNG
+       ════════════════════════════════════ -->
+  <section class="hvl-pl-solution">
+    <div class="hvl-pl-solution-inner">
+      <h2>
+        Warum Biotin und Vitamine <span class="accent">dein Problem nicht lösen.</span>
+      </h2>
+
+      <p>Wenn Frauen Haarausfall bemerken, greifen sie zuerst zu Biotin, Kollagen oder Multivitaminen. <strong>Aber keiner dieser Stoffe stellt das Wachstumssignal an der Papilla wieder her.</strong> Sie füttern das Haar mit Nährstoffen — aber solange die Papilla „Ausfallen" sendet, helfen keine Vitamine der Welt.</p>
+
+      <p>Verschreibungspflichtige Medikamente wie Minoxidil erhöhen die Durchblutung der Kopfhaut. <strong>Aber sie adressieren nicht die Ursache:</strong> die fehlende Östrogen-Stimulation an der Papilla. Und sie kommen mit Nebenwirkungen: <strong>Kopfhautreizungen, Herzrasen und unerwünschter Haarwuchs im Gesicht.</strong></p>
+
+      <p>Was, wenn es <strong class="green-text">einen natürlichen Weg gäbe, die Östrogen-Rezeptoren an der Papilla wieder zu stimulieren</strong> — und das Wachstumssignal zurückzubringen?</p>
+
+      <img class="hvl-pl-solution-stat" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/BAHNBRECHENDES_STUDIEN_RESULTAT.png?v=1793134508" alt="Klinische Studie Kürbiskernöl" loading="lazy">
+
+      <p>Mit Millionen von Frauen, die unter Haarausfall leiden und keine wirklich gesunde Lösung finden, <strong>machten sich führende Dermatologen auf die Suche nach einer besseren Alternative.</strong></p>
+
+      <p>Sie suchten einen natürlichen Wirkstoff, der die Östrogen-Rezeptoren an der Papilla stimuliert — <strong>ohne synthetische Hormone oder gefährliche Nebenwirkungen.</strong> Was sie fanden, übertraf alle Erwartungen.</p>
+
+      <p class="green-text">Ein Durchbruch, der <strong>die Papilla wieder auf „Wachsen" umschaltet — und gleichzeitig deine Kopfhaut mit essentiellen Nährstoffen versorgt,</strong> die dickeres, stärkeres Haar fördern.</p>
+
+      <p class="breakthrough">Dieser Durchbruch? <span class="accent">Kürbiskernöl.</span></p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       SECTION 5 — WIRKSTOFF-FEATURES
+       ════════════════════════════════════ -->
+  <section class="hvl-pl-features">
+    <div class="hvl-pl-features-inner">
+      <h2>
+        Zwei Kapseln.
+        <span class="accent">Tausend neue Haare.</span>
+      </h2>
+
+      <div class="hvl-pl-feature-card">
+        <div class="emoji">🔄</div>
+        <h3>Reaktiviert das Wachstumssignal</h3>
+        <p>Kürbiskernöl enthält Phytosterole: pflanzliche Verbindungen, die strukturell ähnlich wie Östrogen sind und die Rezeptoren an der Papilla stimulieren.</p>
+      </div>
+
+      <div class="hvl-pl-feature-card">
+        <div class="emoji">🧡</div>
+        <h3>Beschleunigt Haarwachstum</h3>
+        <p>Kürbiskernöl enthält Zink, Vitamin E, Omega-Fettsäuren und Antioxidantien, die dickeres, stärkeres Haar fördern und die Follikelproduktion ankurbeln.</p>
+      </div>
+
+      <img class="hvl-pl-features-img" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Design_ohne_Titel_30.png?v=1793134951" alt="HaarVital Kapseln" loading="lazy">
+
+      <div class="hvl-pl-feature-card">
+        <div class="emoji">😌</div>
+        <h3>Nährt die Kopfhaut</h3>
+        <p>Kürbiskernöl nährt deine Kopfhaut, stärkt die Follikelstruktur und schafft die Grundlage für neues Haarwachstum.</p>
+      </div>
+
+      <div class="hvl-pl-feature-card">
+        <div class="emoji">🌿</div>
+        <h3>Sägepalme</h3>
+        <p>Sägepalme regt neues Haarwachstum an, unterstützt die Follikelaktivität und sorgt dafür, dass mehr Haare gleichzeitig in der Wachstumsphase bleiben.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       SECTION 6 — TESTIMONIALS
+       ════════════════════════════════════ -->
+  <section class="hvl-pl-testimonials">
+    <div class="hvl-pl-testimonials-inner">
+      <h2>Das sagen unsere Kundinnen</h2>
+
+      <div class="hvl-pl-review">
+        <img class="hvl-pl-review-img" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Tag_1_3.png?v=1793172077" alt="Sabine R. Erfahrung" loading="lazy">
+        <div class="hvl-pl-review-body">
+          <div class="hvl-pl-review-stars">★★★★★</div>
+          <div class="hvl-pl-review-name">Sabine R.</div>
+          <p class="hvl-pl-review-text">"Die Wechseljahre haben meine Haare ruiniert. Jede Woche war mehr Kopfhaut sichtbar — ich habe mich so geschämt. Nach ein paar Monaten HaarVital sieht mein Scheitel nicht mehr kahl aus. Ich bin überrascht, wie viel sich verändert hat."</p>
+        </div>
+      </div>
+
+      <div class="hvl-pl-review">
+        <img class="hvl-pl-review-img" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Tag_1_4.png?v=1793172098" alt="Julia G. Erfahrung" loading="lazy">
+        <div class="hvl-pl-review-body">
+          <div class="hvl-pl-review-stars">★★★★★</div>
+          <div class="hvl-pl-review-name">Julia G.</div>
+          <p class="hvl-pl-review-text">"Als ich 50 wurde und die Wechseljahre kamen, fielen meine Haare büschelweise aus. Auf dem Kopfkissen, in der Bürste — überall. Nach drei Monaten sehe ich neue kleine Härchen und mein Haar fühlt sich dichter an."</p>
+        </div>
+      </div>
+
+      <div class="hvl-pl-review">
+        <img class="hvl-pl-review-img" src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Tag_1_5.png?v=1793172107" alt="Elena B. Erfahrung" loading="lazy">
+        <div class="hvl-pl-review-body">
+          <div class="hvl-pl-review-stars">★★★★★</div>
+          <div class="hvl-pl-review-name">Elena B.</div>
+          <p class="hvl-pl-review-text">"Ich habe unter der Dusche ganze Büschel Haare verloren. Ich konnte buchstäblich Haut sehen. Aus Verzweiflung habe ich HaarVital probiert — und sehe jetzt zum ersten Mal echtes neues Wachstum."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       SECTION 7 — CTA CARD
+       ════════════════════════════════════ -->
+  <div class="hvl-pl-cta-wrapper">
+    <div class="hvl-pl-cta-section">
+      <h2>Aktiviere dein Haarwachstum. Heute.</h2>
+
+      <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Design_ohne_Titel_29.png?v=1793131729" alt="HaarVital NATURAPlus" loading="lazy">
+
+      <p class="sub">HaarVital von NATURAPlus™ ist aktuell auf Lager — aber die Nachfrage steigt.</p>
+
+      <ul class="hvl-pl-cta-checks">
+        <li>Kürbiskernöl + Sägepalme in einer Formel</li>
+        <li>Entwickelt für Frauen in den Wechseljahren</li>
+        <li>120-Tage-Geld-zurück-Garantie</li>
+      </ul>
+
+      <a href="https://naturapls.com/products/naturaplus%E2%84%A2%EF%B8%8F-haarvitaal" class="hvl-pl-cta-btn">Jetzt HaarVital sichern →</a>
+
+      <p class="hvl-pl-cta-fine">Kein Abo. Keine versteckten Kosten. Wenn du nicht zufrieden bist, bekommst du dein Geld zurück.</p>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════
+       SECTION 8 — FAQ
+       ════════════════════════════════════ -->
+  <section class="hvl-pl-faq">
+    <div class="hvl-pl-faq-inner">
+      <h2>Häufig gestellte Fragen</h2>
+
+      <div class="hvl-pl-faq-item">
+        <button class="hvl-pl-faq-q">Wirkt das speziell bei Haarausfall durch die Wechseljahre?</button>
+        <div class="hvl-pl-faq-a">
+          <p>Ja. HaarVital wurde gezielt für hormonell bedingten Haarausfall in den Wechseljahren entwickelt. Kürbiskernöl enthält Phytosterole, die die Östrogen-Rezeptoren an der Papilla (Nervenzentrum deiner Follikel) stimulieren und das Wachstumssignal reaktivieren. Sägepalme regt zusätzlich neues Haarwachstum an.</p>
+        </div>
+      </div>
+
+      <div class="hvl-pl-faq-item">
+        <button class="hvl-pl-faq-q">Wie lange dauert es, bis ich Ergebnisse sehe?</button>
+        <div class="hvl-pl-faq-a">
+          <p>Die meisten Kundinnen berichten nach 4–6 Wochen von weniger Haaren in der Bürste. Sichtbar dickeres Haar am Scheitel zeigt sich typischerweise nach 8–12 Wochen. Deshalb geben wir dir 120 Tage Garantie — damit du genug Zeit hast.</p>
+        </div>
+      </div>
+
+      <div class="hvl-pl-faq-item">
+        <button class="hvl-pl-faq-q">Warum wirkt Biotin nicht gegen meinen Haarausfall?</button>
+        <div class="hvl-pl-faq-a">
+          <p>Biotin, Kollagen und Multivitamine füttern dein Haar mit Nährstoffen — aber sie adressieren nicht die Ursache. Solange die Papilla das Ausfallsignal sendet, helfen keine Vitamine. HaarVital setzt direkt an der Papilla an und reaktiviert das Wachstumssignal.</p>
+        </div>
+      </div>
+
+      <div class="hvl-pl-faq-item">
+        <button class="hvl-pl-faq-q">Beeinflusst es meine Hormonersatztherapie oder andere Medikamente?</button>
+        <div class="hvl-pl-faq-a">
+          <p>HaarVital enthält rein pflanzliche Inhaltsstoffe und keine synthetischen Hormone. Die Phytosterole im Kürbiskernöl stimulieren die Rezeptoren an der Papilla auf natürlichem Weg. Wenn du eine HRT oder andere Medikamente nimmst, sprich kurz mit deiner Ärztin — in den meisten Fällen ist die Kombination unproblematisch.</p>
+        </div>
+      </div>
+
+      <div class="hvl-pl-faq-item">
+        <button class="hvl-pl-faq-q">Gibt es hormonelle oder Verdauungs-Nebenwirkungen?</button>
+        <div class="hvl-pl-faq-a">
+          <p>Nein. HaarVital ist rein pflanzlich und gut verträglich. Es enthält keine synthetischen Hormone und verursacht keine bekannten Nebenwirkungen.</p>
+        </div>
+      </div>
+
+      <div class="hvl-pl-faq-item">
+        <button class="hvl-pl-faq-q">Ist es sicher bei Soja-, Gluten- oder Nussallergien?</button>
+        <div class="hvl-pl-faq-a">
+          <p>HaarVital ist frei von Soja, Gluten und Nüssen. Falls du unsicher bist, findest du die vollständige Inhaltsstoffliste auf der Produktseite.</p>
+        </div>
+      </div>
+
+      <div class="hvl-pl-faq-item">
+        <button class="hvl-pl-faq-q">Ich bin noch nicht in der Menopause — wirkt es trotzdem?</button>
+        <div class="hvl-pl-faq-a">
+          <p>Ja. HaarVital wirkt auch in der Perimenopause, wenn der Östrogenspiegel bereits sinkt und die Papilla weniger Wachstumssignale sendet. Je früher du anfängst, desto besser für deine Follikel.</p>
+        </div>
+      </div>
+
+      <div class="hvl-pl-faq-item">
+        <button class="hvl-pl-faq-q">Wie groß sind die Kapseln und sind sie leicht zu schlucken?</button>
+        <div class="hvl-pl-faq-a">
+          <p>Die Softgel-Kapseln sind standardmäßig groß und mit Wasser leicht zu schlucken — deutlich einfacher als harte Tabletten.</p>
+        </div>
+      </div>
+
+      <div class="hvl-pl-faq-item">
+        <button class="hvl-pl-faq-q">Verliere ich meine Ergebnisse, wenn ich aufhöre?</button>
+        <div class="hvl-pl-faq-a">
+          <p>Deine Haare bleiben gestärkt. Für die beste langfristige Wirkung empfehlen wir eine dauerhafte Einnahme — aber es gibt keinen plötzlichen oder verstärkten Haarausfall, wenn du pausierst.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       SECTION 9 — ZAHLEN & ERGEBNISSE
+       ════════════════════════════════════ -->
+  <section class="hvl-pl-stats">
+    <div class="hvl-pl-stats-inner">
+      <p class="hvl-pl-stats-label">Die Zahlen sprechen für sich</p>
+      <h2>Echte Ergebnisse, bestätigt von tausenden Kundinnen.</h2>
+      <div class="hvl-pl-stats-divider"></div>
+      <p class="hvl-pl-stats-desc">Unabhängige Umfragen bestätigen, was tausende Frauen in den Wechseljahren bereits wissen: diese pflanzliche Formel unterstützt messbare, sichtbare Verbesserungen bei hormonell bedingtem Haarausfall und stärkt das Selbstbewusstsein.</p>
+      <p class="hvl-pl-stats-footnote">Basierend auf einer Umfrage unter 1.000 Frauen in den Wechseljahren (45–65 Jahre), die NATURAPlus™ HaarVital täglich über 90 Tage eingenommen haben.</p>
+
+      <!-- Karte 1 -->
+      <div class="hvl-pl-stat-card">
+        <div class="hvl-pl-stat-header">
+          <span class="hvl-pl-stat-number">94%</span>
+          <span class="hvl-pl-stat-label">BEMERKTEN DEUTLICH WENIGER HAARAUSFALL INNERHALB VON 30 TAGEN</span>
+        </div>
+        <div class="hvl-pl-stat-img-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Design_ohne_Titel_31.png?v=1793175408" alt="Kerstin L. Vorher Nachher" loading="lazy">
+        </div>
+        <div class="hvl-pl-stat-customer">
+          🇩🇪 Kerstin L. <span class="verified">✅ Verifizierte Kundin</span>
+        </div>
+        <ul class="hvl-pl-stat-bullets">
+          <li><span class="check">✓</span> <span>Weniger Haare in Dusche und Bürste <strong>innerhalb der ersten 2 Wochen</strong></span></li>
+          <li><span class="check">✓</span> <span><strong>Weniger Haarausfall</strong> beim Kämmen und Styling</span></li>
+          <li><span class="check">✓</span> <span>Trägt ihre Haare <strong>wieder offen und ohne Angst</strong></span></li>
+        </ul>
+      </div>
+
+      <!-- Karte 2 -->
+      <div class="hvl-pl-stat-card">
+        <div class="hvl-pl-stat-header">
+          <span class="hvl-pl-stat-number">91%</span>
+          <span class="hvl-pl-stat-label">BERICHTEN VON DICKEREM, VOLLEREM HAAR</span>
+        </div>
+        <div class="hvl-pl-stat-img-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Design_ohne_Titel_32.png?v=1793175426" alt="Marlene T. Vorher Nachher" loading="lazy">
+        </div>
+        <div class="hvl-pl-stat-customer">
+          🇩🇪 Marlene T. <span class="verified">✅ Verifizierte Kundin</span>
+        </div>
+        <ul class="hvl-pl-stat-bullets">
+          <li><span class="check">✓</span> <span>Neue kleine Härchen am Scheitel und <strong>an den Schläfen nach 6 Wochen</strong></span></li>
+          <li><span class="check">✓</span> <span>Sichtbare <strong>Kopfhautabdeckung verbessert</strong> am Oberkopf und vorne</span></li>
+          <li><span class="check">✓</span> <span><strong>Haar sieht voller aus</strong> und Frisuren halten mehr Volumen</span></li>
+        </ul>
+      </div>
+
+      <!-- Karte 3 -->
+      <div class="hvl-pl-stat-card">
+        <div class="hvl-pl-stat-header">
+          <span class="hvl-pl-stat-number">97%</span>
+          <span class="hvl-pl-stat-label">FÜHLEN SICH SELBSTBEWUSSTER MIT IHREM HAAR</span>
+        </div>
+        <div class="hvl-pl-stat-img-wrap">
+          <img src="https://cdn.shopify.com/s/files/1/1062/0770/7473/files/Design_ohne_Titel_33.png?v=1793175488" alt="Annika M. Vorher Nachher" loading="lazy">
+        </div>
+        <div class="hvl-pl-stat-customer">
+          🇩🇪 Annika M. <span class="verified">✅ Verifizierte Kundin</span>
+        </div>
+        <ul class="hvl-pl-stat-bullets">
+          <li><span class="check">✓</span> <span><strong>Mehr Selbstbewusstsein</strong> beim Blick in den Spiegel</span></li>
+          <li><span class="check">✓</span> <span>Traut sich wieder, <strong>Fotos ohne Hut</strong> zu machen</span></li>
+          <li><span class="check">✓</span> <span>Fühlt sich <strong>wieder wie sie selbst</strong> nach 60 Tagen</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- ════════════════════════════════════
+     JAVASCRIPT — FAQ Accordion
+     ════════════════════════════════════ -->
+<script>
+(function() {
+  var items = document.querySelectorAll('.hvl-pl-faq-item');
+  items.forEach(function(item) {
+    var btn = item.querySelector('.hvl-pl-faq-q');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var isOpen = item.classList.contains('active');
+      items.forEach(function(i) { i.classList.remove('active'); });
+      if (!isOpen) item.classList.add('active');
+    });
+  });
+})();
+</script>

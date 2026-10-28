@@ -1,0 +1,23 @@
+{{ 'https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap' | stylesheet_tag }}
+
+<style>
+  .hvl-product-title {
+    font-family: 'Baloo 2', 'Poppins', sans-serif;
+    font-weight: 800;
+    color: #2E6E4E;
+    font-size: 42px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin: 0 0 16px 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .hvl-product-title {
+      font-size: 30px;
+    }
+  }
+</style>
+
+<h1 class="hvl-product-title">
+  {{ product.title }}
+</h1>
