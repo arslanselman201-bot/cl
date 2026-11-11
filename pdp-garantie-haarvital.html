@@ -1,0 +1,80 @@
+{{ 'https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Poppins:wght@400;700&display=swap' | stylesheet_tag }}
+
+<style>
+  .np-guarantee {
+    background: #cfe7f5;
+    padding: 48px 20px;
+  }
+
+  .np-g-inner {
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .np-g-title {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    color: #1f5c34;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+  }
+
+  .np-g-title--accent {
+    color: #6cb6e8;
+  }
+
+  .np-g-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #3d5a4c;
+    line-height: 1.6;
+    margin: 0 0 14px 0;
+  }
+
+  .np-g-bold {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #1f5c34;
+    font-weight: 700;
+    line-height: 1.6;
+    margin: 0 0 14px 0;
+  }
+
+  .np-g-cta {
+    display: inline-block;
+    background: #f0cd4a;
+    color: #1f5c34;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px 36px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .np-g-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  }
+
+  @media screen and (max-width: 749px) {
+    .np-g-title { font-size: 26px; }
+    .np-g-text, .np-g-bold { font-size: 15px; }
+    .np-guarantee { padding: 36px 16px; }
+  }
+</style>
+
+<section class="np-guarantee">
+  <div class="np-g-inner">
+    <h2 class="np-g-title">120 Tage Garantie <span class="np-g-title--accent">Risikofrei!</span></h2>
+    <p class="np-g-text">Wir sind überzeugt, dass du uns lieben wirst — aber wir verstehen, dass du dir vielleicht noch nicht sicher bist.</p>
+    <p class="np-g-bold">Deshalb bieten wir dir eine 120-Tage-Testphase.</p>
+    <p class="np-g-text">Wenn du aus irgendeinem Grund nicht zufrieden bist, kannst du es innerhalb von 120 Tagen nach Lieferdatum zurückgeben — und bekommst dein Geld vollständig zurück.</p>
+    <button type="button" class="np-g-cta" onclick="window.scrollTo({top: 900, behavior: 'smooth'});">Jetzt bestellen und sparen</button>
+  </div>
+</section>
